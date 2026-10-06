@@ -1,0 +1,5 @@
+steph@DESKTOP-VMJCDBI MINGW64 /c/Env/RetroArch
+$ ./configure
+
+WASAPI est le seul pilote audio MAINTENANT
+Direct3D 9 A etait desactiver dans le ./configure il apparrait plus dans RetroArch
