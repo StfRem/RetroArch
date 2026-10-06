@@ -881,12 +881,13 @@ static win32_powrprof_t *win32_powrprof_get(void)
          "PowerReadDescription");
 
    if (     !p->get_active || !p->set_active || !p->duplicate
-         || !p->remove     || !p->write_ac   || !p->write_name
-         || !p->write_desc || !p->read_desc)
-   {
-      p->get_active = NULL;
-      return NULL;
-   }
+      || !p->remove     || !p->write_ac   || !p->write_name
+      || !p->write_desc || !p->read_desc)
+{
+   FreeLibrary(lib);
+   p->get_active = NULL;
+   return NULL;
+}
    return p;
 }
 

@@ -537,8 +537,11 @@ static bool retro_task_regular_find(retro_task_finder_t func, void *user_data)
 
 static void retro_task_regular_retrieve(task_retriever_data_t *data)
 {
-   retro_task_t *task          = NULL;
-   task_retriever_info_t *tail = NULL;
+   retro_task_t *task = NULL;
+   task_retriever_info_t **link = &data->list;
+
+   while (*link)
+      link = &(*link)->next;
 
    /* Parse all running tasks and handle matching handlers */
    for (task = tasks_running.front; task != NULL; task = task->next)
@@ -573,21 +576,8 @@ static void retro_task_regular_retrieve(task_retriever_data_t *data)
       }
 
       /* Add link to list */
-      if (data->list)
-      {
-         if (tail)
-         {
-            tail->next = info;
-            tail       = tail->next;
-         }
-         else
-            tail       = info;
-      }
-      else
-      {
-         data->list    = info;
-         tail          = data->list;
-      }
+      *link = info;
+      link  = &info->next;
    }
 }
 

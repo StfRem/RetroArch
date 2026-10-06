@@ -2825,9 +2825,11 @@ static bool rgui_downscale_thumbnail(
                ? video_st->av_info.geometry.aspect_ratio
                : aspect_ratio;
 
+   if (!image_src->width || !image_src->height)
+      return false;
+
    if (aspect_ratio > display_aspect_ratio)
    {
-      image_dst->width           = max_width;
       image_dst->height          = image_src->height * max_width / image_src->width;
 
       if (thumbnail_core_aspect)
@@ -2862,6 +2864,9 @@ static bool rgui_downscale_thumbnail(
       if (image_dst->width > max_width)
          image_dst->width        = max_width;
    }
+
+   if (!image_dst->width || !image_dst->height)
+      return false;
 
    /* Allocate pixel buffer */
    if (!(image_dst->pixels = (uint32_t*)calloc(image_dst->width * image_dst->height, sizeof(uint32_t))))

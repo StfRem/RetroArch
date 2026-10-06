@@ -1923,6 +1923,8 @@ static void wdmks_rt_event_unregister(HANDLE pin, HANDLE ev)
    CloseHandle(ev);
 }
 
+static void wdmks_rt_geometry(unsigned latency, unsigned rate,
+      unsigned frame_bytes, size_t *ahead, size_t *loop);
 static size_t wdmks_rt_ring_bytes(size_t ahead);
 
 static bool wdmks_rt_get_buffer(wdmks_t *w, size_t wanted)
@@ -2209,8 +2211,7 @@ static void wdmks_rt_wait_room(wdmks_t *w, size_t want)
    if (period_usec < 500)
       period_usec = 500;
    {
-      retro_time_t ring_usec = (retro_time_t)(w->rt_size / w->frame_bytes)
-         * 1000000 / w->rate;
+retro_time_t ring_usec = (w->frame_bytes && w->rate) ? (retro_time_t)(w->rt_size / w->frame_bytes) * 1000000 / w->rate : 0;
       if (ring_usec && period_usec > ring_usec)
          period_usec = ring_usec;
    }
@@ -2461,7 +2462,8 @@ static void wdmks_rt_advance(wdmks_t *w, ULONG v)
    wdmks_rt_scrub(w, w->rt_last_pos, v);
 
    w->rt_last_pos = v;
-   w->rt_played   = w->rt_played_bytes / w->frame_bytes;
+   if (w->frame_bytes)
+      w->rt_played = w->rt_played_bytes / w->frame_bytes;
 
    /* Round more than once unobserved is an overrun whatever the loop
     * held, since it held less than one lap; the count says the rest. */

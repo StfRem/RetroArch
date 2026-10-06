@@ -333,7 +333,7 @@ static void allocate(rac3_encoder_t *e, const uint8_t *exps, unsigned start, uns
       kk++;
    } while (end > lastbin);
    bndstrt = rac3_masktab[start];
-   bndend  = rac3_masktab[end - 1] + 1;
+   bndend  = (end > 0) ? rac3_masktab[end - 1] + 1 : 0;
    {
       lowcomp = enc_calc_lowcomp(lowcomp, bndpsd[0], bndpsd[1], 0);
       excite[0] = bndpsd[0] - fgain - lowcomp;
@@ -614,7 +614,7 @@ static uint16_t solve_crc1(const uint8_t *rest, size_t n)
    /* columns: CRC(e_i || 0^n): run the unit vector then n zero bytes */
    for (i = 0; i < 16; i++)
    {
-      uint16_t crc = (uint16_t)(1u << (15 - i));   /* the two bytes with bit i set, as the CRC state after them (init 0, no xor) */
+      uint16_t crc;   /* the two bytes with bit i set, as the CRC state after them (init 0, no xor) */
       size_t z;
       /* CRC state after feeding the two bytes with only bit i set is
        * those bytes shifted through the polynomial: feed them */

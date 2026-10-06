@@ -2309,7 +2309,6 @@ static void gfx_ctx_gdi_get_video_size(
 static bool gfx_ctx_gdi_init(void)
 {
    WNDCLASSEX wndclass      = {0};
-   settings_t *settings     = config_get_ptr();
    uint8_t win32_flags      = win32_get_flags();
 
    if (win32_flags & WIN32_CMN_FLAG_INITED)
@@ -2394,7 +2393,6 @@ static void *gdi_init(const video_info_t *video)
    unsigned mode_dims = 0;
    unsigned win_dims   = 0;
    unsigned temp_dims = 0;
-   settings_t *settings                 = config_get_ptr();
    gdi_t *gdi                           = (gdi_t*)calloc(1, sizeof(*gdi));
 
    if (!gdi)
@@ -2788,7 +2786,10 @@ static bool gdi_frame(void *data, const void *frame,
       {
          unsigned short *tmp = NULL;
          if (gdi->temp_buf)
+         {
             free(gdi->temp_buf);
+            gdi->temp_buf = NULL;
+         }
          tmp = (unsigned short*)malloc(width * height
                * sizeof(unsigned short));
          if (tmp)

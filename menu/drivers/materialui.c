@@ -21,6 +21,10 @@
 #include <string.h>
 #include <limits.h>
 
+#ifdef HAVE_CONFIG_H
+#include "../../config.h"
+#endif
+
 #include <compat/posix_string.h>
 #include <compat/strcasestr.h>
 #include <compat/strl.h>
@@ -32,10 +36,6 @@
 #include <encodings/utf.h>
 #include <retro_inline.h>
 #include <retro_math.h>
-
-#ifdef HAVE_CONFIG_H
-#include "../../config.h"
-#endif
 
 #include "../../gfx/gfx_surface.h"
 #include "../../frontend/frontend_driver.h"
@@ -5285,7 +5285,9 @@ static void materialui_render_menu_entry_default(
             /* Label */
             mui->ticker.s        = label_buf;
             mui->ticker.s_len    = sizeof(label_buf);
-            mui->ticker.len      = (size_t)(label_width / mui->font_data.list.glyph_width);
+            mui->ticker.len      = mui->font_data.list.glyph_width
+                  ? (size_t)(label_width / mui->font_data.list.glyph_width)
+                  : 0;
             mui->ticker.str      = entry_label;
 
             gfx_animation_ticker(&mui->ticker);
@@ -10007,7 +10009,8 @@ static void materialui_navigation_set(void *data, bool scroll)
    {
       menu_list_t *menu_list     = menu_st->entries.list;
       size_t entry_idx_selection = selection + 1;
-      size_t list_size           = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      file_list_t *selection_list = MENU_LIST_GET_SELECTION(menu_list, 0);
+       size_t list_size           = selection_list ? selection_list->size : 0;
       unsigned entry_idx_offset  = mui->entry_index_offset;
       bool show_entry_idx        = true;
 
@@ -10469,7 +10472,8 @@ static void materialui_populate_entries(void *data, const char *path,
    {
       menu_list_t *menu_list     = menu_st->entries.list;
       size_t entry_idx_selection = menu_st->selection_ptr + 1;
-      size_t list_size           = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      file_list_t *selection_list = MENU_LIST_GET_SELECTION(menu_list, 0);
+       size_t list_size           = selection_list ? selection_list->size : 0;
       unsigned entry_idx_offset  = 0;
       bool show_entry_idx        = true;
 
@@ -11746,7 +11750,9 @@ static int materialui_pointer_up(void *userdata,
                /* If this is not a playlist or file list, a tap/press
                 * anywhere on the header triggers a MENU_ACTION_CANCEL
                 * action unless already at root depth */
-               else if (MENU_LIST_GET_STACK_SIZE(menu_st->entries.list, 0) > 1)
+               else if (menu_st->entries.list
+                     && MENU_LIST_GET(menu_st->entries.list, 0)
+                     && MENU_LIST_GET_STACK_SIZE(menu_st->entries.list, 0) > 1)
                   return materialui_menu_entry_action(mui, entry, selection, MENU_ACTION_CANCEL);
             }
             /* Tap/press menu item: Activate and/or select item */

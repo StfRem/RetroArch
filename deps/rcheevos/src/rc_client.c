@@ -1280,14 +1280,21 @@ static void rc_client_load_error(rc_client_load_state_t* load_state, int result,
 
 static void rc_client_load_aborted(rc_client_load_state_t* load_state)
 {
+  int has_pending_requests;
+
   /* prevent callback from being called when manually aborted */
   load_state->callback = NULL;
+
+  rc_mutex_lock(&load_state->client->state.mutex);
+  has_pending_requests = load_state->outstanding_requests > 0;
+  rc_mutex_unlock(&load_state->client->state.mutex);
 
   /* mark the game as no longer being loaded */
   rc_client_load_error(load_state, RC_ABORTED, NULL);
 
-  /* decrement the async counter and potentially free the load_state object */
-  rc_client_end_load_state(load_state);
+  /* load_error frees the state immediately when no request remains. */
+  if (has_pending_requests)
+    rc_client_end_load_state(load_state);
 }
 
 static void rc_client_invalidate_memref_achievements(rc_client_game_info_t* game, rc_client_t* client, rc_memref_t* memref)
@@ -1973,11 +1980,13 @@ static void rc_client_start_session_callback(const rc_api_server_response_t* ser
   error_message = rc_client_server_error_message(&result, server_response->http_status_code, &start_session_response.response);
   outstanding_requests = rc_client_end_load_state(load_state);
 
-  if (error_message) {
-    rc_client_load_error(load_state, result, error_message);
-  }
-  else if (outstanding_requests < 0) {
+  if (outstanding_requests < 0) {
     /* previous load state was aborted, load_state was free'd */
+  }
+  else if (error_message) {
+    rc_client_load_error(load_state, result, error_message);
+    rc_api_destroy_start_session_response(&start_session_response);
+    return;
   }
   else if (outstanding_requests == 0 && load_state->client->state.allow_background_memory_reads) {
     rc_client_activate_game(load_state, &start_session_response);
@@ -1988,6 +1997,8 @@ static void rc_client_start_session_callback(const rc_api_server_response_t* ser
 
     if (!load_state->start_session_response) {
       rc_client_load_error(load_state, RC_OUT_OF_MEMORY, rc_error_str(RC_OUT_OF_MEMORY));
+      rc_api_destroy_start_session_response(&start_session_response);
+      return;
     }
     else {
       /* safer to parse the response again than to try to copy it */
@@ -2310,11 +2321,13 @@ static void rc_client_fetch_game_sets_callback(const rc_api_server_response_t* s
 
   outstanding_requests = rc_client_end_load_state(load_state);
 
-  if (error_message && result != RC_NOT_FOUND) {
-    rc_client_load_error(load_state, result, error_message);
-  }
-  else if (outstanding_requests < 0) {
+  if (outstanding_requests < 0) {
     /* previous load state was aborted, load_state was free'd */
+  }
+  else if (error_message && result != RC_NOT_FOUND) {
+    rc_client_load_error(load_state, result, error_message);
+    rc_api_destroy_fetch_game_sets_response(&fetch_game_sets_response);
+    return;
   }
   else if (fetch_game_sets_response.id == 0) {
     load_state->hash->game_id = 0;
@@ -2382,7 +2395,10 @@ static void rc_client_fetch_game_sets_callback(const rc_api_server_response_t* s
 
     if (!first_subset) {
       rc_client_load_error(load_state, RC_NOT_FOUND, "Response contained no sets");
-    } else {
+      rc_api_destroy_fetch_game_sets_response(&fetch_game_sets_response);
+      return;
+    }
+    else {
       load_state->subset = first_subset;
 
       /* core set */

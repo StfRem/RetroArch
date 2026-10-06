@@ -2613,6 +2613,9 @@ static bool vulkan_frame_window(const struct vk_texture *tex,
    if (pitch != tex->stride)
       return false;
    bpp = vulkan_format_to_bpp(tex->format);
+   if (!bpp)
+      return false;
+
    off = (size_t)(p - base);
    row = off % tex->stride;
    if ((row % bpp) || (off & 3))
@@ -3912,11 +3915,13 @@ static void vulkan_font_render_msg(
 
    /* Asked for before anything is laid out: it may have grown, and the
     * texture coordinates are taken from the texture's size */
-   if (font->font_driver && font->font_data)
-   {
-      font->atlas = font->font_driver->get_atlas(font->font_data);
-      vulkan_font_follow_atlas(font);
-   }
+   if (!font->font_driver || !font->font_data)
+      return;
+
+   font->atlas = font->font_driver->get_atlas(font->font_data);
+   if (!font->atlas)
+      return;
+   vulkan_font_follow_atlas(font);
 
 
    font_driver_resolve_params(params, &rp);
@@ -3984,8 +3989,7 @@ static void vulkan_font_render_msg(
    }
 
    font->vertices   = 0;
-   glyph_q          = (font->font_driver)
-      ? font->font_driver->get_glyph(font->font_data, '?') : NULL;
+   glyph_q          = font->font_driver->get_glyph(font->font_data, '?');
 
    /* Pair the fallback-glyph lookup with an upload like every other
     * lookup, in case '?' was just (re)rasterized after eviction. */
@@ -3996,6 +4000,8 @@ static void vulkan_font_render_msg(
       font->needs_update = true;
    }
    font->font_driver->get_line_metrics(font->font_data, &line_metrics);
+   if (!line_metrics)
+      return;
    line_height      = line_metrics->height * scale / VIDEO_SCALE_H(vk->vp.dims);
 
    /* Hoist reciprocals, function pointer, and pre-multiplied factors. */
@@ -4289,7 +4295,10 @@ static const struct font_glyph *vulkan_font_get_glyph(
    const struct font_glyph* glyph;
    vulkan_raster_t *font = (vulkan_raster_t*)data;
 
-   if (!font || !font->font_driver)
+   if (     !font
+         || !font->font_driver
+         || !font->font_data
+         || !font->atlas)
       return NULL;
 
    glyph = font->font_driver->get_glyph((void*)font->font_data, code);

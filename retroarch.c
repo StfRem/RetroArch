@@ -1804,7 +1804,7 @@ void drivers_init(
    }
 
 #ifdef HAVE_MENU
-   if (flags & DRIVER_INPUT_MASK)
+   if ((flags & DRIVER_INPUT_MASK) && menu_st)
       menu_st->input_pointer_hw_state.flags |= MENU_INP_PTR_FLG_RESET;
 #endif
 

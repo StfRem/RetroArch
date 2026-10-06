@@ -1615,8 +1615,8 @@ static void d3d11_font_render_msg(
    d3d11_sprite_t *v                = NULL;
    d3d11_font_t *font               = (d3d11_font_t*)data;
    d3d11_video_t *d3d11             = (d3d11_video_t*)userdata;
-   unsigned width                   = VIDEO_SCALE_W(d3d11->vp.full_dims);
-   unsigned height                  = VIDEO_SCALE_H(d3d11->vp.full_dims);
+   unsigned width                   = 0;
+   unsigned height                  = 0;
    const struct font_glyph* (*get_glyph)(void*, uint32_t) = NULL;
    void *font_data                  = NULL;
    float inv_vp_w, inv_vp_h, inv_tex_w, inv_tex_h;
@@ -1624,20 +1624,25 @@ static void d3d11_font_render_msg(
    int   drop_x_px, drop_y_px;
    int   base_lx;
 
-   if (!font || !msg || !*msg)
+   if (!d3d11 || !font || !msg || !*msg)
       return;
    if (!(d3d11->flags & D3D11_ST_FLAG_SPRITES_ENABLE))
       return;
 
+   width  = VIDEO_SCALE_W(d3d11->vp.full_dims);
+   height = VIDEO_SCALE_H(d3d11->vp.full_dims);
+
    /* Asked for before anything is laid out: it may have grown, and the
     * texture coordinates are taken from the texture's size */
-   if (font->font_driver && font->font_data)
-   {
-      font->atlas = font->font_driver->get_atlas(font->font_data);
-      if (     font->texture.desc.Width  != font->atlas->width
-            || font->texture.desc.Height != font->atlas->height)
-         d3d11_font_make_texture(d3d11, font);
-   }
+   if (!font->font_driver || !font->font_data)
+      return;
+
+   font->atlas = font->font_driver->get_atlas(font->font_data);
+   if (!font->atlas)
+      return;
+   if (     font->texture.desc.Width  != font->atlas->width
+         || font->texture.desc.Height != font->atlas->height)
+      d3d11_font_make_texture(d3d11, font);
 
    font_driver_resolve_params(params, &rp);
    x          = rp.x;
@@ -1658,9 +1663,10 @@ static void d3d11_font_render_msg(
    get_glyph                  = font->font_driver->get_glyph;
    font_data                  = font->font_data;
 
-   glyph_q     = font->font_driver
-      ? get_glyph(font_data, '?') : NULL;
+   glyph_q     = get_glyph(font_data, '?');
    font->font_driver->get_line_metrics(font_data, &line_metrics);
+   if (!line_metrics)
+      return;
    line_height = line_metrics->height * scale / height;
 
    have_drop   = (drop_x || drop_y);

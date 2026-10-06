@@ -290,6 +290,9 @@ static void handle_translation_response(
       translation_response_t *response,
       void *user_data)
 {
+   if (!response)
+      return;
+
    uint8_t* raw_output_data          = NULL;
    struct scaler_ctx* scaler         = NULL;
    void* raw_image_data              = NULL;
@@ -502,6 +505,9 @@ static void handle_translation_response(
             RARCH_LOG("[Translation] Unsupported image format.\n");
             goto finish;
          }
+
+         if (!raw_image_data)
+            goto finish;
 
          if (!(scaler = (struct scaler_ctx*)calloc(1, sizeof(struct scaler_ctx))))
             goto finish;

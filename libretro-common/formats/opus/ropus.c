@@ -8776,6 +8776,10 @@ static int32_t ropus_silk_inverse32_varq(int32_t b32, int Qres)
 {
    int b_headrm, lshift;
    int32_t b32_inv, b32_nrm, err_Q32, result;
+
+   if (b32 == 0)
+      return 0;
+
    b_headrm = ropus_silk_clz32(ROPUS_SILK_ABS(b32)) - 1;
    b32_nrm = (int32_t)((uint32_t)b32 << b_headrm);
    b32_inv = (0x7fffffff >> 2) / (b32_nrm >> 16);

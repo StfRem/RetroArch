@@ -3190,9 +3190,20 @@ static void cw_add_files_dialog(ui_companion_win32_wimp_t *w)
             fp = strldup(full, strlen(full) + 1);
             if (n == cap)
             {
+               const char **tmp;
+
                cap = cap ? cap * 2 : 8;
-               paths = (const char**)realloc((void*)paths, cap * sizeof(char*));
+
+               tmp = (const char**)realloc(
+                     (void*)paths,
+                     cap * sizeof(char*));
+
+               if (!tmp)
+                  break;
+
+               paths = tmp;
             }
+
             paths[n++] = fp;
             p += strlen(p) + 1;
          }

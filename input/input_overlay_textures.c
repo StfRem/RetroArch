@@ -95,7 +95,8 @@ void input_overlay_release_textures(input_overlay_t *ol)
          if (gfx_surface_free_adopt((gfx_surface_t*)ol->surfaces[i], pixels))
          {
             input_overlay_forget_pixels(ol, pixels);
-            ol->images[i]->pixels = NULL;
+            if (ol->images[i])
+               ol->images[i]->pixels = NULL;
          }
       }
       free(ol->surfaces);

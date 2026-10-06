@@ -780,6 +780,13 @@ static enum runahead_copy_status runahead_copy_poll(
             return RUNAHEAD_COPY_UNAVAILABLE;
          }
 
+         if (!core_path)
+         {
+            free(task);
+            free(h);
+            return RUNAHEAD_COPY_UNAVAILABLE;
+         }
+
          h->src_path     = strdup(core_path);
          h->dir_libretro = dir_libretro ? strdup(dir_libretro) : NULL;
          h->generation   = runahead_copy_generation;
@@ -1162,6 +1169,9 @@ static void mylist_resize(my_list *list,
        * 'if (element)' before writing to it, and downstream
        * code already accepts that runahead state may be
        * incomplete. */
+      if (new_capacity <= 0)
+         return;
+
       new_data = (void**)realloc(
             (void*)list->data, new_capacity * sizeof(void*));
       if (!new_data)
@@ -1226,7 +1236,7 @@ static void mylist_destroy(my_list **list_p)
    if (list)
    {
       mylist_resize(list, 0, false);
-      free(list->data);
+      if (list->data) { free(list->data); list->data = NULL; }
       free(list);
       *list_p = NULL;
    }
@@ -1355,9 +1365,13 @@ static void runahead_input_state_set_last(
    }
 
    if (!runloop_st->input_state_list)
+   {
       mylist_create(&runloop_st->input_state_list, 16,
             input_list_element_constructor,
             input_list_element_destructor);
+      if (!runloop_st->input_state_list)
+         return;
+   }
 
    /* Find list item */
    for (i = 0; i < (unsigned)runloop_st->input_state_list->size; i++)

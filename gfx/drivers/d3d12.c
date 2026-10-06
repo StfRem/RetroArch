@@ -2271,11 +2271,13 @@ static void d3d12_font_render_msg(
 
    /* Asked for before anything is laid out: it may have grown, and the
     * texture coordinates are taken from the texture's size */
-   if (font->font_driver && font->font_data)
-   {
-      font->atlas = font->font_driver->get_atlas(font->font_data);
-      d3d12_font_follow_atlas(d3d12, font);
-   }
+   if (!font->font_driver || !font->font_data)
+      return;
+
+   font->atlas = font->font_driver->get_atlas(font->font_data);
+   if (!font->atlas)
+      return;
+   d3d12_font_follow_atlas(d3d12, font);
 
    width  = VIDEO_SCALE_W(d3d12->vp.full_dims);
    height = VIDEO_SCALE_H(d3d12->vp.full_dims);
@@ -2296,9 +2298,10 @@ static void d3d12_font_render_msg(
    color      = DXGI_COLOR_RGBA(r, g, b, alpha);
 
 
-   glyph_q          = (font->font_driver)
-      ? font->font_driver->get_glyph(font->font_data, '?') : NULL;
+   glyph_q          = font->font_driver->get_glyph(font->font_data, '?');
    font->font_driver->get_line_metrics(font->font_data, &line_metrics);
+   if (!line_metrics)
+      return;
    line_height = line_metrics->height * scale / height;
 
    get_glyph  = font->font_driver->get_glyph;
@@ -2330,6 +2333,9 @@ static void d3d12_font_render_msg(
       shadow_dx        = 0.0f;
       shadow_dy        = 0.0f;
    }
+
+   if (!font->atlas)
+      return;
 
    if (font->atlas->dirty)
    {
@@ -5267,10 +5273,27 @@ static void d3d12_create_fullscreen_quad_vbo(D3D12Device device,
    view->StrideInBytes  = sizeof(*vertices);
    view->BufferLocation = d3d12_create_buffer(device, type, view->SizeInBytes, vbo);
 
+   if (!vbo || !*vbo || !view->BufferLocation)
+   {
+      view->SizeInBytes   = 0;
+      view->StrideInBytes = 0;
+      return;
+   }
+
    read_range.Begin     = 0;
    read_range.End       = 0;
 
-   D3D12Map(*vbo, 0, &read_range, &vertex_data_begin);
+   if (FAILED(D3D12Map(*vbo, 0, &read_range, &vertex_data_begin))
+         || !vertex_data_begin)
+   {
+      Release(*vbo);
+      *vbo                 = NULL;
+      view->BufferLocation = 0;
+      view->SizeInBytes    = 0;
+      view->StrideInBytes  = 0;
+      return;
+   }
+
    memcpy(vertex_data_begin, vertices, sizeof(vertices));
    D3D12Unmap(*vbo, 0, NULL);
 }

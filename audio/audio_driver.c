@@ -777,7 +777,7 @@ static void audio_driver_reset_resamplers(audio_driver_state_t *audio_st)
    unsigned i;
    if (audio_st->resampler && audio_st->resampler->reset)
    {
-      if (audio_st->resampler_data)
+      if (audio_st->resampler && audio_st->resampler_data)
          audio_st->resampler->reset(audio_st->resampler_data);
       if (!audio_st->extra.res_int16)
          for (i = 0; i < audio_st->extra.nres; i++)
@@ -807,6 +807,8 @@ static void audio_driver_reset_resamplers(audio_driver_state_t *audio_st)
 static void audio_driver_extra_resample(audio_driver_state_t *audio_st,
       double ratio, size_t input_frames, bool bypass, bool int16_path)
 {
+   if (!audio_st || !audio_st->resampler) return;
+   if (!audio_st || !audio_st->resampler) return;
    unsigned i, ch = audio_st->extra.channels;
    size_t f, out_frames = 0;
    if (!audio_st->extra.pending)
@@ -3687,7 +3689,7 @@ static void audio_driver_flush(audio_driver_state_t *audio_st,
          else
             audio_driver_resampler_realloc(audio_st, audio_st->resampler_hq);
       }
-      if (audio_st->resampler_data)
+      if (audio_st->resampler && audio_st->resampler_data)
          audio_st->resampler->process(audio_st->resampler_data, &src_data);
       else
          src_data.output_frames = 0;
@@ -3869,7 +3871,7 @@ static void audio_driver_inline_render(audio_driver_state_t *audio_st,
    {
       unsigned positions = layout & ~AUDIO_LAYOUT_STEREO;
       unsigned ex = audio_layout_channels(positions), bit, c = 0;
-      unsigned slots[AUDIO_PIPE_CANON_CHANNELS];
+      unsigned slots[AUDIO_PIPE_CANON_CHANNELS] = {0};
       size_t f;
       bool discrete = ex && audio_driver_multi_discrete(audio_st, layout)
          && audio_driver_extra_prepare(audio_st, ex, positions, AUDIO_CHUNK_SIZE_NONBLOCKING >> 1,

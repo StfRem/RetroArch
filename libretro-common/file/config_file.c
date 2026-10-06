@@ -930,7 +930,7 @@ static int config_file_parse_buffer(config_file_t *conf,
       }
       else
       {
-         if (list->flags & CONF_ENTRY_FLG_POOLED)
+         if (base_flags & CONF_ENTRY_FLG_POOLED)
             config_file_entry_pool_unwind(conf);
          else
             free(list);

@@ -2665,9 +2665,10 @@ void CORE_PREFIX(retro_run)(void)
             if (!VIDEO_BUFFER_STR)
                break;
 
-            if (!DECODE_THREAD_DEAD_STR)
-               video_buffer_wait_for_finished_slot(VIDEO_BUFFER_STR,
-                     &g_ctx.decode_thread_dead);
+            if (!DECODE_THREAD_DEAD_STR
+                  && !video_buffer_wait_for_finished_slot(VIDEO_BUFFER_STR,
+                     &g_ctx.decode_thread_dead))
+               break;
 
             if (!DECODE_THREAD_DEAD_STR)
             {
@@ -2678,6 +2679,8 @@ void CORE_PREFIX(retro_run)(void)
                uint32_t               *data = NULL;
 
                video_buffer_get_finished_slot(VIDEO_BUFFER_STR, &ctx);
+               if (!ctx)
+                  break;
                pts                          = ctx->pts;
 
 #ifdef HAVE_SSA

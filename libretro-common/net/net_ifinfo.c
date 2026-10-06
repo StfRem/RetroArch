@@ -444,6 +444,8 @@ bool net_ifinfo_best(const char *dst, void *src, bool ipv6)
                      break;
                   }
                } while ((addr = addr->Next));
+
+               free(addresses);
                return found;
             }
 

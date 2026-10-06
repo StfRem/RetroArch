@@ -572,7 +572,7 @@ struct menu_state
     * never from within menu iteration */
    char pending_config_path[PATH_MAX_LENGTH];
 
-#ifdef HAVE_MENU
+#if defined(HAVE_MENU) || defined(HAVE_MATERIALUI)
    char input_dialog_kb_label_setting[256];
    char input_dialog_kb_label[256];
 

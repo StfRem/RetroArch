@@ -315,6 +315,9 @@ int64_t filestream_truncate(RFILE *stream, int64_t length)
 {
    int64_t output;
 
+   if (!stream)
+      return -1;
+
    /* The lookahead may hold bytes past the new length; drop it and
     * restore the underlying position first. */
    if (stream)
@@ -1518,6 +1521,9 @@ static int64_t filestream_raw_tell(RFILE *stream)
 {
    int64_t output;
 
+   if (!stream)
+      return -1;
+
    if (filestream_tell_cb)
       output = filestream_tell_cb(stream->hfile);
    else
@@ -1604,6 +1610,9 @@ int64_t filestream_read(RFILE *stream, void *s, int64_t len)
 int filestream_flush(RFILE *stream)
 {
    int output;
+
+   if (!stream)
+      return -1;
 
    /* Match stdio fflush() on an update stream: synchronize the
     * underlying position with the logical one. */
@@ -1738,7 +1747,9 @@ int filestream_cmp(const char *src, const char *dst)
    RFILE *fp_dst     = filestream_open(dst, RETRO_VFS_FILE_ACCESS_READ,
          RETRO_VFS_FILE_ACCESS_HINT_NONE);
 
-   if (!fp_src || !fp_dst || filestream_get_size(fp_src) != filestream_get_size(fp_dst))
+   if (!fp_src || !fp_dst)
+      ret = -1;
+   else if (filestream_get_size(fp_src) != filestream_get_size(fp_dst))
       ret = -1;
 
    if (ret >= 0)
@@ -1892,6 +1903,9 @@ const uint8_t *filestream_get_mapped_ptr(RFILE *stream, int64_t *len)
 int64_t filestream_write(RFILE *stream, const void *s, int64_t len)
 {
    int64_t output;
+
+   if (!stream)
+      return -1;
 
    /* Reads may have run ahead of the logical position; put the
     * underlying handle back on it before writing through it.  The

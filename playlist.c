@@ -1758,6 +1758,7 @@ static bool playlist_push_new_entry(playlist_t *playlist,
       memmove(playlist->entries + 1, playlist->entries,
             _len * sizeof(struct playlist_entry));
 
+      memset(&playlist->entries[0], 0, sizeof(playlist->entries[0]));
       playlist->entries[0].path               = NULL;
       playlist->entries[0].label              = NULL;
       playlist->entries[0].core_path          = NULL;

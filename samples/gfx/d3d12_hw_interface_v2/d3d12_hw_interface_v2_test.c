@@ -261,6 +261,7 @@ int main(int argc, char **argv)
 
    fe.quit = 1; SetEvent(fe.have_work);
    WaitForSingleObject(thread, 60000);
+   CloseHandle(core_event);
    printf("  %ld of %u frames reached the frontend\n", (long)fe.shown, FRAMES);
    if (fe.bad || fe.shown != FRAMES) { puts("d3d12_hw_interface_v2: FAILED"); return 1; }
    puts("d3d12_hw_interface_v2: ok");

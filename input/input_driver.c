@@ -1763,7 +1763,7 @@ static int16_t input_joypad_analog_axis(
 
    /* See input_joypad_analog_button() - drv is NULL while the
     * joypad driver is being torn down and reinitialised. */
-   if (!drv)
+   if (!drv || !joypad_info || !binds || !joypad_info->auto_binds)
       return 0;
 
    /* Skip analog input with analog_dpad_mode */
@@ -5560,11 +5560,13 @@ size_t input_config_get_bind_string(
    settings_t *settings                 = (settings_t*)settings_data;
    size_t _len                          = 0;
    int delim                            = 0;
-   bool  input_descriptor_label_show    =
-      settings->bools.input_descriptor_label_show;
+   bool  input_descriptor_label_show;
 
-   if (len == 0)
+   if (!settings || !s || !bind || len == 0)
       return 0;
+
+   input_descriptor_label_show =
+      settings->bools.input_descriptor_label_show;
    *s                                 = '\0';
 
    if      (bind      && bind->joykey  != NO_BTN)

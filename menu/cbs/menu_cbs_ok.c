@@ -2783,7 +2783,7 @@ static int action_ok_compressed_archive_push_overlay(const char *path,
    info.type          = type;
    info.directory_ptr = idx;
    info.label         = strdup(MENU_ENUM_LABEL_DEFERRED_ARCHIVE_OPEN_STR);
-   info.path          = strdup(path);
+   info.path          = path ? strdup(path) : NULL;
    info.enum_idx      = MENU_ENUM_LABEL_DEFERRED_ARCHIVE_OPEN;
 
    if (menu_displaylist_ctl(DISPLAYLIST_GENERIC, &info, settings))

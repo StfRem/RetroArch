@@ -4449,7 +4449,7 @@ static void video_thread_set_callbacks(thread_video_t *thr,
 bool video_init_thread(const video_driver_t **out_driver, void **out_data,
       const video_driver_t *drv, const video_info_t info)
 {
-   thread_video_t *thr = (thread_video_t*)calloc(1, sizeof(video_thread_private_t));
+   thread_video_t *thr = (thread_video_t*)calloc(1, sizeof(*thr));
    if (!thr)
       return false;
 

@@ -5603,7 +5603,9 @@ static bool event_init_content(
             menu_entry.flags |= MENU_ENTRY_FLAG_LABEL_ENABLED;
             menu_entry_get(&menu_entry, 0, 0, NULL, true);
 
-            if (string_is_equal(menu_entry.label, MENU_ENUM_LABEL_STATE_SLOT_RUN_STR))
+            if (     menu_st
+                  && menu_st->driver_data
+                  && string_is_equal(menu_entry.label, MENU_ENUM_LABEL_STATE_SLOT_RUN_STR))
             {
                runloop_st->entry_state_slot = menu_st->driver_data->state_slot_run;
                entry_state_load = true;

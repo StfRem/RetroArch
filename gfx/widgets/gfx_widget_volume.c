@@ -101,6 +101,10 @@ static void gfx_widget_volume_frame(void* data, void *user_data)
       char percentage_msg[128];
       video_frame_info_t *video_info       = (video_frame_info_t*)data;
       dispgfx_widget_t *p_dispwidget       = (dispgfx_widget_t*)user_data;
+
+      if (!video_info || !p_dispwidget)
+         return;
+
       gfx_widget_font_data_t *font_regular = &p_dispwidget->gfx_widget_fonts.regular;
 
       void *userdata                       = video_info->userdata;
@@ -125,7 +129,10 @@ static void gfx_widget_volume_frame(void* data, void *user_data)
       float *bar_foreground                = NULL;
       float bar_percentage                 = 0.0f;
       gfx_display_t            *p_disp     = (gfx_display_t*)video_info->disp_userdata;
-      gfx_display_ctx_driver_t *dispctx    = p_disp->dispctx;
+      gfx_display_ctx_driver_t *dispctx    = p_disp ? p_disp->dispctx : NULL;
+
+      if (!dispctx)
+         return;
 
       /* Note: Volume + percentage text has no component
        * that extends below the baseline, so we shift
