@@ -262,6 +262,11 @@ audio_driver_t audio_null = {
 };
 
 audio_driver_t *audio_drivers[] = {
+#ifdef _WIN32
+#ifdef HAVE_WASAPI
+   &audio_wasapi,
+#endif
+#else
 #ifdef HAVE_ALSA
    &audio_alsa,
 #endif
@@ -360,6 +365,7 @@ audio_driver_t *audio_drivers[] = {
    &audio_switch,
 #ifdef HAVE_LIBNX
    &audio_switch_libnx_audren,
+#endif
 #endif
 #endif
    &audio_null,
