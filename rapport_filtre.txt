@@ -1,0 +1,322 @@
+Unix API | Allocator sizeof operand mismatch | libretro-common/formats/vp9/rvp9_recon.inc | rvp9_decode_frame_impl_hbd | 2569 | 1 | View Report | 
+Unix API | Allocator sizeof operand mismatch | libretro-common/formats/vp9/rvp9_recon.inc | rvp9_decode_frame_impl_hbd | 2568 | 1 | View Report | 
+Unix API | Allocator sizeof operand mismatch | libretro-common/formats/vp9/rvp9_recon.inc | rvp9_decode_frame_impl_hbd | 2570 | 1 | View Report | 
+Logic error | Assigned value is uninitialized | libretro-common/include/gfx/video_frame.h | video_frame_convert_rgba_to_bgr | 203 | 17 | View Report | 
+Logic error | Assigned value is uninitialized | libretro-common/formats/jpeg/rjpeg.c | rjpeg_output_rows | 4566 | 21 | View Report | 
+Logic error | Assigned value is uninitialized | libretro-common/formats/opus/ropus.c | ropus_silk_decode_pulses | 8720 | 42 | View Report | 
+Logic error | Assigned value is uninitialized | libretro-common/encodings/encoding_rzstd.c | rzstd_fse_build_ct | 2979 | 32 | View Report | 
+Memory error | Bad free | libretro-common/formats/image/image_blit_bands.c | image_blit_group_release | 141 | 33 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/opus/ropus.c | ropus_silk_inverse32_varq | 8780 | 13 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/vp9/rvp9.c | rvp9_br_fill | 1565 | 24 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/webp/rwebp.c | vbr_fill | 134 | 29 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/vorbis/rvorbis.c | get_bits | 1234 | 15 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/encodings/encoding_deflate.c | rinf_need | 474 | 40 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/opus/ropus.c | ropus_pshr32 | 5421 | 2 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/flac/rflac.c | rflac__read_uint32 | 1118 | 9 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/encodings/encoding_deflate.c | rd_putbits | 2060 | 47 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/opus/ropus.c | ropus_ec_tell_frac | 289 | 19 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/opus/ropus.c | ropus_silk_div32_varq | 9309 | 14 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/vorbis/rvorbis.c | prep_huffman | 1286 | 49 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/h265/rh265.c | rh265_fill_nzc | 2479 | 59 | View Report | 
+Suspicious operation | Bitwise shift | libretro-common/formats/opus/ropus.c | ropus_isqrt32 | 3016 | 2 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d9hlsl.c | hlsl_d3d9_renderchain_render | 2996 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d10.c | d3d10_font_render_msg | 1279 | 1 | View Report | 
+Unused code | Dead assignment | libretro-common/formats/png/rpng_apng.c | apng_build_frame_png | 607 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/sdl2_gfx.c | sdl2_render_msg | 216 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers_shader/slang_process.c | glslang_parse_meta | 1106 | 1 | View Report | 
+Unused code | Dead assignment | gfx/gfx_display.c | gfx_display_scissor_begin | 390 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d9hlsl.c | d3d9_hlsl_init_chain | 6844 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d9hlsl.c | hlsl_d3d9_renderchain_render | 2984 | 1 | View Report | 
+Unused code | Dead assignment | gfx/gfx_display.c | gfx_display_scissor_begin | 392 | 1 | View Report | 
+Unused code | Dead assignment | input/drivers/winraw_input.c | winraw_take | 1760 | 1 | View Report | 
+Unused code | Dead assignment | menu/menu_displaylist.c | menu_displaylist_parse_display_edid | 2831 | 1 | View Report | 
+Unused code | Dead assignment | libretro-common/net/net_smb2.c | rsmb_tree_connect | 1213 | 1 | View Report | 
+Unused code | Dead assignment | tasks/task_autodetect_blissbox.c | input_autoconfigure_get_blissbox_pad_type_win32 | 294 | 1 | View Report | 
+Unused code | Dead assignment | cheevos/cheevos_rvz.c | rvz_find_entry_for_offset | 2759 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d9hlsl.c | hlsl_d3d9_renderchain_render | 2990 | 1 | View Report | 
+Unused code | Dead assignment | libretro-common/crypto/x509.c | x509_parse_ip | 764 | 1 | View Report | 
+Unused code | Dead assignment | tasks/task_database.c | task_manual_content_scan_handler | 3204 | 1 | View Report | 
+Unused code | Dead assignment | menu/cbs/menu_cbs_sublabel.c | menu_action_sublabel_contentless_core | 190 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d9hlsl.c | hlsl_d3d9_renderchain_render | 2978 | 1 | View Report | 
+Unused code | Dead assignment | libretro-common/audio/audio_mixer.c | audio_mixer_mix_stream_s16 | 2817 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers_shader/shader_gl3.c | gl3_spirv_link_program | 590 | 1 | View Report | 
+Unused code | Dead assignment | libretro-common/audio/audio_mixer.c | audio_mixer_mix_stream | 2670 | 1 | View Report | 
+Unused code | Dead assignment | tasks/task_database.c | task_manual_content_scan_handler | 3205 | 1 | View Report | 
+Unused code | Dead assignment | gfx/gfx_thumbnail.c | gfx_savestate_thumbnail_get_path | 4197 | 1 | View Report | 
+Unused code | Dead assignment | libretro-common/net/net_smb2.c | rsmb_tree_connect | 1214 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers_shader/shader_gl3.c | gl3_spirv_link_program | 623 | 1 | View Report | 
+Unused code | Dead assignment | libretro-common/formats/7z/r7z_lzma_stream.c | decode_real | 820 | 1 | View Report | 
+Unused code | Dead assignment | menu/menu_displaylist.c | menu_displaylist_parse_display_edid | 2616 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d9hlsl.c | hlsl_d3d9_renderchain_render | 2981 | 1 | View Report | 
+Unused code | Dead assignment | menu/menu_setting.c | setting_get_string_representation_uint_cheat_browse_address | 7121 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d12.c | d3d12_hw_ring_capture | 8855 | 1 | View Report | 
+Unused code | Dead assignment | libretro-common/formats/flac/rflac.c | rflac__seek_bits | 1254 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d9hlsl.c | d3d9_hlsl_init_chain | 6843 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d9hlsl.c | hlsl_d3d9_renderchain_render | 2993 | 1 | View Report | 
+Unused code | Dead assignment | gfx/video_driver.c | video_driver_cached_frame_read | 4771 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/sdl2_gfx.c | sdl2_render_msg | 215 | 1 | View Report | 
+Unused code | Dead assignment | libretro-common/net/net_smb2.c | rsmb_tree_connect | 1215 | 1 | View Report | 
+Unused code | Dead assignment | menu/drivers/rgui.c | rgui_render_osk | 5515 | 1 | View Report | 
+Unused code | Dead assignment | input/input_driver.c | input_keys_pressed | 9519 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d12.c | d3d12_hw_ring_capture | 8854 | 1 | View Report | 
+Unused code | Dead assignment | gfx/drivers/d3d9hlsl.c | d3d9_hlsl_convert_macro_loops | 5888 | 1 | View Report | 
+Unused code | Dead assignment | libretro-common/cdrom/cdrom.c | cdrom_send_command | 934 | 1 | View Report | 
+Unused code | Dead increment | libretro-common/formats/png/rpng_apng.c | apng_build_frame_png | 656 | 1 | View Report | 
+Unused code | Dead increment | libretro-common/formats/opus/ropus.c | ropus_packet_parse | 478 | 1 | View Report | 
+Unused code | Dead increment | menu/drivers/ozone.c | ozone_draw_entries | 6183 | 1 | View Report | 
+Unused code | Dead increment | retroarch.c | retroarch_print_features | 7292 | 1 | View Report | 
+Unused code | Dead increment | menu/menu_displaylist.c | menu_displaylist_parse_display_info | 2266 | 1 | View Report | 
+Unused code | Dead increment | menu/menu_displaylist.c | menu_displaylist_ctl_internal | 17625 | 1 | View Report | 
+Unused code | Dead increment | menu/menu_displaylist.c | create_string_list_rdb_entry_int | 3885 | 1 | View Report | 
+Unused code | Dead increment | menu/menu_displaylist.c | menu_displaylist_parse_system_info | 3636 | 1 | View Report | 
+Unused code | Dead increment | menu/menu_displaylist.c | menu_displaylist_parse_core_info | 1126 | 1 | View Report | 
+Unused code | Dead increment | tasks/task_autodetect.c | input_autoconfigure_get_config_file_affinity | 312 | 1 | View Report | 
+Unused code | Dead increment | menu/menu_displaylist.c | menu_displaylist_parse_system_info | 3132 | 1 | View Report | 
+Unused code | Dead increment | libretro-common/encodings/encoding_rzstd.c | rzstd_read_frame_header | 393 | 1 | View Report | 
+Unused code | Dead increment | menu/cbs/menu_cbs_sublabel.c | action_bind_sublabel_cheat_desc | 1062 | 1 | View Report | 
+Unused code | Dead increment | menu/cbs/menu_cbs_sublabel.c | action_bind_sublabel_cheat_desc | 1055 | 1 | View Report | 
+Unused code | Dead increment | menu/cbs/menu_cbs_title.c | action_get_title_fill_path_search_filter_default | 144 | 1 | View Report | 
+Unused code | Dead increment | tasks/patch_stream.c | patch_stream_ips_open | 264 | 1 | View Report | 
+Unused code | Dead increment | menu/cbs/menu_cbs_sublabel.c | action_bind_sublabel_netplay_room | 1115 | 1 | View Report | 
+Unused code | Dead increment | gfx/video_driver.c | video_driver_frame | 7420 | 1 | View Report | 
+Unused code | Dead increment | gfx/drivers_font_renderer/stb.c | rtt__acc_line | 504 | 1 | View Report | 
+Unused code | Dead increment | menu/menu_displaylist.c | menu_displaylist_parse_display_info | 2285 | 1 | View Report | 
+Unused code | Dead increment | libretro-common/net/net_smb2.c | rsmb_session_setup_ntlm | 1122 | 1 | View Report | 
+Unused code | Dead increment | menu/drivers/ozone.c | ozone_draw_sidebar | 3857 | 1 | View Report | 
+Unused code | Dead initialization | libretro-common/formats/png/rpng.c | rpng_filter_paeth_pair | 762 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/gl3.c | gl3_renderchain_recompute_pass_sizes | 2867 | 1 | View Report | 
+Unused code | Dead initialization | menu/menu_driver.c | generic_menu_entry_action | 8292 | 1 | View Report | 
+Unused code | Dead initialization | libretro-common/formats/vorbis/rvorbis.c | draw_line_q | 3885 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/d3d11.c | d3d11_font_render_msg | 1761 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/gl2.c | gl2_renderchain_recompute_pass_sizes | 2062 | 1 | View Report | 
+Unused code | Dead initialization | libretro-common/formats/png/rpng.c | rpng_filter_avg_pair | 870 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/d3d9hlsl.c | d3d9_hlsl_fixup_cg_source | 5124 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers_context/wgl_ctx.c | gfx_ctx_wgl_init | 641 | 1 | View Report | 
+Unused code | Dead initialization | libretro-common/cdrom/cdrom.c | cdrom_send_command | 750 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/gl2.c | gl2_renderchain_recompute_pass_sizes | 2061 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/d3d12.c | d3d12_shader_load_step | 3581 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/d3d12.c | d3d12_gfx_init_pipelines | 4283 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/d3d12.c | d3d12_gfx_set_shader | 3741 | 1 | View Report | 
+Unused code | Dead initialization | menu/menu_driver.c | generic_menu_iterate | 8156 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/gl3.c | gl3_renderchain_recompute_pass_sizes | 2868 | 1 | View Report | 
+Unused code | Dead initialization | libretro-common/formats/vorbis/rvorbis.c | draw_line | 1772 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/gl3.c | gl3_renderchain_recompute_pass_sizes | 2869 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/d3d10.c | d3d10_font_render_msg | 1318 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/d3d12.c | d3d12_font_render_msg | 2384 | 1 | View Report | 
+Unused code | Dead initialization | libretro-common/formats/ac3/rac3_encode.c | solve_crc1 | 617 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/gl2.c | gl2_renderchain_recompute_pass_sizes | 2064 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/gl3.c | gl3_renderchain_recompute_pass_sizes | 2871 | 1 | View Report | 
+Unused code | Dead initialization | gfx/drivers/gl2.c | gl2_renderchain_recompute_pass_sizes | 2060 | 1 | View Report | 
+Unused code | Dead nested assignment | gfx/common/win32_common.c | win32_set_window | 2522 | 1 | View Report | 
+Unused code | Dead nested assignment | libretro-common/cdrom/cdrom.c | cdrom_read_track_info | 1349 | 1 | View Report | 
+Unused code | Dead nested assignment | cores/libretro-ffmpeg/ffmpeg_core.c | decode_thread | 3787 | 1 | View Report | 
+Unused code | Dead nested assignment | midi/drivers/fmsynth_midi.c | fmsynth_apply_events | 692 | 1 | View Report | 
+Unused code | Dead nested assignment | tasks/task_autodetect.c | input_autoconfigure_index_try | 769 | 1 | View Report | 
+Unused code | Dead nested assignment | libretro-common/net/net_nfs3.c | nfs4_open_reclaim | 1372 | 1 | View Report | 
+Unused code | Dead nested assignment | tasks/task_autodetect.c | input_autoconfigure_index_try | 759 | 1 | View Report | 
+Unused code | Dead nested assignment | libretro-common/formats/chd/rchd.c | rchd_decompress | 2105 | 1 | View Report | 
+Logic error | Dereference of a fixed address | gfx/gfx_animation.c | gfx_animation_timer_start_in | 1919 | 3 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_cheat_details | 14649 | 10 | View Report | 
+Logic error | Dereference of null pointer | input/input_driver.c | input_config_get_bind_string | 5596 | 10 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_displaylist.c | menu_displaylist_populate_subsystem | 8287 | 14 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_video | 15266 | 15 | View Report | 
+Logic error | Dereference of null pointer | gfx/video_thread_wrapper.c | video_thread_frame | 2991 | 24 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/string/stdstring.c | word_wrap_wideglyph | 484 | 20 | View Report | 
+Logic error | Dereference of null pointer | tasks/task_cloudsync.c | task_cloud_sync_check_server_current | 1661 | 55 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_driver.c | retroarch_menu_running_finished | 7220 | 13 | View Report | 
+Logic error | Dereference of null pointer | tasks/task_autodetect_blissbox.c | input_autoconfigure_get_blissbox_pad_type_win32 | 371 | 30 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/vulkan.c | vulkan_init_filter_chain | 6025 | 89 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_video | 15367 | 20 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/vulkan.c | vulkan_font_render_msg | 3998 | 20 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/d3d9hlsl.c | hlsl_d3d9_renderchain_render | 2915 | 22 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/vulkan.c | vulkan_overlay_free | 11673 | 17 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | general_write_handler | 10437 | 14 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/xmb.c | xmb_selection_pointer_changed | 2407 | 28 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/webm/rwebm_video.c | rwebm_video_stream_scan_step | 552 | 8 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/mp4/rmp4_video.c | rmp4_video_stream_step | 966 | 11 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/png/rpng_apng.c | apng_index | 367 | 50 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_directory | 17916 | 9 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_drivers | 13993 | 9 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/7z/r7z_bcj2.c | r7z_bcj2_decode_part | 221 | 40 | View Report | 
+Logic error | Dereference of null pointer | input/input_driver.c | input_joypad_analog_axis | 1795 | 35 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers_shader/shader_vulkan.c | slang_pass_build_commands | 4071 | 12 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_user_accounts_kick | 17835 | 8 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/vp8/rvp8.c | rvp8_decode_mb_mode | 2507 | 59 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/ozone.c | ozone_list_cache | 4889 | 49 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_nfsclient | 18323 | 7 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/d3d11.c | gfx_display_d3d11_draw | 1063 | 18 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_recording | 15970 | 8 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_main_menu | 13705 | 10 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_core | 14044 | 7 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_playlist | 16896 | 7 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/rgui.c | rgui_load_current_thumbnails | 7752 | 55 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_logging | 14309 | 7 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_core_updater | 17157 | 8 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/ozone.c | ozone_set_thumbnail_content | 8442 | 32 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_netplay | 17287 | 10 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/xmb.c | xmb_set_dynamic_icon_content | 2347 | 46 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers_shader/shader_gl3.c | gl3_chain_set_pass_name | 3488 | 24 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | setting_append_list_input_libretro_device_options | 11919 | 9 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_driver.c | generic_menu_iterate | 8057 | 21 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_manual_content_scan | 18037 | 8 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers_shader/shader_gl3.c | gl3_chain_set_shader | 2995 | 34 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/rgui.c | rgui_populate_entries | 8429 | 24 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/audio_transfer.c | audio_transfer_ac3_read | 1165 | 17 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/string/stdstring.c | word_wrap_wideglyph | 429 | 21 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/d3d9hlsl.c | d3d9_hlsl_frame | 7759 | 17 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/d3d12.c | D3D12Map | 816 | 26 | View Report | 
+Logic error | Dereference of null pointer | cores/libretro-ffmpeg/ffmpeg_core.c | libretro_ffmpeg_retro_run | 2681 | 47 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/d3d12.c | d3d12_font_render_msg | 2301 | 9 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/rgui.c | rgui_navigation_set | 8219 | 28 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_menu | 16577 | 23 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | menu_settings_list_current_add_range | 8312 | 9 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_cheat_search | 14883 | 10 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_user_accounts_facebook | 17802 | 8 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/mp4/rmp4_video.c | rmp4_video_stream_scan_step | 676 | 8 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/ozone.c | ozone_pointer_up | 14013 | 5 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_core_updater | 17203 | 8 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_driver.c | menu_list_flush_stack | 1508 | 9 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_directory | 17859 | 7 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_cloud_sync | 14535 | 8 | View Report | 
+Logic error | Dereference of null pointer | gfx/video_shader_parse.c | video_shader_apply_shader | 4162 | 5 | View Report | 
+Logic error | Dereference of null pointer | network/netplay/netplay_frontend.c | netplay_free | 7618 | 42 | View Report | 
+Logic error | Dereference of null pointer | ui/drivers/ui_win32.c | win32_menu_loop | 1105 | 17 | View Report | 
+Logic error | Dereference of null pointer | gfx/widgets/gfx_widget_volume.c | gfx_widget_volume_frame | 230 | 28 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/vulkan.c | vulkan_deinit_pipelines | 5580 | 43 | View Report | 
+Logic error | Dereference of null pointer | input/input_overlay_textures.c | input_overlay_release_textures | 98 | 47 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/xmb.c | xmb_pointer_up | 11082 | 3 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_displaylist.c | menu_displaylist_populate_subsystem | 8171 | 14 | View Report | 
+Logic error | Dereference of null pointer | audio/audio_driver.c | audio_driver_flush | 3691 | 47 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_contentless_cores.c | menu_contentless_cores_get_info | 216 | 3 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_desc_group | 18370 | 15 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/vulkan.c | vulkan_init | 7004 | 111 | View Report | 
+Logic error | Dereference of null pointer | tasks/task_cloudsync.c | task_cloud_sync_check_server_current | 1698 | 68 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers_shader/shader_gl3.c | gl3_pass_set_name | 1257 | 43 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_recording | 16011 | 8 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/ozone.c | ozone_update_content_metadata | 4498 | 35 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/d3d11.c | d3d11_font_render_msg | 1658 | 7 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_user_interface | 16759 | 8 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/ozone.c | ozone_render | 10840 | 3 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/vulkan.c | vulkan_deinit_command_buffers | 5565 | 28 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_user_accounts_youtube | 17736 | 8 | View Report | 
+Logic error | Dereference of null pointer | record/drivers/record_ffmpeg.c | planarize_float | 1489 | 52 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_displaylist.c | menu_displaylist_ctl_internal | 17152 | 13 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_audio | 15519 | 7 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_user_accounts_twitch | 17769 | 8 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/opus/ropus.c | ropus_quant_band_n1 | 3537 | 57 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | setting_get_string_representation_password | 3495 | 5 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/opus/ropus.c | ropus_quant_band_n1_q | 5982 | 60 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/memory/mempool.c | mempool_alloc | 123 | 5 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers_shader/glslang_util.c | glslang_read_shader_file_internal | 769 | 47 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/vulkan.c | vulkan_deinit_command_buffers | 5562 | 28 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_menu | 16304 | 7 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/webm/rwebm_video.c | rwebm_video_stream_step | 1010 | 11 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_directory | 17882 | 9 | View Report | 
+Logic error | Dereference of null pointer | menu/cbs/menu_cbs_right.c | action_right_scroll | 237 | 9 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_cheat_details | 14765 | 14 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/d3d9hlsl.c | hlsl_d3d9_renderchain_render | 2970 | 22 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_smbclient | 18215 | 8 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | setting_append_list_input_player_options | 11580 | 22 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_ai_service | 16703 | 8 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_input | 15925 | 9 | View Report | 
+Logic error | Dereference of null pointer | menu/cbs/menu_cbs_sublabel.c | action_bind_sublabel_playlist_entry | 1259 | 3 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_displaylist.c | menu_displaylist_parse_content_information | 6491 | 17 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/sdl2_gfx.c | sdl2_raster_font_render_message | 1720 | 18 | View Report | 
+Logic error | Dereference of null pointer | network/cloud_sync/webdav.c | webdav_mkdir_cb | 1078 | 32 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_cheevos_appearance | 17019 | 8 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_input | 15889 | 8 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/d3d10.c | d3d10_font_render_msg | 1267 | 9 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/7z/r7z_bcj2.c | r7z_bcj2_decode_part | 142 | 25 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_input_hotkey | 16061 | 11 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers_shader/shader_vulkan.c | slang_pass_set_name | 925 | 44 | View Report | 
+Logic error | Dereference of null pointer | gfx/drivers/d3d10.c | gfx_display_d3d10_draw | 781 | 23 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/xmb.c | xmb_layout | 7386 | 9 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_video | 15237 | 14 | View Report | 
+Logic error | Dereference of null pointer | menu/drivers/xmb.c | xmb_populate_entries | 4136 | 64 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_netplay | 17329 | 11 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_netplay | 17261 | 10 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_microphone | 15644 | 7 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | setting_append_list_input_remap_port_options | 11984 | 9 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_explore.c | explore_add_unique_string | 400 | 23 | View Report | 
+Logic error | Dereference of null pointer | gfx/video_driver.c | video_driver_init_internal | 6167 | 10 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/string/stdstring.c | word_wrap | 262 | 16 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_video | 15113 | 7 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_drivers | 13826 | 7 | View Report | 
+Logic error | Dereference of null pointer | tasks/task_overlay.c | task_overlay_resolve_targets | 913 | 11 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_main_menu | 13683 | 7 | View Report | 
+Logic error | Dereference of null pointer | gfx/gfx_thumbnail.c | gfx_thumbnail_anim_shown | 1372 | 40 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_manual_content_scan | 18132 | 8 | View Report | 
+Logic error | Dereference of null pointer | libretro-common/formats/7z/r7z_bcj2.c | r7z_bcj2_decode_part | 168 | 32 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_cheat_details | 14617 | 10 | View Report | 
+Logic error | Dereference of null pointer | menu/menu_setting.c | settings_build_frame_throttling | 16103 | 8 | View Report | 
+Logic error | Division by zero | gfx/drivers/vulkan.c | vulkan_copy_staging_to_dynamic | 2499 | 46 | View Report | 
+Logic error | Division by zero | menu/menu_setting.c | setting_action_left_libretro_device_type | 6146 | 6 | View Report | 
+Logic error | Division by zero | libretro-common/formats/opus/ropus.c | ropus_silk_inverse32_varq | 8781 | 10 | View Report | 
+Logic error | Division by zero | gfx/drivers/vulkan.c | vulkan_frame_window | 2618 | 39 | View Report | 
+Logic error | Division by zero | libretro-common/streams/rzip_stream.c | rzipstream_write_chunks_parallel | 1276 | 28 | View Report | 
+Logic error | Garbage return value | gfx/video_thread_wrapper.c | video_thread_alive | 2555 | 10 | View Report | 
+Logic error | Garbage return value | gfx/video_thread_wrapper.c | video_thread_init | 3403 | 32 | View Report | 
+Memory error | Memory leak | menu/menu_setting.c | settings_build_ai_service | 16703 | 2 | View Report | 
+Memory error | Memory leak | libretro-common/formats/xml/rxml.c | rxml_load_document_string_opts | 1843 | 20 | View Report | 
+Memory error | Memory leak | gfx/gfx_thumbnail.c | gfx_savestate_thumbnail_get_path | 4238 | 31 | View Report | 
+Memory error | Memory leak | core_updater_list.c | core_updater_list_add_pfd_entry | 1232 | 52 | View Report | 
+Memory error | Memory leak | menu/menu_setting.c | settings_build_user_interface | 16759 | 2 | View Report | 
+Memory error | Memory leak | input/bsv/uint32s_index.c | uint32s_index_insert | 207 | 33 | View Report | 
+Memory error | Memory leak | libretro-common/net/net_ifinfo.c | net_ifinfo_best | 447 | 21 | View Report | 
+Memory error | Memory leak | ui/drivers/ui_win32_companion.c | cw_on_status_message | 3021 | 10 | View Report | 
+Memory error | Memory leak | libretro-common/net/net_ifinfo.c | net_ifinfo_best | 447 | 23 | View Report | 
+Memory error | Memory leak | ui/drivers/ui_qt_widgets.cpp | UIntRadioButtons | 820 | 19 | View Report | 
+Memory error | Memory leak | gfx/drivers/d3d9hlsl.c | hlsl_d3d9_renderchain_create_first_pass | 2131 | 11 | View Report | 
+Memory error | Memory leak | libretro-common/streams/file_stream.c | filestream_copy_loop | 1696 | 41 | View Report | 
+Memory error | Memory leak | ui/drivers/ui_qt_widgets.cpp | buildLayout | 4381 | 27 | View Report | 
+Memory error | Memory leak | libretro-common/streams/file_stream.c | filestream_copy_loop | 1694 | 37 | View Report | 
+Memory error | Memory leak | libretro-common/streams/file_stream.c | filestream_cmp | 1771 | 24 | View Report | 
+Memory error | Memory leak | tasks/task_autodetect_blissbox.c | input_autoconfigure_get_blissbox_pad_type_win32 | 416 | 60 | View Report | 
+Memory error | Memory leak | ui/drivers/ui_qt_widgets.cpp | buildLayout | 4381 | 27 | View Report | 
+Memory error | Memory leak | gfx/drivers_shader/glslang_util.c | glslang_read_shader_file_internal | 678 | 18 | View Report | 
+Memory error | Memory leak | gfx/drivers/d3d9hlsl.c | d3d9_hlsl_preprocess_includes | 3573 | 32 | View Report | 
+Memory error | Memory leak | libretro-common/streams/file_stream.c | filestream_cmp | 1776 | 24 | View Report | 
+Memory error | Memory leak | ui/drivers/ui_win32_companion.c | cw_log_append | 2938 | 13 | View Report | 
+Memory error | Offset free | libretro-common/file/config_file.c | config_file_parse_buffer | 936 | 30 | View Report | 
+Logic error | Possibly undefined arithmetic operation involving a null pointer | libretro-common/formats/png/rpng.c | rpng_reverse_filter_regular_iterate | 2532 | 47 | View Report | 
+Logic error | Possibly undefined arithmetic operation involving a null pointer | tasks/task_cloudsync.c | task_cloud_sync_should_ignore_file | 487 | 40 | View Report | 
+Logic error | Possibly undefined arithmetic operation involving a null pointer | libretro-common/formats/mp3/rmp3.c | rmp3_stream_process | 3101 | 15 | View Report | 
+Logic error | Possibly undefined arithmetic operation involving a null pointer | libretro-common/formats/mp4/rmp4_audio.c | rmp4_audio_decode_aac | 209 | 44 | View Report | 
+Logic error | Result of operation is garbage or undefined | audio/audio_driver.c | audio_driver_inline_render | 3891 | 56 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/formats/webp/rwebp.c | vlds_begin | 604 | 57 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/crypto/pk.c | bn_select | 133 | 58 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/net/net_nfs3.c | rnfs_opendir | 2809 | 22 | View Report | 
+Logic error | Result of operation is garbage or undefined | audio/audio_driver.c | audio_driver_inline_render | 3903 | 56 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/formats/ac3/rac3_encode.c | allocate | 336 | 34 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/formats/json/rjson.c | _rjson_read_number | 600 | 63 | View Report | 
+Logic error | Result of operation is garbage or undefined | midi/drivers/fmsynth_midi.c | fmsynth_handle_message | 609 | 26 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/formats/opus/ropus.c | ropus_silk_nlsf_stabilize | 8863 | 40 | View Report | 
+Logic error | Result of operation is garbage or undefined | midi/drivers/fmsynth_midi.c | fmsynth_handle_message | 599 | 26 | View Report | 
+Logic error | Result of operation is garbage or undefined | playlist.c | playlist_push_new_entry | 1773 | 44 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/formats/opus/ropus.c | ropus_silk_bwexpander_32 | 8983 | 27 | View Report | 
+Logic error | Result of operation is garbage or undefined | tasks/task_database.c | manual_scan_end_flush_tick | 2276 | 28 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/formats/opus/ropus.c | ropus_silk_lpc_fit | 9000 | 15 | View Report | 
+Logic error | Result of operation is garbage or undefined | midi/drivers/fmsynth_midi.c | fmsynth_handle_message | 604 | 26 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/formats/aac/raac.c | raac_sbr_in_table | 3027 | 41 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/crypto/pk.c | bn_mont_sqr | 335 | 29 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/formats/opus/ropus.c | ropus_silk_lpc_inv_pred_gain_qa | 9058 | 25 | View Report | 
+Logic error | Result of operation is garbage or undefined | audio/audio_driver.c | audio_driver_pipeline_render | 5857 | 60 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/formats/opus/ropus.c | ropus_silk_lpc_inv_pred_gain_qa | 9085 | 16 | View Report | 
+Logic error | Result of operation is garbage or undefined | libretro-common/crypto/pk.c | bn_mont_sqr | 317 | 22 | View Report | 
+Logic error | Result of operation is garbage or undefined | audio/audio_driver.c | audio_driver_pipeline_render | 5845 | 60 | View Report | 
+Logic error | Uninitialized argument value | midi/drivers/fmsynth_midi.c | fmsynth_handle_message | 595 | 26 | View Report | 
+Logic error | Uninitialized argument value | midi/drivers/fmsynth_midi.c | fmsynth_handle_message | 591 | 26 | View Report | 
+Logic error | Unix API | menu/menu_driver.c | action_iterate_type | 3535 | 8 | View Report | 
+Logic error | Unix API | gfx/drivers/vulkan.c | vulkan_font_flush_block | 4278 | 37 | View Report | 
+Logic error | Unix API | libretro-common/formats/webm/rwebm_audio.c | rwebm_ogg_page | 215 | 39 | View Report | 
+Logic error | Unix API | menu/menu_setting.c | settings_build_menu | 16332 | 2 | View Report | 
+Logic error | Unix API | libretro-common/formats/mp4/rmp4_audio.c | rmp4_audio_pcm_to_wav | 612 | 67 | View Report | 
+Logic error | Unix API | libretro-common/formats/mp4/rmp4_audio.c | rmp4_ogg_page | 276 | 38 | View Report | 
+Logic error | Unix API | gfx/video_driver.c | video_coord_array_append | 454 | 35 | View Report | 
+Logic error | Unix API | gfx/video_driver.c | video_context_driver_get_api | 5791 | 10 | View Report | 
+Logic error | Unix API | gfx/video_driver.c | video_coord_array_append | 446 | 29 | View Report | 
+Logic error | Unix API | gfx/drivers/vulkan.c | vulkan_font_draw_range | 4202 | 33 | View Report | 
+Logic error | Unix API | gfx/video_driver.c | video_coord_array_append | 458 | 39 | View Report | 
+Logic error | Unix API | gfx/video_driver.c | video_coord_array_append | 450 | 32 | View Report | 
+Memory error | Use-after-free | ui/drivers/ui_qt_widgets.cpp | pixmapFor | 7348 | 15 | View Report | 
+Memory error | Use-after-free | ui/companion/companion_thumbs.c | companion_thumbs_forget | 1672 | 16 | View Report | 

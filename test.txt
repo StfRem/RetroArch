@@ -1,0 +1,752 @@
+ui\drivers\ui_win32_companion.c:29:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+ui\drivers\ui_win32_companion.c:30:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+ui\drivers\ui_win32_companion.c:31:2: information: Include file: <stdio.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdio.h>
+ ^
+ui\drivers\ui_win32_companion.c:32:2: information: Include file: <stdlib.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+ ^
+ui\drivers\ui_win32_companion.c:33:2: information: Include file: <ctype.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <ctype.h>
+ ^
+ui\drivers\ui_win32_companion.c:34:2: information: Include file: <string.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <string.h>
+ ^
+ui\drivers\ui_win32_companion.c:36:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+ui\drivers\ui_win32_companion.c:52:2: information: Include file: <windows.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <windows.h>
+ ^
+ui\drivers\ui_win32_companion.c:53:2: information: Include file: <commctrl.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <commctrl.h>
+ ^
+ui\drivers\ui_win32_companion.c:54:2: information: Include file: <commdlg.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <commdlg.h>
+ ^
+ui\drivers\ui_win32_companion.c:55:2: information: Include file: <shellapi.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <shellapi.h>
+ ^
+ui\drivers\ui_win32_companion.c:56:2: information: Include file: <shlobj.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <shlobj.h>
+ ^
+ui\drivers\ui_win32_companion.c:58:2: information: Include file: <compat/strl.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <compat/strl.h>
+ ^
+ui\drivers\ui_win32_companion.c:59:2: information: Include file: <features/features_cpu.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <features/features_cpu.h>
+ ^
+ui\drivers\ui_win32_companion.c:60:2: information: Include file: <file/file_path.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <file/file_path.h>
+ ^
+ui\drivers\ui_win32_companion.c:61:2: information: Include file: <formats/image.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <formats/image.h>
+ ^
+ui\drivers\ui_win32_companion.c:62:2: information: Include file: <lists/string_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/string_list.h>
+ ^
+ui\drivers\ui_win32_companion.c:63:2: information: Include file: <compat/msvc.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <compat/msvc.h>
+ ^
+ui\drivers\ui_win32_companion.c:64:2: information: Include file: <string/stdstring.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <string/stdstring.h>
+ ^
+command.h:21:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+command.h:23:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+command.h:24:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+command.h:30:2: information: Include file: <streams/interface_stream.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <streams/interface_stream.h>
+ ^
+tasks\task_notify.h:18:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+tasks\task_notify.h:20:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+tasks\task_notify.h:21:2: information: Include file: <retro_inline.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_inline.h>
+ ^
+tasks\task_notify.h:22:2: information: Include file: <queues/task_queue.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <queues/task_queue.h>
+ ^
+retroarch_types.h:4:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+retroarch_types.h:5:2: information: Include file: <retro_inline.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_inline.h>
+ ^
+retroarch_types.h:6:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+retroarch_types.h:7:2: information: Include file: <retro_miscellaneous.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_miscellaneous.h>
+ ^
+input\input_defines.h:20:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+input\input_defines.h:21:2: information: Include file: <string.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <string.h>
+ ^
+input\input_defines.h:23:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+disk_control_interface.h:26:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+disk_control_interface.h:27:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+disk_control_interface.h:29:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+disk_index_file.h:26:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+disk_index_file.h:27:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+disk_index_file.h:28:2: information: Include file: <retro_miscellaneous.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_miscellaneous.h>
+ ^
+disk_index_file.h:30:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+configuration.h:22:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+configuration.h:24:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+configuration.h:25:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+configuration.h:26:2: information: Include file: <retro_miscellaneous.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_miscellaneous.h>
+ ^
+configuration.h:27:2: information: Include file: <file/config_file.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <file/config_file.h>
+ ^
+gfx\video_defines.h:20:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+gfx\video_defines.h:22:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+msg_hash.h:38:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+msg_hash.h:39:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+msg_hash.h:40:2: information: Include file: <limits.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <limits.h>
+ ^
+msg_hash.h:41:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+msg_hash.h:42:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+retroarch.h:21:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+retroarch.h:22:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+retroarch.h:23:2: information: Include file: <sys/types.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <sys/types.h>
+ ^
+retroarch.h:24:2: information: Include file: <stdlib.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+ ^
+retroarch.h:26:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+retroarch.h:27:2: information: Include file: <retro_inline.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_inline.h>
+ ^
+retroarch.h:28:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+retroarch.h:34:2: information: Include file: <lists/string_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/string_list.h>
+ ^
+retroarch.h:35:2: information: Include file: <queues/task_queue.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <queues/task_queue.h>
+ ^
+retroarch.h:36:2: information: Include file: <queues/message_queue.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <queues/message_queue.h>
+ ^
+gfx\video_driver.h:20:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+gfx\video_driver.h:22:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+gfx\video_driver.h:23:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+gfx\video_driver.h:24:2: information: Include file: <retro_atomic.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_atomic.h>
+ ^
+gfx\video_driver.h:25:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+gfx\video_driver.h:35:2: information: Include file: <gfx/scaler/pixconv.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <gfx/scaler/pixconv.h>
+ ^
+gfx\video_driver.h:36:2: information: Include file: <gfx/scaler/scaler.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <gfx/scaler/scaler.h>
+ ^
+gfx\video_driver.h:37:2: information: Include file: <formats/image.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <formats/image.h>
+ ^
+gfx\video_driver.h:38:2: information: Include file: <formats/rpng.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <formats/rpng.h>
+ ^
+input\input_driver.h:20:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+input\input_driver.h:21:2: information: Include file: <stdlib.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+ ^
+input\input_driver.h:22:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+input\input_driver.h:23:2: information: Include file: <sys/types.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <sys/types.h>
+ ^
+input\input_driver.h:25:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+input\input_driver.h:26:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+input\input_driver.h:27:2: information: Include file: <retro_atomic.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_atomic.h>
+ ^
+input\input_driver.h:28:2: information: Include file: <retro_inline.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_inline.h>
+ ^
+input\input_driver.h:29:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+input\input_driver.h:30:2: information: Include file: <retro_miscellaneous.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_miscellaneous.h>
+ ^
+input\input_driver.h:31:2: information: Include file: <streams/interface_stream.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <streams/interface_stream.h>
+ ^
+input\input_osk.h:20:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+input\input_osk.h:21:2: information: Include file: <stdlib.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+ ^
+input\input_osk.h:23:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+input\input_osk.h:25:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+performance_counters.h:20:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+performance_counters.h:21:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+performance_counters.h:23:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+performance_counters.h:24:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+performance_counters.h:25:2: information: Include file: <features/features_cpu.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <features/features_cpu.h>
+ ^
+gfx\video_shader_parse.h:20:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+gfx\video_shader_parse.h:21:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+gfx\video_shader_parse.h:22:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+gfx\video_shader_parse.h:23:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+gfx\video_shader_parse.h:24:2: information: Include file: <retro_miscellaneous.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_miscellaneous.h>
+ ^
+gfx\video_shader_parse.h:25:2: information: Include file: <file/config_file.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <file/config_file.h>
+ ^
+gfx\video_shader_parse.h:26:2: information: Include file: <file/file_path.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <file/file_path.h>
+ ^
+gfx\video_shader_parse.h:27:2: information: Include file: <lists/string_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/string_list.h>
+ ^
+gfx\video_filter.h:20:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+gfx\video_filter.h:22:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+gfx\video_filter.h:23:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+core.h:21:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+core.h:22:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+core.h:24:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+driver.h:20:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+driver.h:21:2: information: Include file: <stdlib.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+ ^
+driver.h:22:2: information: Include file: <sys/types.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <sys/types.h>
+ ^
+driver.h:24:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+driver.h:25:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+runloop.h:20:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+runloop.h:21:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+runloop.h:22:2: information: Include file: <stdlib.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+ ^
+runloop.h:24:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+runloop.h:25:2: information: Include file: <retro_inline.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_inline.h>
+ ^
+runloop.h:26:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+runloop.h:27:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+runloop.h:28:2: information: Include file: <dynamic/dylib.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <dynamic/dylib.h>
+ ^
+runloop.h:29:2: information: Include file: <queues/message_queue.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <queues/message_queue.h>
+ ^
+runloop.h:30:2: information: Include file: <queues/mpsc_stack.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <queues/mpsc_stack.h>
+ ^
+dynamic.h:21:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+dynamic.h:22:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+dynamic.h:23:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+core_option_manager.h:20:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+core_option_manager.h:22:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+core_option_manager.h:23:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+core_option_manager.h:24:2: information: Include file: <lists/string_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/string_list.h>
+ ^
+core_option_manager.h:25:2: information: Include file: <lists/nested_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/nested_list.h>
+ ^
+core_option_manager.h:26:2: information: Include file: <file/config_file.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <file/config_file.h>
+ ^
+core_option_manager.h:27:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+core_option_manager.h:29:2: information: Include file: <retro_miscellaneous.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_miscellaneous.h>
+ ^
+state_manager.h:21:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+state_manager.h:22:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+state_manager.h:24:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+state_manager.h:25:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+state_manager.h:26:2: information: Include file: <retro_atomic.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_atomic.h>
+ ^
+tasks\tasks_internal.h:19:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+tasks\tasks_internal.h:21:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+tasks\tasks_internal.h:22:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+tasks\tasks_internal.h:23:2: information: Include file: <retro_miscellaneous.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_miscellaneous.h>
+ ^
+tasks\tasks_internal.h:24:2: information: Include file: <lists/string_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/string_list.h>
+ ^
+tasks\tasks_internal.h:29:2: information: Include file: <formats/image.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <formats/image.h>
+ ^
+tasks\tasks_internal.h:31:2: information: Include file: <queues/task_queue.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <queues/task_queue.h>
+ ^
+tasks\tasks_internal.h:32:2: information: Include file: <gfx/scaler/scaler.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <gfx/scaler/scaler.h>
+ ^
+playlist.h:21:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+playlist.h:22:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+playlist.h:23:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+playlist.h:25:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+playlist.h:26:2: information: Include file: <retro_miscellaneous.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_miscellaneous.h>
+ ^
+playlist.h:27:2: information: Include file: <lists/string_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/string_list.h>
+ ^
+core_info.h:21:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+core_info.h:23:2: information: Include file: <lists/string_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/string_list.h>
+ ^
+core_info.h:24:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+core_backup.h:22:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+core_backup.h:23:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+core_backup.h:25:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+gfx\common\win32_common.h:21:2: information: Include file: <string.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <string.h>
+ ^
+gfx\common\win32_common.h:25:2: information: Include file: <windows.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <windows.h>
+ ^
+gfx\common\win32_common.h:34:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+gfx\common\win32_common.h:35:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+gfx\common\win32_common.h:36:2: information: Include file: <retro_environment.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_environment.h>
+ ^
+ui\drivers\ui_win32.h:20:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+ui\drivers\ui_win32.h:21:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+ui\drivers\ui_win32.h:23:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+ui\drivers\ui_win32.h:24:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+ui\drivers\ui_win32.h:25:2: information: Include file: <retro_miscellaneous.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_miscellaneous.h>
+ ^
+ui\drivers\ui_win32.h:29:2: information: Include file: <windows.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <windows.h>
+ ^
+ui\ui_companion_driver.h:20:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+ui\ui_companion_driver.h:22:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+ui\ui_companion_driver.h:23:2: information: Include file: <retro_atomic.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_atomic.h>
+ ^
+ui\ui_companion_driver.h:24:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+ui\ui_companion_driver.h:25:2: information: Include file: <lists/file_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/file_list.h>
+ ^
+ui\ui_companion_driver.h:26:2: information: Include file: <lists/string_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/string_list.h>
+ ^
+ui\companion\companion_core.h:33:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+ui\companion\companion_core.h:35:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+ui\companion\companion_core.h:36:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+ui\companion\companion_thumbs.h:47:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+ui\companion\companion_thumbs.h:48:2: information: Include file: <stdint.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+ ^
+ui\companion\companion_thumbs.h:49:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+ui\companion\companion_thumbs.h:50:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+ui\drivers\ui_win32_companion.c:82:2: information: Include file: <encodings/utf.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <encodings/utf.h>
+ ^
+ui\companion\companion_dock.h:19:2: information: Include file: <stddef.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+ ^
+ui\companion\companion_dock.h:20:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+ui\companion\companion_dock.h:21:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+ui\drivers\ui_win32_companion.c:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+ui\drivers\ui_win32_companion.c:825:17: style: Array index 'i' is used before limits check. [arrayIndexThenCheck]
+   for (i = 0; s[i] && i < sizeof(low) - 1; i++)
+                ^
+ui\drivers\ui_win32_companion.c:4422:8: style: Condition '!cw_pick_folder(w->hwnd,"Select a directory to scan for content",dir,sizeof(dir))' is always true [knownConditionTrueFalse]
+   if (!cw_pick_folder(w->hwnd, "Select a directory to scan for content",
+       ^
+ui\drivers\ui_win32_companion.c:4422:23: note: Calling function 'cw_pick_folder' returns 0
+   if (!cw_pick_folder(w->hwnd, "Select a directory to scan for content",
+                      ^
+ui\drivers\ui_win32_companion.c:4422:8: note: Condition '!cw_pick_folder(w->hwnd,"Select a directory to scan for content",dir,sizeof(dir))' is always true
+   if (!cw_pick_folder(w->hwnd, "Select a directory to scan for content",
+       ^
+ui\drivers\ui_win32_companion.c:2757:15: warning: Either the condition '!w' is redundant or there is possible null pointer dereference: w. [nullPointerRedundantCheck]
+   HWND ctl = w->thumb_pane[t].ctl;
+              ^
+ui\drivers\ui_win32_companion.c:2759:8: note: Assuming that condition '!w' is not redundant
+   if (!w || !ctl || !IsWindowVisible(ctl))
+       ^
+ui\drivers\ui_win32_companion.c:2757:15: note: Null pointer dereference
+   HWND ctl = w->thumb_pane[t].ctl;
+              ^
+ui\drivers\ui_win32_companion.c:3181:10: warning: If memory allocation fails, then there is a possible null pointer dereference: paths [nullPointerOutOfMemory]
+         paths[0] = buf;
+         ^
+ui\drivers\ui_win32_companion.c:3180:38: note: Assuming allocation function fails
+         paths = (const char**)malloc(sizeof(char*));
+                                     ^
+ui\drivers\ui_win32_companion.c:3180:18: note: Assignment 'paths=(const char**)malloc(sizeof(char*))', assigned value is 0
+         paths = (const char**)malloc(sizeof(char*));
+                 ^
+ui\drivers\ui_win32_companion.c:3181:10: note: Null pointer dereference
+         paths[0] = buf;
+         ^
+ui\drivers\ui_win32_companion.c:3207:13: warning: Possible null pointer dereference: paths [nullPointer]
+            paths[n++] = fp;
+            ^
+ui\drivers\ui_win32_companion.c:3175:28: note: Assignment 'paths=NULL', assigned value is 0
+      const char **paths = NULL;
+                           ^
+ui\drivers\ui_win32_companion.c:3191:19: note: Assuming condition is false
+            if (n == cap)
+                  ^
+ui\drivers\ui_win32_companion.c:3207:13: note: Null pointer dereference
+            paths[n++] = fp;
+            ^
+ui\drivers\ui_win32_companion.c:3217:31: warning: If memory allocation fails, then there is a possible null pointer dereference: paths [nullPointerOutOfMemory]
+      if (n > 1 || (n == 1 && paths[0] != buf))
+                              ^
+ui\drivers\ui_win32_companion.c:3180:38: note: Assuming allocation function fails
+         paths = (const char**)malloc(sizeof(char*));
+                                     ^
+ui\drivers\ui_win32_companion.c:3180:18: note: Assignment 'paths=(const char**)malloc(sizeof(char*))', assigned value is 0
+         paths = (const char**)malloc(sizeof(char*));
+                 ^
+ui\drivers\ui_win32_companion.c:3217:31: note: Null pointer dereference
+      if (n > 1 || (n == 1 && paths[0] != buf))
+                              ^
+ui\drivers\ui_win32_companion.c:3790:38: warning: Either the condition '!w' is redundant or there is possible null pointer dereference: w. [nullPointerRedundantCheck]
+   companion_launch_option_t *opts = w->combo_opts;
+                                     ^
+ui\drivers\ui_win32_companion.c:3796:8: note: Assuming that condition '!w' is not redundant
+   if (!w || !w->core_combo)
+       ^
+ui\drivers\ui_win32_companion.c:3790:38: note: Null pointer dereference
+   companion_launch_option_t *opts = w->combo_opts;
+                                     ^
+ui\drivers\ui_win32_companion.c:1464:17: style: Same expression used in consecutive assignments of 'cx' and 'cy'. [duplicateAssignExpression]
+            int cx = S / 2, cy = S / 2, h = S / 4;
+                ^
+ui\drivers\ui_win32_companion.c:1464:29: note: Same expression used in consecutive assignments of 'cx' and 'cy'.
+            int cx = S / 2, cy = S / 2, h = S / 4;
+                            ^
+ui\drivers\ui_win32_companion.c:1464:17: note: Same expression used in consecutive assignments of 'cx' and 'cy'.
+            int cx = S / 2, cy = S / 2, h = S / 4;
+                ^
+ui\drivers\ui_win32_companion.c:4176:21: style: Variable 'item.iItem' is reassigned a value before the old one has been used. [redundantAssignment]
+      item.iItem    = (int)cw_lv_item(w->cores_list, LVM_INSERTITEMA, 0, &item);
+                    ^
+ui\drivers\ui_win32_companion.c:4171:21: note: item.iItem is assigned
+      item.iItem    = (int)i;
+                    ^
+ui\drivers\ui_win32_companion.c:4176:21: note: item.iItem is overwritten
+      item.iItem    = (int)cw_lv_item(w->cores_list, LVM_INSERTITEMA, 0, &item);
+                    ^
+ui\drivers\ui_win32_companion.c:1000:12: style: The scope of the variable 'placeholder' can be reduced. [variableScope]
+   HBITMAP placeholder;
+           ^
+ui\drivers\ui_win32_companion.c:1261:27: style: The scope of the variable 'span' can be reduced. [variableScope]
+   size_t first, last, i, span;
+                          ^
+ui\drivers\ui_win32_companion.c:1660:19: style: The scope of the variable 'label' can be reduced. [variableScope]
+      const char *label;
+                  ^
+ui\drivers\ui_win32_companion.c:2971:14: style: The scope of the variable 'i' can be reduced. [variableScope]
+      size_t i, n = companion_core_playlist_count(w->core);
+             ^
+ui\drivers\ui_win32_companion.c:4148:11: style: The scope of the variable 'supported' can be reduced. [variableScope]
+   size_t supported;
+          ^
+ui\drivers\ui_win32_companion.c:817:56: style: Parameter 'w' can be declared as pointer to const [constParameterPointer]
+static bool cw_filter_match(ui_companion_win32_wimp_t *w, const char *s)
+                                                       ^
+ui\drivers\ui_win32_companion.c:1999:22: style: Variable 'fr' can be declared as pointer to const [constVariablePointer]
+   companion_rect_t *fr = &w->dock.floats[p];
+                     ^
+ui\drivers\ui_win32_companion.c:3188:19: style: Variable 'fp' can be declared as pointer to const [constVariablePointer]
+            char *fp;
+                  ^
+ui\drivers\ui_win32_companion.c:3341:20: style: Variable 'hdr' can be declared as pointer to const [constVariablePointer]
+            NMHDR *hdr = (NMHDR*)lparam;
+                   ^
+ui\drivers\ui_win32_companion.c:3548:25: style: Variable 'nm' can be declared as pointer to const [constVariablePointer]
+            NMLISTVIEW *nm = (NMLISTVIEW*)lparam;
+                        ^
+ui\drivers\ui_win32_companion.c:3700:20: style: Variable 'hdr' can be declared as pointer to const [constVariablePointer]
+            NMHDR *hdr = (NMHDR*)lparam;
+                   ^
+ui\drivers\ui_win32_companion.c:3720:28: style: Variable 'nm' can be declared as pointer to const [constVariablePointer]
+               NMLISTVIEW *nm = (NMLISTVIEW*)lparam;
+                           ^
+ui\drivers\ui_win32_companion.c:4982:20: style: Variable 'hdr' can be declared as pointer to const [constVariablePointer]
+            NMHDR *hdr = (NMHDR*)lparam;
+                   ^
+ui\drivers\ui_win32_companion.c:5080:37: style: Variable 'nm' can be declared as pointer to const [constVariablePointer]
+                        NMLISTVIEW *nm = (NMLISTVIEW*)lparam;
+                                    ^
+ui\drivers\ui_win32_companion.c:5118:31: style: Variable 'nm' can be declared as pointer to const [constVariablePointer]
+                  NMLISTVIEW *nm = (NMLISTVIEW*)lparam;
+                              ^
+ui\drivers\ui_win32_companion.c:5128:38: style: Variable 'di' can be declared as pointer to const [constVariablePointer]
+                  cw_nmlvdispinfo_t *di = (cw_nmlvdispinfo_t*)lparam;
+                                     ^
+ui\drivers\ui_win32_companion.c:5725:16: style: Variable 'settings' can be declared as pointer to const [constVariablePointer]
+   settings_t *settings         = config_get_ptr();
+               ^
+core_updater_list.h:26:2: information: Include file: <retro_common_api.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <retro_common_api.h>
+ ^
+core_updater_list.h:27:2: information: Include file: <libretro.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <libretro.h>
+ ^
+core_updater_list.h:29:2: information: Include file: <lists/string_list.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <lists/string_list.h>
+ ^
+core_updater_list.h:31:2: information: Include file: <boolean.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <boolean.h>
+ ^
+tasks\tasks_internal.h:99:2: information: Include file: <net/net_http.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <net/net_http.h>
+ ^
+msg_hash.h:49:2: information: Include file: <TargetConditionals.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <TargetConditionals.h>
+ ^
+configuration.h:42:2: information: Include file: <TargetConditionals.h> not found. Please note: Standard library headers do not need to be provided to get proper results. [missingIncludeSystem]
+#include <TargetConditionals.h>
+ ^
+ui\drivers\ui_win32_companion.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 187 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+gfx\video_driver.h:1820:21: style: The function 'video_driver_aspect_ratio_of' is never used. [unusedFunction]
+static INLINE float video_driver_aspect_ratio_of(
+                    ^
+gfx\video_driver.h:1828:20: style: The function 'video_driver_aspect_ratio_put' is never used. [unusedFunction]
+static INLINE void video_driver_aspect_ratio_put(
+                   ^
+runloop.h:456:28: style: The function 'runloop_content_frame_time_us' is never used. [unusedFunction]
+static INLINE retro_time_t runloop_content_frame_time_us(float core_hz)
+                           ^
+runloop.h:488:23: style: The function 'runloop_content_frame_time_ns' is never used. [unusedFunction]
+static INLINE int64_t runloop_content_frame_time_ns(float core_hz)
+                      ^
+runloop.h:509:28: style: The function 'runloop_pace_schedule' is never used. [unusedFunction]
+static INLINE retro_time_t runloop_pace_schedule(int64_t *anchor_ns,
+                           ^
+runloop.h:534:28: style: The function 'runloop_pace_margin_update' is never used. [unusedFunction]
+static INLINE retro_time_t runloop_pace_margin_update(retro_time_t margin,
+                           ^
+runloop.h:553:20: style: The function 'runloop_pace_sample_usable' is never used. [unusedFunction]
+static INLINE bool runloop_pace_sample_usable(retro_time_t delta_us)
+                   ^
+runloop.h:569:24: style: The function 'runloop_video_swap_interval_for' is never used. [unusedFunction]
+static INLINE unsigned runloop_video_swap_interval_for(float timing_fps,
+                       ^
+runloop.h:620:24: style: The function 'runloop_sync_plan_for' is never used. [unusedFunction]
+static INLINE unsigned runloop_sync_plan_for(float display_hz,
+                       ^
+runloop.h:752:24: style: The function 'runloop_pace_decide' is never used. [unusedFunction]
+static INLINE unsigned runloop_pace_decide(runloop_pace_facts_t f)
+                       ^
+tasks\task_notify.h:47:20: style: The function 'task_notify_set' is never used. [unusedFunction]
+static INLINE void task_notify_set(task_notify_t *n,
+                   ^
+nofile:0:0: information: Active checkers: 119/186 (use --checkers-report=<filename> to see details) [checkersReport]
+

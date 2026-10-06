@@ -1,0 +1,340 @@
+# 🔴 Problèmes confirmés
+
+## D3D12
+
+🔴 `gfx/drivers/d3d12.c | D3D12Map | 816 | 26`
+→ **Vrai problème**, via `d3d12_create_fullscreen_quad_vbo()` : une création de ressource peut échouer puis `D3D12Map()` reçoit un `NULL`.
+
+🔴 `gfx/drivers/d3d12.c | d3d12_font_render_msg | 2301 | 9`
+→ **Vrai NULL dereference confirmé**.
+
+⚠️ Compilation Clang complète de `d3d12.c` bloquée par l'incohérence `d3d12_gpu_index`. Elle ne permet donc pas de valider ces deux points.
+
+---
+
+# 🟡 Vulkan — pas encore confirmé
+
+Le test Clang est bloqué par :
+
+```text
+fatal error: 'vulkan/vulkan.h' file not found
+```
+
+Header Vulkan trouvé dans MSYS2 :
+
+```text
+/c/msys64/mingw64/include/libplacebo/vulkan.h
+```
+
+Donc :
+
+🟢 Aucun bug Vulkan confirmé à ce stade.
+🟡 Les findings Vulkan doivent être vérifiés manuellement.
+🔴 L'échec de Clang vient de l'environnement de compilation, pas d'un problème Vulkan confirmé.
+
+### Vulkan à vérifier
+
+`gfx/drivers/vulkan.c | vulkan_copy_staging_to_dynamic | 2499 | 46`
+→ Division par zéro
+
+`gfx/drivers/vulkan.c | vulkan_frame_window | 2618 | 39`
+→ Division par zéro
+
+`gfx/drivers/vulkan.c | vulkan_deinit_command_buffers | 5562 | 28`
+→ NULL dereference
+
+`gfx/drivers/vulkan.c | vulkan_deinit_command_buffers | 5565 | 28`
+→ NULL dereference
+
+`gfx/drivers/vulkan.c | vulkan_deinit_pipelines | 5580 | 43`
+→ NULL dereference
+
+`gfx/drivers/vulkan.c | vulkan_font_render_msg | 3998 | 20`
+→ NULL dereference
+
+`gfx/drivers/vulkan.c | vulkan_init | 7004 | 111`
+→ NULL dereference
+
+`gfx/drivers/vulkan.c | vulkan_init_filter_chain | 6025 | 89`
+→ NULL dereference
+
+`gfx/drivers/vulkan.c | vulkan_overlay_free | 11673 | 17`
+→ NULL dereference
+
+---
+
+# 🟡 D3D11
+
+`gfx/drivers/d3d11.c | d3d11_font_render_msg | 1658 | 7`
+→ NULL dereference — **à vérifier**
+
+---
+
+# 🟡 Shader Vulkan
+
+`gfx/drivers_shader/shader_vulkan.c | slang_pass_build_commands | 4071 | 12`
+→ NULL dereference — à vérifier
+
+`gfx/drivers_shader/shader_vulkan.c | slang_pass_set_name | 925 | 44`
+→ NULL dereference — à vérifier
+
+---
+
+# 🟡 Autres NULL dereference à vérifier
+
+`audio/audio_driver.c | audio_driver_flush | 3691 | 47`
+
+`cores/libretro-ffmpeg/ffmpeg_core.c | libretro_ffmpeg_retro_run | 2681 | 47`
+
+`gfx/drivers_shader/glslang_util.c | glslang_read_shader_file_internal | 769 | 47`
+
+`gfx/drivers_shader/shader_gl3.c | gl3_chain_set_pass_name | 3488 | 24`
+
+`gfx/drivers_shader/shader_gl3.c | gl3_chain_set_shader | 2995 | 34`
+
+`gfx/drivers_shader/shader_gl3.c | gl3_pass_set_name | 1257 | 43`
+
+`gfx/gfx_thumbnail.c | gfx_thumbnail_anim_shown | 1372 | 40`
+
+`gfx/video_driver.c | video_driver_init_internal | 6167 | 10`
+
+`gfx/video_shader_parse.c | video_shader_apply_shader | 4162 | 5`
+
+`gfx/video_thread_wrapper.c | video_thread_frame | 2991 | 24`
+
+`gfx/widgets/gfx_widget_volume.c | gfx_widget_volume_frame | 230 | 28`
+
+`input/input_driver.c | input_config_get_bind_string | 5596 | 10`
+
+`input/input_driver.c | input_joypad_analog_axis | 1795 | 35`
+
+`input/input_overlay_textures.c | input_overlay_release_textures | 98 | 47`
+
+`libretro-common/formats/7z/r7z_bcj2.c | r7z_bcj2_decode_part | 142 | 25`
+
+`libretro-common/formats/7z/r7z_bcj2.c | r7z_bcj2_decode_part | 168 | 32`
+
+`libretro-common/formats/7z/r7z_bcj2.c | r7z_bcj2_decode_part | 221 | 40`
+
+`libretro-common/formats/audio_transfer.c | audio_transfer_ac3_read | 1165 | 17`
+
+`libretro-common/formats/mp4/rmp4_video.c | rmp4_video_stream_scan_step | 676 | 8`
+
+`libretro-common/formats/mp4/rmp4_video.c | rmp4_video_stream_step | 966 | 11`
+
+`libretro-common/formats/opus/ropus.c | ropus_quant_band_n1 | 3537 | 57`
+
+`libretro-common/formats/opus/ropus.c | ropus_quant_band_n1_q | 5982 | 60`
+
+`libretro-common/formats/png/rpng_apng.c | apng_index | 367 | 50`
+
+`libretro-common/formats/vp8/rvp8.c | rvp8_decode_mb_mode | 2507 | 59`
+
+`libretro-common/formats/webm/rwebm_video.c | rwebm_video_stream_scan_step | 552 | 8`
+
+`libretro-common/formats/webm/rwebm_video.c | rwebm_video_stream_step | 1010 | 11`
+
+`libretro-common/memory/mempool.c | mempool_alloc | 123 | 5`
+
+`libretro-common/string/stdstring.c | word_wrap | 262 | 16`
+
+`libretro-common/string/stdstring.c | word_wrap_wideglyph | 429 | 21`
+
+`libretro-common/string/stdstring.c | word_wrap_wideglyph | 484 | 20`
+
+`menu/cbs/menu_cbs_right.c | action_right_scroll | 237 | 9`
+
+`menu/cbs/menu_cbs_sublabel.c | action_bind_sublabel_playlist_entry | 1259 | 3`
+
+`menu/menu_contentless_cores.c | menu_contentless_cores_get_info | 216 | 3`
+
+`menu/menu_displaylist.c | menu_displaylist_ctl_internal | 17152 | 13`
+
+`menu/menu_displaylist.c | menu_displaylist_parse_content_information | 6491 | 17`
+
+`menu/menu_displaylist.c | menu_displaylist_populate_subsystem | 8171 | 14`
+
+`menu/menu_displaylist.c | menu_displaylist_populate_subsystem | 8287 | 14`
+
+`menu/menu_driver.c | generic_menu_iterate | 8057 | 21`
+
+`menu/menu_driver.c | menu_list_flush_stack | 1508 | 9`
+
+`menu/menu_driver.c | retroarch_menu_running_finished | 7220 | 13`
+
+`menu/menu_explore.c | explore_add_unique_string | 400 | 23`
+
+`network/cloud_sync/webdav.c | webdav_mkdir_cb | 1078 | 32`
+
+`network/netplay/netplay_frontend.c | netplay_free | 7618 | 42`
+
+`record/drivers/record_ffmpeg.c | planarize_float | 1489 | 52`
+
+`tasks/task_autodetect_blissbox.c | input_autoconfigure_get_blissbox_pad_type_win32 | 371 | 30`
+
+`tasks/task_cloudsync.c | task_cloud_sync_check_server_current | 1661 | 55`
+
+`tasks/task_cloudsync.c | task_cloud_sync_check_server_current | 1698 | 68`
+
+`tasks/task_overlay.c | task_overlay_resolve_targets | 913 | 11`
+
+`ui/drivers/ui_win32.c | win32_menu_loop | 1105 | 17`
+
+---
+
+# 🟡 Valeurs non initialisées
+
+`libretro-common/encodings/encoding_rzstd.c | rzstd_fse_build_ct | 2979 | 32`
+
+`libretro-common/formats/jpeg/rjpeg.c | rjpeg_output_rows | 4566 | 21`
+
+`libretro-common/formats/opus/ropus.c | ropus_silk_decode_pulses | 8720 | 42`
+
+`libretro-common/include/gfx/video_frame.h | video_frame_convert_rgba_to_bgr | 203 | 17`
+
+---
+
+# 🟡 Autres erreurs logiques
+
+`gfx/gfx_animation.c | gfx_animation_timer_start_in | 1919 | 3`
+→ Dereference of a fixed address
+
+`libretro-common/formats/opus/ropus.c | ropus_silk_inverse32_varq | 8781 | 10`
+→ Division by zero
+
+`libretro-common/streams/rzip_stream.c | rzipstream_write_chunks_parallel | 1276 | 28`
+→ Division by zero
+
+`gfx/video_thread_wrapper.c | video_thread_alive | 2555 | 10`
+→ Garbage return value
+
+`gfx/video_thread_wrapper.c | video_thread_init | 3403 | 32`
+→ Garbage return value
+
+---
+
+# 🟡 Possibly undefined arithmetic
+
+`libretro-common/formats/mp3/rmp3.c | rmp3_stream_process | 3101 | 15`
+
+`libretro-common/formats/mp4/rmp4_audio.c | rmp4_audio_decode_aac | 209 | 44`
+
+`libretro-common/formats/png/rpng.c | rpng_reverse_filter_regular_iterate | 2532 | 47`
+
+`tasks/task_cloudsync.c | task_cloud_sync_should_ignore_file | 487 | 40`
+
+---
+
+# 🟡 Result of operation is garbage or undefined
+
+`audio/audio_driver.c | audio_driver_inline_render | 3891 | 56`
+
+`audio/audio_driver.c | audio_driver_inline_render | 3903 | 56`
+
+`audio/audio_driver.c | audio_driver_pipeline_render | 5845 | 60`
+
+`audio/audio_driver.c | audio_driver_pipeline_render | 5857 | 60`
+
+`libretro-common/crypto/pk.c | bn_mont_sqr | 317 | 22`
+
+`libretro-common/crypto/pk.c | bn_mont_sqr | 335 | 29`
+
+`libretro-common/crypto/pk.c | bn_select | 133 | 58`
+
+`libretro-common/formats/aac/raac.c | raac_sbr_in_table | 3027 | 41`
+
+`libretro-common/formats/ac3/rac3_encode.c | allocate | 336 | 34`
+
+`libretro-common/formats/json/rjson.c | _rjson_read_number | 600 | 63`
+
+`libretro-common/formats/opus/ropus.c | ropus_silk_bwexpander_32 | 8983 | 27`
+
+`libretro-common/formats/opus/ropus.c | ropus_silk_lpc_fit | 9000 | 15`
+
+`libretro-common/formats/opus/ropus_silk_lpc_inv_pred_gain_qa | 9058 | 25`
+
+`libretro-common/formats/opus/ropus_silk_lpc_inv_pred_gain_qa | 9085 | 16`
+
+`libretro-common/formats/opus/ropus_silk_nlsf_stabilize | 8863 | 40`
+
+`libretro-common/formats/webp/rwebp.c | vlds_begin | 604 | 57`
+
+`libretro-common/net/net_nfs3.c | rnfs_opendir | 2809 | 22`
+
+`midi/drivers/fmsynth_midi.c | fmsynth_handle_message | 599 | 26`
+
+`midi/drivers/fmsynth_midi.c | fmsynth_handle_message | 604 | 26`
+
+`midi/drivers/fmsynth_midi.c | fmsynth_handle_message | 609 | 26`
+
+`playlist.c | playlist_push_new_entry | 1773 | 44`
+
+`tasks/task_database.c | manual_scan_end_flush_tick | 2276 | 28`
+
+---
+
+# 🟡 Uninitialized argument
+
+`midi/drivers/fmsynth_midi.c | fmsynth_handle_message | 591 | 26`
+
+`midi/drivers/fmsynth_midi.c | fmsynth_handle_message | 595 | 26`
+
+---
+
+# 🟡 Unix API
+
+Ces signalements ne constituent pas en eux-mêmes des bugs mémoire/logiques sous Windows :
+
+`gfx/drivers/vulkan.c | vulkan_font_draw_range | 4202 | 33`
+
+`gfx/drivers/vulkan.c | vulkan_font_flush_block | 4278 | 37`
+
+`gfx/video_driver.c | video_context_driver_get_api | 5791 | 10`
+
+`gfx/video_driver.c | video_coord_array_append | 446 | 29`
+
+`gfx/video_driver.c | video_coord_array_append | 450 | 32`
+
+`gfx/video_driver.c | video_coord_array_append | 454 | 35`
+
+`gfx/video_driver.c | video_coord_array_append | 458 | 39`
+
+`libretro-common/formats/mp4/rmp4_audio.c | rmp4_audio_pcm_to_wav | 612 | 67`
+
+`libretro-common/formats/mp4/rmp4_audio.c | rmp4_ogg_page | 276 | 38`
+
+`libretro-common/formats/webm/rwebm_audio.c | rwebm_ogg_page | 215 | 39`
+
+`menu/menu_driver.c | action_iterate_type | 3535 | 8`
+
+---
+
+# 🟡 Suspicious bitwise shifts
+
+À vérifier uniquement si on veut aller jusqu'au bout :
+
+`libretro-common/encodings/encoding_deflate.c | rd_putbits | 2060 | 47`
+
+`libretro-common/encodings/encoding_deflate.c | rinf_need | 474 | 40`
+
+`libretro-common/formats/flac/rflac.c | rflac__read_uint32 | 1118 | 9`
+
+`libretro-common/formats/h265/rh265.c | rh265_fill_nzc | 2479 | 59`
+
+`libretro-common/formats/opus/ropus.c | ropus_ec_tell_frac | 289 | 19`
+
+`libretro-common/formats/opus/ropus.c | ropus_isqrt32 | 3016 | 2`
+
+`libretro-common/formats/opus/ropus.c | ropus_pshr32 | 5421 | 2`
+
+`libretro-common/formats/opus/ropus.c | ropus_silk_div32_varq | 9309 | 14`
+
+`libretro-common/formats/opus/ropus.c | ropus_silk_inverse32_varq | 8780 | 13`
+
+`libretro-common/formats/vorbis/rvorbis.c | get_bits | 1234 | 15`
+
+`libretro-common/formats/vorbis/rvorbis.c | prep_huffman | 1286 | 49`
+
+`libretro-common/formats/vp9/rvp9.c | rvp9_br_fill | 1565 | 24`
+
+`libretro-common/formats/webp/rwebp.c | vbr_fill | 134 | 29`

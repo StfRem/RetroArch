@@ -1,0 +1,2428 @@
+scan-build --use-analyzer=/mingw64/bin/clang -o /c/Env/RetroArch/__rapport_audit_windows11_x64 make -j8 CC=clang CXX=g++ HAVE_MATERIALUI=1 HAVE_TRANSLATE=1
+Detected MSYS2 environment
+clean
+scan-build: Using '/mingw64/bin/clang' for static analysis
+Detected MSYS2 environment
+CC version_git.c
+CC libretro-common/formats/mp3/rmp3.c
+CC frontend/frontend_driver.c
+CC retroarch.c
+CC runloop.c
+CC ui/ui_companion_driver.c
+CC camera/camera_driver.c
+CC record/record_driver.c
+CC record/drivers/record_wav.c
+CC command.c
+CC msg_hash.c
+CC intl/msg_hash_us.c
+CC libretro-common/queues/task_queue.c
+CC tasks/task_content.c
+CC tasks/task_patch.c
+CC tasks/patch_stream.c
+CC libretro-common/encodings/encoding_vcdiff.c
+CC save.c
+retroarch.c:7292:4: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 7292 |    _len += _PSUPP_BUF(buf, _len, SUPPORTS_QT,              "Qt",              "Qt UI companion support");
+      |    ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC tasks/task_save.c
+CC tasks/task_movie.c
+CC tasks/task_file_transfer.c
+CC tasks/task_nbio_slice.c
+tasks/patch_stream.c:264:13: warning: Value stored to 'off' is never read [deadcode.DeadStores]
+  264 |             off += 3;
+      |             ^      ~
+1 warning generated.
+CC tasks/task_content_prefetch.c
+CC tasks/task_image.c
+CC tasks/task_playlist_manager.c
+CC tasks/task_core_backup.c
+CC libretro-common/encodings/encoding_utf.c
+CC libretro-common/encodings/encoding_crc32.c
+CC libretro-common/encodings/encoding_base64.c
+CC tasks/task_translation.c
+libretro-common/formats/mp3/rmp3.c:3101:30: warning: Addition of a null pointer (via field 'out') and a probably nonzero integer value may result in undefined behavior [core.NullPointerArithm]
+ 3101 |                memcpy(s->out + s->out_pos * (size_t)s->channels,
+      |                          ~~~ ^
+1 warning generated.
+CC libretro-common/compat/fopen_utf8.c
+CC libretro-common/compat/compat_strldup.c
+CC libretro-common/lists/file_list.c
+CC libretro-common/lists/dir_list.c
+CC libretro-common/file/retro_dirent.c
+CC libretro-common/file/file_watch.c
+CC libretro-common/streams/stdin_stream.c
+CC libretro-common/streams/file_stream.c
+CC libretro-common/streams/file_stream_transforms.c
+CC libretro-common/streams/interface_stream.c
+CC libretro-common/streams/memory_stream.c
+CC libretro-common/streams/network_stream.c
+CC libretro-common/vfs/vfs_implementation.c
+CC libretro-common/vfs/vfs_hybrid.c
+CC libretro-common/lists/string_list.c
+CC libretro-common/string/rstrtod.c
+CC libretro-common/string/stdstring.c
+CC libretro-common/memmap/memalign.c
+CC libretro-common/memmap/memcpy_nt.c
+CC libretro-common/lists/linked_list.c
+CC libretro-common/lists/nested_list.c
+CC libretro-common/queues/generic_queue.c
+CC libretro-common/file/file_path.c
+CC libretro-common/file/file_path_io.c
+CC file_path_special.c
+libretro-common/string/stdstring.c:262:15: warning: Dereference of null pointer [core.NullDereference]
+  262 |          *s++ = *src++;
+      |          ~~~~~^~~~~~~~
+libretro-common/string/stdstring.c:429:15: warning: Dereference of null pointer [core.NullDereference]
+  429 |          *s++ = *src++;
+      |          ~~~~~^~~~~~~~
+libretro-common/string/stdstring.c:484:7: warning: Dereference of null pointer (loaded from variable 's') [core.NullDereference]
+  484 |    *s = '\0';
+      |     ~ ^
+3 warnings generated.
+CC libretro-common/hash/lrc_hash.c
+CC audio/audio_driver.c
+libretro-common/streams/file_stream.c:1694:8: warning: Potential leak of memory pointed to by 'fp_src' [unix.Malloc]
+ 1694 |    if (fp_dst)
+      |        ^~~~~~
+libretro-common/streams/file_stream.c:1696:8: warning: Potential leak of memory pointed to by 'fp_dst' [unix.Malloc]
+ 1696 |    if (ret != 0)
+      |        ^~~
+libretro-common/streams/file_stream.c:1771:8: warning: Potential leak of memory pointed to by 'fp_src' [unix.Malloc]
+ 1771 |    if (fp_dst)
+      |        ^~~~~~
+libretro-common/streams/file_stream.c:1776:11: warning: Potential leak of memory pointed to by 'fp_dst' [unix.Malloc]
+ 1776 |    return ret;
+      |           ^~~
+4 warnings generated.
+CC audio/audio_upmix.c
+CC audio/audio_stretch.c
+CC audio/audio_speed_lpf.c
+CC audio/audio_pipeline_stretch.c
+CC audio/audio_binaural.c
+CC input/input_driver.c
+CC input/input_driver_choice.c
+CC input/input_overlay_textures.c
+CC input/input_overlay_alpha.c
+CC input/common/input_hid_common.c
+CC led/led_driver.c
+CC gfx/video_driver.c
+CC gfx/common/video_mode_select.c
+CC gfx/gfx_display.c
+CC gfx/gfx_animation.c
+input/input_overlay_textures.c:98:35: warning: Access to field 'pixels' results in a dereference of a null pointer [core.NullDereference]
+   98 |             ol->images[i]->pixels = NULL;
+      |             ~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+1 warning generated.
+CC gfx/gfx_instrument.c
+CC gfx/gfx_surface.c
+CC gfx/gfx_thumbnail.c
+CC gfx/gfx_anim_preview.c
+CC configuration.c
+gfx/gfx_display.c:390:10: warning: Value stored to 'height' is never read [deadcode.DeadStores]
+  390 |          height     = video_height - y;
+      |          ^            ~~~~~~~~~~~~~~~~
+gfx/gfx_display.c:392:10: warning: Value stored to 'width' is never read [deadcode.DeadStores]
+  392 |          width      = video_width - x;
+      |          ^            ~~~~~~~~~~~~~~~
+2 warnings generated.
+CC libretro-common/dynamic/dylib.c
+CC cores/dynamic_dummy.c
+gfx/gfx_animation.c:1919:25: warning: Dereference of a fixed address (loaded from variable 'timer') [core.FixedAddressDereference]
+ 1919 |    *timer               = 0.0f;
+      |     ~~~~~               ^
+1 warning generated.
+CC libretro-common/queues/message_queue.c
+CC state_manager.c
+CC gfx/bitmapfont.c
+CC tasks/task_autodetect.c
+CC input/input_autodetect_builtin.c
+CC input/input_keymaps.c
+CC libretro-common/queues/fifo_queue.c
+CC libretro-common/queues/retro_spsc.c
+CC libretro-common/compat/compat_fnmatch.c
+CC libretro-common/compat/compat_posix_string.c
+CC cheat_manager.c
+tasks/task_autodetect.c:312:7: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+  312 |       _len += strlcpy(config_key + _len, config_key_postfix,
+      |       ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  313 |                sizeof(config_key) - _len);
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+tasks/task_autodetect.c:759:18: warning: Although the value stored to 'total_size' is used in the enclosing expression, the value is never actually read from 'total_size' [deadcode.DeadStores]
+  759 |             || ((total_size = (int64_t)strtoll(fp_entry->value,
+      |                  ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  760 |                      NULL, 10)) != cur_total))
+      |                      ~~~~~~~~~
+tasks/task_autodetect.c:769:18: warning: Although the value stored to 'newest_mtime' is used in the enclosing expression, the value is never actually read from 'newest_mtime' [deadcode.DeadStores]
+  769 |             || ((newest_mtime = (int64_t)strtoll(fp_entry->value,
+      |                  ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  770 |                      NULL, 10)) != cur_newest))
+      |                      ~~~~~~~~~
+3 warnings generated.
+CC core_info.c
+CC core_backup.c
+CC core_option_manager.c
+gfx/gfx_thumbnail.c:1372:9: warning: Access to field 'handle' results in a dereference of a null pointer (loaded from variable 's') [core.NullDereference]
+ 1372 |    if (!s->handle)
+      |         ^~~~~~~~~
+gfx/gfx_thumbnail.c:4197:10: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 4197 |          _len = strlcpy_lit(entry_basename + _len, ".state", PATH_MAX_LENGTH - _len);
+      |          ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/gfx_thumbnail.c:4238:15: warning: Potential leak of memory pointed to by 'state_name' [unix.Malloc]
+ 4238 |       int n = snprintf(s + _len, len - _len, "%d", state_slot);
+      |               ^~~~~~~~
+3 warnings generated.
+CC libretro-common/file/config_file.c
+gfx/video_driver.c:446:7: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  446 |       memcpy(ca->coords.vertex        + offset * 2,
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  447 |             coords->vertex, base_size * 2);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/video_driver.c:450:7: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  450 |       memcpy(ca->coords.color         + offset * 4,
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  451 |             coords->color, base_size * 4);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/video_driver.c:454:7: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  454 |       memcpy(ca->coords.tex_coord     + offset * 2,
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  455 |             coords->tex_coord, base_size * 2);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/video_driver.c:458:7: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  458 |       memcpy(ca->coords.lut_tex_coord + offset * 2,
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  459 |             coords->lut_tex_coord, base_size * 2);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/video_driver.c:4771:10: warning: Value stored to 'hazard' is never read [deadcode.DeadStores]
+ 4771 |          hazard = -1;
+      |          ^        ~~
+gfx/video_driver.c:5791:17: warning: Null pointer passed as 1st argument to string comparison function [unix.cstring.NullArg]
+ 5791 |       else if (!strcmp(video_ident, "vulkan"))
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/video_driver.c:6167:10: warning: Dereference of null pointer [core.NullDereference]
+ 6167 |          settings->floats.video_aspect_ratio,
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/video_driver.c:7420:13: warning: Value stored to '__len' is never read [deadcode.DeadStores]
+ 7420 |             __len += strlcpy(
+      |             ^        ~~~~~~~~
+ 7421 |                   video_st->window_title         + __len,
+      |                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 7422 |                   status_text,
+      |                   ~~~~~~~~~~~~
+ 7423 |                   sizeof(video_st->window_title) - __len);
+      |                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8 warnings generated.
+CC libretro-common/file/config_file_io.c
+audio/audio_driver.c:3691:10: warning: Access to field 'process' results in a dereference of a null pointer (loaded from field 'resampler') [core.NullDereference]
+ 3691 |          audio_st->resampler->process(audio_st->resampler_data, &src_data);
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+audio/audio_driver.c:3891:70: warning: The right operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 3891 |                      audio_st->extra.in_f[f*ex+c] = src[f*t->channels+slots[c]];
+      |                                                                      ^~~~~~~~~
+audio/audio_driver.c:3903:70: warning: The right operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 3903 |                      audio_st->extra.in_i[f*ex+c] = src[f*t->channels+slots[c]];
+      |                                                                      ^~~~~~~~~
+audio/audio_driver.c:5845:63: warning: The right operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 5845 |                   audio_st->extra.in_f[f * ex + c] = w[f * pc + slot[c]];
+      |                                                               ^ ~~~~~~~
+audio/audio_driver.c:5857:63: warning: The right operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 5857 |                   audio_st->extra.in_i[f * ex + c] = w[f * pc + slot[c]];
+      |                                                               ^ ~~~~~~~
+5 warnings generated.
+CC libretro-common/file/config_file_userdata.c
+CC runtime_file.c
+CC disk_index_file.c
+CC tasks/task_screenshot.c
+CC tasks/task_powerstate.c
+CC libretro-common/gfx/scaler/scaler.c
+CC libretro-common/gfx/scaler/pixconv.c
+CC libretro-common/gfx/scaler/scaler_int.c
+CC libretro-common/gfx/scaler/scaler_filter.c
+CC gfx/font_driver.c
+CC gfx/video_filter.c
+CC libretro-common/audio/resampler/audio_resampler.c
+CC libretro-common/audio/resampler/audio_resampler_int16.c
+CC libretro-common/audio/dsp_filter.c
+CC libretro-common/audio/resampler/drivers/sinc_resampler.c
+CC libretro-common/audio/resampler/drivers/sinc_resampler_int16.c
+CC libretro-common/audio/resampler/drivers/nearest_resampler.c
+CC libretro-common/audio/resampler/drivers/nearest_resampler_int16.c
+CC libretro-common/utils/md5.c
+CC playlist.c
+CC libretro-common/features/features_cpu.c
+CC libretro-common/memory/mem_stats.c
+libretro-common/file/config_file.c:936:13: warning: Argument to 'free()' is offset by 24 bytes from the start of memory allocated by 'malloc()' [unix.Malloc]
+  936 |             free(list);
+      |             ^~~~~~~~~~
+1 warning generated.
+CC libretro-common/memory/mempool.c
+CC verbosity.c
+libretro-common/memory/mempool.c:123:25: warning: Access to field 'next' results in a dereference of a null pointer (loaded from variable 'node') [core.NullDereference]
+  123 |    pool->free_list    = node->next;
+      |                         ^~~~~~~~~~
+1 warning generated.
+CC libretro-common/playlists/label_sanitization.c
+CC libretro-common/time/rtime.c
+CC manual_content_scan.c
+input/input_driver.c:1795:9: warning: Access to field 'attr' results in a dereference of a null pointer (loaded from variable 'bind_minus') [core.NullDereference]
+ 1795 |    if (!RETRO_KEYBIND_VALID(bind_minus) || !RETRO_KEYBIND_VALID(bind_plus))
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+input/input_types.h:128:37: note: expanded from macro 'RETRO_KEYBIND_VALID'
+  128 | #define RETRO_KEYBIND_VALID(b)    (((b)->attr & RETRO_KEYBIND_VALID_BIT) != 0)
+      |                                     ^~~~~~~~~
+input/input_driver.c:5596:41: warning: Access to field 'attr' results in a dereference of a null pointer (loaded from variable 'bind') [core.NullDereference]
+ 5596 |       input_keymaps_translate_rk_to_str(RETRO_KEYBIND_KEY(bind), key, sizeof(key));
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~
+input/input_types.h:126:23: note: expanded from macro 'RETRO_KEYBIND_KEY'
+  126 |    ((enum retro_key)(((b)->attr & RETRO_KEYBIND_KEY_MASK) >> RETRO_KEYBIND_KEY_SHIFT))
+      |                       ^~~~~~~~~
+input/input_driver.c:9519:10: warning: Value stored to 'any_pressed' is never read [deadcode.DeadStores]
+ 9519 |          any_pressed = true;
+      |          ^             ~~~~
+3 warnings generated.
+CC tasks/task_database.c
+CC disk_control_interface.c
+CC libretro-common/crypto/crypto.c
+CC libretro-common/crypto/kdf.c
+CC libretro-common/crypto/pk.c
+CC libretro-common/crypto/x509.c
+CC libretro-common/file/keychain.c
+CC tasks/task_keychain.c
+CC tasks/task_autodetect_blissbox.c
+CC tasks/task_audio_mixer.c
+CC libretro-common/audio/audio_mix.c
+tasks/task_autodetect_blissbox.c:294:7: warning: Value stored to 'ret' is never read [deadcode.DeadStores]
+  294 |       ret = SetupDiEnumDeviceInfo(hDeviceInfo, index, &device_info_data);
+      |       ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tasks/task_autodetect_blissbox.c:371:39: warning: Access to field 'cbSize' results in a dereference of a null pointer (loaded from variable 'pInterfaceDetailData') [core.NullDereference]
+  371 |          pInterfaceDetailData->cbSize = sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA);
+      |          ~~~~~~~~~~~~~~~~~~~~         ^
+tasks/task_autodetect_blissbox.c:411:16: warning: Potential leak of memory pointed to by 'device_path' [unix.Malloc]
+  411 |                LocalFree(lp_device_path);
+      |                ^~~~~~~~~
+3 warnings generated.
+CC libretro-common/audio/audio_mixer.c
+CC input/bsv/bsvmovie.c
+tasks/task_database.c:2276:10: warning: The left operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 2276 |          PLAYLIST_SET_ENTRY_SLOT(&entry, 0);
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tasks/../playlist.h:158:28: note: expanded from macro 'PLAYLIST_SET_ENTRY_SLOT'
+  158 |    ((e)->attr = ((e)->attr & ~0xffffu) | ((uint32_t)(v) & 0xffffu))
+      |                  ~~~~~~~~~ ^
+tasks/task_database.c:3204:10: warning: Value stored to 'dbinfo' is never read [deadcode.DeadStores]
+ 3204 |          dbinfo  = manual_scan->handle;
+      |          ^         ~~~~~~~~~~~~~~~~~~~
+tasks/task_database.c:3205:10: warning: Value stored to 'dbstate' is never read [deadcode.DeadStores]
+ 3205 |          dbstate = &manual_scan->state;
+      |          ^         ~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+CC libretro-db/rmsgpack.c
+CC libretro-db/rmsgpack_dom.c
+CC input/bsv/uint32s_index.c
+libretro-common/crypto/x509.c:764:10: warning: Value stored to 's' is never read [deadcode.DeadStores]
+  764 |          s  = end;
+      |          ^    ~~~
+1 warning generated.
+CC runahead.c
+CC audio/drivers_resampler/cc_resampler.c
+CC audio/drivers_resampler/cc_resampler_int16.c
+CC libretro-common/compat/compat_getopt.c
+playlist.c:1773:7: warning: The left operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 1773 |       PLAYLIST_SET_RUNTIME_STATUS(&playlist->entries[0],
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1774 |             PLAYLIST_RUNTIME_UNKNOWN);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~
+./playlist.h:160:28: note: expanded from macro 'PLAYLIST_SET_RUNTIME_STATUS'
+  160 |    ((e)->attr = ((e)->attr & ~(0x7u << 16)) \
+      |                  ~~~~~~~~~ ^
+1 warning generated.
+CC libretro-common/compat/compat_strcasestr.c
+CC libretro-common/compat/compat_strl.c
+CC libretro-common/formats/image_texture.c
+CC cores/libretro-imageviewer/image_core.c
+libretro-common/audio/audio_mixer.c:2670:10: warning: Value stored to 'st' is never read [deadcode.DeadStores]
+ 2670 |          st = AUDIO_PROCESS_END;
+      |          ^    ~~~~~~~~~~~~~~~~~
+libretro-common/audio/audio_mixer.c:2817:10: warning: Value stored to 'st' is never read [deadcode.DeadStores]
+ 2817 |          st  = AUDIO_PROCESS_END;
+      |          ^     ~~~~~~~~~~~~~~~~~
+2 warnings generated.
+CXX ui/drivers/ui_qt.cpp
+libretro-common/crypto/pk.c:133:36: warning: The left operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+  133 |       r[i] = (a[i] & mask) | (b[i] & ~mask);
+      |                               ~~~~ ^
+libretro-common/crypto/pk.c:317:61: warning: The left operand of '*' is a garbage value [core.UndefinedBinaryOperatorResult]
+  317 |          carry     += (bn_dword)tmp[i + j] + (bn_dword)a[i] * a[j];
+      |                                                        ~~~~ ^
+libretro-common/crypto/pk.c:317:61: warning: The right operand of '*' is a garbage value [core.UndefinedBinaryOperatorResult]
+  317 |          carry     += (bn_dword)tmp[i + j] + (bn_dword)a[i] * a[j];
+      |                                                             ^ ~~~~
+libretro-common/crypto/pk.c:335:62: warning: The left operand of '*' is a garbage value [core.UndefinedBinaryOperatorResult]
+  335 |       carry         += (bn_dword)tmp[2 * i] + (bn_dword)a[i] * a[i];
+      |                                                         ~~~~ ^
+4 warnings generated.
+CXX ui/drivers/ui_qt_widgets.cpp
+CC libretro-db/bintree.c
+CC libretro-db/libretrodb.c
+CC libretro-db/query.c
+In file included from input/bsv/uint32s_index.c:27:
+./deps/xxHash/xxhash.h:2357:42: warning: Addition of a null pointer (from variable 'input') and a nonzero integer value (from variable 'len') results in undefined behavior [core.NullPointerArithm]
+ 2357 |         const xxh_u8* const bEnd = input + len;
+      |                                    ~~~~~ ^ ~~~
+input/bsv/uint32s_index.c:207:7: warning: Potential leak of memory pointed to by 'copy' [unix.Malloc]
+  207 |       RBUF_PUSH(index->objects, copy);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./libretro-common/include/array/rbuf.h:105:13: note: expanded from macro 'RBUF_PUSH'
+  105 |    } while (0)
+      |             ^
+input/bsv/uint32s_index.c:224:7: warning: Potential leak of memory pointed to by 'copy' [unix.Malloc]
+  224 |       RBUF_PUSH(index->objects, copy);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./libretro-common/include/array/rbuf.h:105:13: note: expanded from macro 'RBUF_PUSH'
+  105 |    } while (0)
+      |             ^
+3 warnings generated.
+CC database_info.c
+CC tasks/task_database_cue.c
+CC menu/menu_explore.c
+CC tasks/task_menu_explore.c
+CC tasks/task_database_info.c
+CC network/mcp_server.c
+CC audio/drivers/dsound.c
+CC audio/drivers/wasapi.c
+CC audio/drivers/asio.c
+CC audio/drivers/xaudio.c
+menu/menu_explore.c:400:10: warning: Dereference of null pointer (loaded from variable 'split_buf') [core.NullDereference]
+  400 |          RBUF_PUSH(*split_buf, entry);
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./libretro-common/include/array/rbuf.h:102:25: note: expanded from macro 'RBUF_PUSH'
+  102 |       RBUF_FIT((b), 1 + RBUF_LEN(b)); \
+      |       ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+./libretro-common/include/array/rbuf.h:78:22: note: expanded from macro 'RBUF_LEN'
+   78 | #define RBUF_LEN(b) ((b) ? RBUF__HDR(b)->len : 0)
+      |                      ^~
+./libretro-common/include/array/rbuf.h:84:34: note: expanded from macro 'RBUF_FIT'
+   84 | #define RBUF_FIT(b, n) ((size_t)(n) <= RBUF_CAP(b) ? 0 : (*(void**)(&(b)) = rbuf__grow((b), (n), sizeof(*(b)))))
+      |                                  ^
+1 warning generated.
+CC audio/drivers/wdmks.c
+CC audio/common/mmdevice_common.c
+CC midi/drivers/winmm_midi.c
+CC midi/drivers/fmsynth_midi.c
+CC libretro-common/audio/conversion/s16_to_float.c
+CC libretro-common/audio/conversion/float_to_s16.c
+CC libretro-common/audio/conversion/float_to_s32.c
+CC libretro-common/audio/conversion/mono_to_stereo_float.c
+CC libretro-common/audio/conversion/stereo_to_mono_float.c
+CC libretro-common/formats/ac3/rac3_frame.c
+CC libretro-common/formats/ac3/rac3_decode.c
+CC libretro-common/formats/ac3/rac3_encode.c
+CC libretro-common/formats/iec61937/iec61937.c
+CC libretro-common/formats/lpcm/rlpcm.c
+midi/drivers/fmsynth_midi.c:591:13: warning: 3rd function call argument is an uninitialized value [core.CallAndMessage]
+  591 |             fmsynth_note_on(fm, channel, data[1], data[2]);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+midi/drivers/fmsynth_midi.c:595:13: warning: 3rd function call argument is an uninitialized value [core.CallAndMessage]
+  595 |             fmsynth_note_off(fm, channel, data[1]);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+midi/drivers/fmsynth_midi.c:599:54: warning: The left operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+  599 |             fm->program[channel] = (uint8_t)(data[1] & 0x7F);
+      |                                              ~~~~~~~ ^
+midi/drivers/fmsynth_midi.c:604:36: warning: The left operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+  604 |                (uint16_t)((data[1] & 0x7F) | ((data[2] & 0x7F) << 7));
+      |                            ~~~~~~~ ^
+midi/drivers/fmsynth_midi.c:609:45: warning: The left operand of '&' is a garbage value [core.UndefinedBinaryOperatorResult]
+  609 |             uint8_t cc  = (uint8_t)(data[1] & 0x7F);
+      |                                     ~~~~~~~ ^
+midi/drivers/fmsynth_midi.c:692:15: warning: Although the value stored to 'ahead' is used in the enclosing expression, the value is never actually read from 'ahead' [deadcode.DeadStores]
+  692 |          if ((ahead = (int)(seq - want)) > 0)
+      |               ^       ~~~~~~~~~~~~~~~~~
+6 warnings generated.
+CC libretro-common/formats/dts/rdts.c
+CC audio/audio_bitstream.c
+CC libretro-common/formats/wav/rwav.c
+CC menu/drivers/rgui.c
+libretro-common/formats/ac3/rac3_encode.c:336:36: warning: The left operand of '+' is a garbage value due to array index out of bounds [core.UndefinedBinaryOperatorResult]
+  336 |    bndend  = rac3_masktab[end - 1] + 1;
+      |              ~~~~~~~~~~~~~~~~~~~~~ ^
+libretro-common/formats/ac3/rac3_encode.c:617:16: warning: Value stored to 'crc' during its initialization is never read [deadcode.DeadStores]
+  617 |       uint16_t crc = (uint16_t)(1u << (15 - i));   /* the two bytes with bit i set, as the CRC state after them (init 0, no xor) */
+      |                ^~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 warnings generated.
+CC menu/drivers/rgui_bitmapfont.c
+CC menu/drivers/materialui.c
+CC menu/drivers/xmb.c
+CC menu/drivers/ozone.c
+CC menu/menu_screensaver.c
+CC menu/menu_setting.c
+CC menu/menu_driver.c
+CC menu/menu_str.c
+CC menu/cbs/menu_cbs_ok.c
+CC menu/cbs/menu_cbs_cancel.c
+CC menu/cbs/menu_cbs_select.c
+menu/drivers/rgui.c:5515:10: warning: Value stored to 'input_str_length' is never read [deadcode.DeadStores]
+ 5515 |          input_str_length            = input_str_max_length;
+      |          ^                             ~~~~~~~~~~~~~~~~~~~~
+menu/drivers/rgui.c:7752:11: warning: Dereference of null pointer [core.NullDereference]
+ 7752 |       if (*menu_st->thumbnail_path_data->system)
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/rgui.c:8219:36: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 8219 |       size_t list_size           = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+menu/drivers/rgui.c:8429:36: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 8429 |       size_t list_size           = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+4 warnings generated.
+CC menu/cbs/menu_cbs_start.c
+CC menu/cbs/menu_cbs_drag.c
+CC menu/cbs/menu_cbs_drop.c
+CC menu/cbs/menu_cbs_info.c
+CC menu/cbs/menu_cbs_left.c
+menu/drivers/xmb.c:2347:46: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 2347 |       size_t list_size           = (unsigned)MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+menu/drivers/xmb.c:2407:43: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 2407 |    end                        = (unsigned)MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+menu/drivers/xmb.c:4136:36: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 4136 |       size_t list_size           = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+menu/drivers/xmb.c:7386:45: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 7386 |    unsigned end                 = (unsigned)MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+menu/drivers/xmb.c:11082:43: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 11082 |    unsigned end               = (unsigned)MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+       |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+5 warnings generated.
+CC menu/cbs/menu_cbs_right.c
+CC menu/cbs/menu_cbs_deferred_push.c
+menu/menu_driver.c:1508:35: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 1508 |       bool wont_pop_stack      = (MENU_LIST_GET_STACK_SIZE(list, idx) <= 1);
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_driver.h:78:45: note: expanded from macro 'MENU_LIST_GET_STACK_SIZE'
+   78 | #define MENU_LIST_GET_STACK_SIZE(list, idx) ((list)->menu_stack[(idx)]->size)
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_driver.c:3535:9: warning: Null pointer passed as 1st argument to string comparison function [unix.cstring.NullArg]
+ 3535 |    if (!strcmp(label, "info_screen"))
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_driver.c:7220:12: warning: Dereference of null pointer [core.NullDereference]
+ 7220 |       if (!settings->bools.menu_pause_libretro)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_driver.c:8057:47: warning: Access to field 'list' results in a dereference of a null pointer (loaded from variable 'selection_buf') [core.NullDereference]
+ 8057 |                unsigned type                = selection_buf->list[selection].type;
+      |                                               ^~~~~~~~~~~~~~~~~~~
+menu/menu_driver.c:8156:26: warning: Value stored to 'menu_list' during its initialization is never read [deadcode.DeadStores]
+ 8156 |             menu_list_t *menu_list = menu_st->entries.list;
+      |                          ^~~~~~~~~   ~~~~~~~~~~~~~~~~~~~~~
+menu/menu_driver.c:8292:17: warning: Value stored to 'menu_stack' during its initialization is never read [deadcode.DeadStores]
+ 8292 |    file_list_t *menu_stack        = menu_list ? MENU_LIST_GET(menu_list, (unsigned)0) : NULL;
+      |                 ^~~~~~~~~~          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings generated.
+CC menu/cbs/menu_cbs_scan.c
+menu/drivers/ozone.c:3857:13: warning: Value stored to 'y' is never read [deadcode.DeadStores]
+ 3857 |             y += (horizontal_list_size - i) * (ozone->dimensions.sidebar_entry_height + ozone->dimensions.sidebar_entry_padding_vertical);
+      |             ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/ozone.c:4498:44: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 4498 |       size_t list_size                   = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+menu/drivers/ozone.c:4889:33: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 4889 |    entries_end                = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+menu/drivers/ozone.c:6183:13: warning: Value stored to 'y' is never read [deadcode.DeadStores]
+ 6183 |             y += OZONE_NODE_HEIGHT(node);
+      |             ^    ~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/ozone.c:8442:34: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 8442 |          size_t list_size      = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+menu/drivers/ozone.c:10840:51: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 10840 |    unsigned entries_end               = (unsigned)MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+       |                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+menu/drivers/ozone.c:14013:40: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 14013 |    size_t entries_end                = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+       |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/drivers/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+7 warnings generated.
+CC menu/cbs/menu_cbs_get_value.c
+ui/drivers/ui_qt_widgets.cpp:820:4: warning: Potential leak of memory pointed to by 'layout' [cplusplus.NewDeleteLeaks]
+  820 |    add_sublabel_and_whats_this(this, m_setting);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+ui/drivers/ui_qt_widgets.cpp:4381:58: warning: Potential leak of memory pointed to by 'filterComboBox' [cplusplus.NewDeleteLeaks]
+ 4381 |    for (i = 0; avail_shader && i < avail_shader->passes; i++)
+      |                                                          ^
+ui/drivers/ui_qt_widgets.cpp:4381:58: warning: Potential leak of memory pointed to by 'scaleComboBox' [cplusplus.NewDeleteLeaks]
+ 4381 |    for (i = 0; avail_shader && i < avail_shader->passes; i++)
+      |                                                          ^
+ui/drivers/ui_qt_widgets.cpp:7348:4: warning: Use of memory after it is released [cplusplus.NewDelete]
+ 7348 |    return pm;
+      |    ^~~~~~~~~
+4 warnings generated.
+CC menu/cbs/menu_cbs_label.c
+CC menu/cbs/menu_cbs_sublabel.c
+CC menu/cbs/menu_cbs_title.c
+CC menu/menu_displaylist.c
+menu/cbs/menu_cbs_right.c:237:33: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+  237 |    size_t entries_end         = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/cbs/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+1 warning generated.
+CC menu/menu_dirwalk.c
+CC menu/menu_contentless_cores.c
+CC gfx/gfx_widgets.c
+menu/cbs/menu_cbs_title.c:144:7: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+  144 |       _len += strlcpy(s + _len, path, len - _len);
+      |       ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC gfx/widgets/gfx_widget_screenshot.c
+menu/cbs/menu_cbs_sublabel.c:190:16: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+  190 |                _len = strlcpy(tmp + _len + 1, entry->runtime.last_played_str, sizeof(tmp) - _len - 1);
+      |                ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/cbs/menu_cbs_sublabel.c:1055:10: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 1055 |          _len += strlcpy(s + _len,
+      |          ^       ~~~~~~~~~~~~~~~~~
+ 1056 |                (code && *code)
+      |                ~~~~~~~~~~~~~~~
+ 1057 |                   ? code
+      |                   ~~~~~~
+ 1058 |                   : msg_hash_to_str(MENU_ENUM_LABEL_VALUE_NOT_AVAILABLE),
+      |                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1059 |                len - _len);
+      |                ~~~~~~~~~~~
+menu/cbs/menu_cbs_sublabel.c:1062:10: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 1062 |          _len += snprintf(s + _len, len - _len, "%08X",
+      |          ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1063 |                cheat_manager_state.cheats[cheat_index].address);
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/cbs/menu_cbs_sublabel.c:1115:7: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 1115 |       _len += snprintf(s + _len, len - _len,
+      |       ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1116 |          msg_hash_to_str(MSG_NETPLAY_SPECTATORS_INFO),
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1117 |          room->player_count, room->spectator_count);
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/cbs/menu_cbs_sublabel.c:1119:7: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 1119 |       _len += snprintf(s + _len, len - _len,
+      |       ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1120 |          msg_hash_to_str(MSG_NETPLAY_PLAYERS_INFO),
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1121 |          room->player_count);
+      |          ~~~~~~~~~~~~~~~~~~~
+menu/cbs/menu_cbs_sublabel.c:1259:48: warning: Access to field 'size' results in a dereference of a null pointer [core.NullDereference]
+ 1259 |    size_t list_size                          = MENU_LIST_GET_SELECTION(menu_list, 0)->size;
+      |                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/cbs/../menu_driver.h:76:44: note: expanded from macro 'MENU_LIST_GET_SELECTION'
+   76 | #define MENU_LIST_GET_SELECTION(list, idx) ((list) ? ((list)->selection_buf[(idx)]) : NULL)
+      |                                            ^
+6 warnings generated.
+CC gfx/widgets/gfx_widget_volume.c
+CC gfx/widgets/gfx_widget_generic_message.c
+CC gfx/widgets/gfx_widget_libretro_message.c
+menu/menu_contentless_cores.c:216:12: warning: Access to field 'info_entries' results in a dereference of a null pointer (loaded from variable 'contentless_cores_state') [core.NullDereference]
+  216 |    *info = RHMAP_GET_STR(contentless_cores_state->info_entries, core_id);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./libretro-common/include/array/rhmap.h:158:43: note: expanded from macro 'RHMAP_GET_STR'
+  158 | #define RHMAP_GET_STR(b, string_key)      RHMAP_GET_FULL(b, rhmap_hash_string(string_key), string_key)
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./libretro-common/include/array/rhmap.h:151:38: note: expanded from macro 'RHMAP_GET_FULL'
+  151 | #define RHMAP_GET_FULL(b, key, str) (RHMAP__FIT1(b), b[rhmap__idx(RHMAP__HDR(b), (key), (str), 0, 0)])
+      |                                      ^~~~~~~~~~~~~~
+./libretro-common/include/array/rhmap.h:176:25: note: expanded from macro 'RHMAP__FIT1'
+  176 | #define RHMAP__FIT1(b) ((b) && RHMAP_LEN(b) * 2 <= RHMAP_MAX(b) ? 0 : RHMAP__GROW(b, 0))
+      |                         ^~~
+1 warning generated.
+CC gfx/widgets/gfx_widget_progress_message.c
+gfx/widgets/gfx_widget_volume.c:230:10: warning: Array access (from variable 'bar_background') results in a null pointer dereference [core.NullDereference]
+  230 |          gfx_display_set_alpha(bar_background, state->text_alpha);
+      |          ^                     ~~~~~~~~~~~~~~
+gfx/widgets/../gfx_display.h:56:96: note: expanded from macro 'gfx_display_set_alpha'
+   56 | #define gfx_display_set_alpha(color, alpha_value) (color[3] = color[7] = color[11] = color[15] = (alpha_value))
+      |                                                                                      ~~~~~     ^
+1 warning generated.
+CC gfx/widgets/gfx_widget_load_content_animation.c
+CC gfx/widgets/gfx_widget_achievement_popup.c
+CC gfx/widgets/gfx_widget_leaderboard_display.c
+CC tasks/task_overlay.c
+CC led/drivers/led_overlay.c
+CC gfx/drivers_font_renderer/stb.c
+CC gfx/drivers_font_renderer/freetype.c
+CC libretro-common/rthreads/rthreads.c
+CC libretro-common/rthreads/tpool.c
+CC libretro-common/rthreads/retro_eventcount.c
+CC libretro-common/rthreads/retro_procbarrier.c
+CC libretro-common/rthreads/retro_asym_eventcount.c
+CC libretro-common/queues/retro_waitable_spsc.c
+CC gfx/video_thread_wrapper.c
+CC gfx/video_thread_hw.c
+CC audio/audio_thread_wrapper.c
+tasks/task_overlay.c:913:24: warning: Access to field 'next_index' results in a dereference of a null pointer (loaded from variable 'desc') [core.NullDereference]
+  913 |       desc->next_index = (unsigned)next_idx;
+      |       ~~~~             ^
+1 warning generated.
+CC frontend/thread_elevation.c
+CC frontend/thread_elevation/eevdf.c
+CC libretro-common/formats/xml/rxml.c
+CC libretro-common/formats/logiqx_dat/logiqx_dat.c
+CC input/drivers/dinput.c
+gfx/drivers_font_renderer/stb.c:504:7: warning: Value stored to 'x1' is never read [deadcode.DeadStores]
+  504 |       x1 += dxdy * ((float)r->h - y1);
+      |       ^     ~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC input/drivers_joypad/dinput_joypad.c
+CC input/drivers_joypad/xinput_hybrid_joypad.c
+libretro-common/formats/xml/rxml.c:1843:4: warning: Potential leak of memory pointed to by 'buf' [unix.Malloc]
+ 1843 |    return rxml_parse_owned(buf, len, opts, err);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC input/drivers/winraw_input.c
+CC input/drivers_joypad/winraw_joypad.c
+CC input/common/output_writer.c
+gfx/video_thread_wrapper.c:2555:10: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+ 2555 |          return pkt.data.b;
+      |          ^~~~~~~~~~~~~~~~~
+gfx/video_thread_wrapper.c:2991:41: warning: Access to field 'refresh_rate' results in a dereference of a null pointer (loaded from variable 'video_info') [core.NullDereference]
+ 2991 |          (retro_time_t)roundf(1000000 / video_info->refresh_rate);
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~
+gfx/video_thread_wrapper.c:3403:4: warning: Undefined or garbage value returned to caller [core.uninitialized.UndefReturn]
+ 3403 |    return pkt.data.b;
+      |    ^~~~~~~~~~~~~~~~~
+3 warnings generated.
+CC ui/drivers/ui_win32.c
+menu/menu_displaylist.c:1126:10: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 1126 |          _len += strlcpy(tmp + _len, tmp_desc, sizeof(tmp) - _len);
+      |          ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_displaylist.c:2266:7: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 2266 |       _len += snprintf(entry + _len, sizeof(entry) - _len, " %d: %s %ux%u @ %d,%d%s",
+      |       ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2267 |             i + 1, outputs[i].name, VIDEO_SCALE_W(outputs[i].dims), VIDEO_SCALE_H(outputs[i].dims),
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2268 |             outputs[i].x, outputs[i].y, outputs[i].primary ? " *" : "");
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_displaylist.c:2285:10: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 2285 |          _len += snprintf(entry + _len, sizeof(entry) - _len, ": %ux%u",
+      |          ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2286 |                VIDEO_SCALE_W(dims), VIDEO_SCALE_H(dims));
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_displaylist.c:2616:21: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 2616 |       if (f & 0x01) _len = menu_displaylist_edid_cat(value, _len, sizeof(value),
+      |                     ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2617 |             info->ver_minor >= 4 ? "continuous frequency" : "GTF");
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_displaylist.c:2831:16: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 2831 |                _len = menu_displaylist_edid_cat(value, _len, sizeof(value), one);
+      |                ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_displaylist.c:3132:4: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 3132 |    _len       += strlcpy(entry + _len, __DATE__, sizeof(entry) - _len);
+      |    ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_displaylist.c:3636:10: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 3636 |          _len += strlcpy(entry + _len,
+      |          ^       ~~~~~~~~~~~~~~~~~~~~~
+ 3637 |                (info_list[info_idx].enabled) ? val_yes_str : val_no_str, sizeof(entry) - _len);
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_displaylist.c:3885:4: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 3885 |    _len       += snprintf(tmp + _len, sizeof(tmp) - _len, "%d", actual_int);
+      |    ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_displaylist.c:6491:27: warning: Dereference of null pointer (loaded from variable 'content_path') [core.NullDereference]
+ 6491 |       strlcpy(tmp + _len, *content_path
+      |                           ^~~~~~~~~~~~~
+./libretro-common/include/compat/strl.h:56:54: note: expanded from macro 'strlcpy'
+   56 | #define strlcpy(dst, src, size) strlcpy_retro__(dst, src, size)
+      |                                                      ^~~
+menu/menu_displaylist.c:8171:50: warning: Access to field 'num_roms' results in a dereference of a null pointer (loaded from variable 'subsystem') [core.NullDereference]
+ 8171 |             if (content_get_subsystem_rom_id() < subsystem->num_roms)
+      |                                                  ^~~~~~~~~~~~~~~~~~~
+menu/menu_displaylist.c:8287:22: warning: Access to field 'desc' results in a dereference of a null pointer (loaded from variable 'subsystem') [core.NullDereference]
+ 8287 |                      subsystem->desc);
+      |                      ^~~~~~~~~~~~~~~
+menu/menu_displaylist.c:17152:33: warning: Dereference of null pointer [core.NullDereference]
+ 17152 |                         if (    sys_info->info.library_name
+       |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_displaylist.c:17625:16: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 17625 |                _len    += strlcpy_lit(new_exts + _len, "dds", sizeof(new_exts) - _len);
+       |                ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+13 warnings generated.
+CC ui/drivers/ui_win32_companion.c
+CC ui/companion/companion_core.c
+CC ui/companion/companion_thumbs.c
+CC ui/companion/companion_dock.c
+input/drivers/winraw_input.c:1760:13: warning: Value stored to 'mod' is never read [deadcode.DeadStores]
+ 1760 |             mod   = 0;
+      |             ^       ~
+1 warning generated.
+CC gfx/drivers_context/gfx_null_ctx.c
+ui/drivers/ui_win32.c:1105:23: warning: Dereference of null pointer [core.NullDereference]
+ 1105 |             if (     !settings->bools.ui_menubar_enable
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC gfx/common/gl_common.c
+CC gfx/drivers/gl2.c
+CC libretro-common/gfx/gl_capabilities.c
+CC libretro-common/glsym/rglgen.c
+CC gfx/drivers/gl1.c
+CC libretro-common/glsym/glsym_gl.c
+ui/companion/companion_thumbs.c:1672:34: warning: Use of memory after it is released [unix.Malloc]
+ 1672 |          struct ct_entry *next = e->chain;
+      |                                  ^~~~~~~~
+1 warning generated.
+CC gfx/drivers/sdl2_gfx.c
+CC gfx/common/sdl2_common.c
+CC gfx/display_servers/dispserv_sdl2.c
+CC audio/drivers/sdl2_audio.c
+CC input/drivers/sdl2_input.c
+CC input/drivers_joypad/sdl2_joypad.c
+CC gfx/drivers_context/sdl2_gl_ctx.c
+menu/menu_setting.c:3495:37: warning: Dereference of null pointer (loaded from field 'string') [core.NullDereference]
+ 3495 |       *setting->value.target.string = '\0';
+      |                              ~~~~~~ ^
+menu/menu_setting.c:6146:34: warning: Division by zero [core.DivideZero]
+ 6146 |       [(current_idx + types - 1) % types];
+      |        ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+menu/menu_setting.c:7121:7: warning: Value stored to '_len' is never read [deadcode.DeadStores]
+ 7121 |       _len = snprintf(s, len, msg_hash_to_str(
+      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 7122 |                MENU_ENUM_LABEL_CHEAT_SEARCH_EQMINUS_VAL),
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 7123 |             *setting->value.target.unsigned_integer,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 7124 |             *setting->value.target.unsigned_integer);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:8312:8: warning: Dereference of null pointer [core.NullDereference]
+ 8312 |    if ((*list)[idx].type == ST_FLOAT)
+      |        ^~~~~~~~~~~~~~~~~
+menu/menu_setting.c:10437:19: warning: Access to field 'flags' results in a dereference of a null pointer (loaded from variable 'settings') [core.NullDereference]
+ 10437 |                   configuration_set_bool(settings,
+       |                   ^                      ~~~~~~~~
+menu/../configuration.h:53:20: note: expanded from macro 'configuration_set_bool'
+   53 |    settings->flags |= SETTINGS_FLG_MODIFIED; \
+      |    ~~~~~~~~        ^
+menu/menu_setting.c:11580:51: warning: Dereference of null pointer [core.NullDereference]
+ 11580 |       (*list)[list_info->index - 1].index         = user + 1;
+       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+menu/menu_setting.c:11919:51: warning: Dereference of null pointer [core.NullDereference]
+ 11919 |       (*list)[list_info->index - 1].index         = user + 1;
+       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+menu/menu_setting.c:11984:51: warning: Dereference of null pointer [core.NullDereference]
+ 11984 |       (*list)[list_info->index - 1].index         = user + 1;
+       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+menu/menu_setting.c:13683:7: warning: Dereference of null pointer [core.NullDereference]
+ 13683 |       MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR(list, list_info, MENU_ENUM_LABEL_MAIN_MENU);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:286:32: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR'
+  286 |    (*a)[b->index - 1].enum_idx = c
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+menu/menu_setting.c:13705:63: warning: Dereference of null pointer [core.NullDereference]
+ 13705 |             (*list)[list_info->index - 1].size                = (uint32_t)path_get_realsize(RARCH_PATH_CORE);
+       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:13826:10: warning: Dereference of null pointer [core.NullDereference]
+ 13826 |          MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR(list, list_info, MENU_ENUM_LABEL_DRIVER_SETTINGS);
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:286:32: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR'
+  286 |    (*a)[b->index - 1].enum_idx = c
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+menu/menu_setting.c:13993:13: warning: Dereference of null pointer [core.NullDereference]
+ 13993 |             SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_IS_DRIVER);
+       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:14044:10: warning: Dereference of null pointer [core.NullDereference]
+ 14044 |          MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR(list, list_info, MENU_ENUM_LABEL_CORE_SETTINGS);
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:286:32: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR'
+  286 |    (*a)[b->index - 1].enum_idx = c
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+menu/menu_setting.c:14309:10: warning: Dereference of null pointer [core.NullDereference]
+ 14309 |          SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ADVANCED);
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:14535:7: warning: Dereference of null pointer [core.NullDereference]
+ 14535 |       SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_IS_DRIVER);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:14617:10: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 14617 |          CONFIG_UINT_CBS(cheat_manager_state.working_cheat.idx, CHEAT_IDX,
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14618 |                NULL,NULL,
+       |                ~~~~~~~~~~
+ 14619 |                0,&setting_get_string_representation_uint,0,cheat_manager_get_size()-1,1);
+       |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:361:7: note: expanded from macro 'CONFIG_UINT_CBS'
+  361 |       SETTINGS_ACTION_SET(left, &(*list)[list_info->index - 1], a_left) \
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:14649:10: warning: Dereference of null pointer [core.NullDereference]
+ 14649 |          SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT);
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:14765:10: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 14765 |          CONFIG_UINT_CBS(cheat_manager_state.working_cheat.repeat_count,
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14766 |                CHEAT_REPEAT_COUNT,
+       |                ~~~~~~~~~~~~~~~~~~~
+ 14767 |                setting_uint_action_left_default,
+       |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14768 |                setting_uint_action_right_default,
+       |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14769 |                0,
+       |                ~~
+ 14770 |                &setting_get_string_representation_hex_and_uint,
+       |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14771 |                1,
+       |                ~~
+ 14772 |                2048,
+       |                ~~~~~
+ 14773 |                1);
+       |                ~~
+menu/menu_setting.c:361:7: note: expanded from macro 'CONFIG_UINT_CBS'
+  361 |       SETTINGS_ACTION_SET(left, &(*list)[list_info->index - 1], a_left) \
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:14883:7: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 14883 |       CONFIG_UINT_CBS(cheat_manager_state.search_bit_size,
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14884 |             CHEAT_START_OR_RESTART,
+       |             ~~~~~~~~~~~~~~~~~~~~~~~
+ 14885 |             setting_uint_action_left_with_refresh,
+       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14886 |             setting_uint_action_right_with_refresh,
+       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14887 |             MENU_ENUM_LABEL_CHEAT_MEMORY_SIZE_1,
+       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14888 |             &setting_get_string_representation_uint_as_enum,
+       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 14889 |             0,5,1);
+       |             ~~~~~~
+menu/menu_setting.c:361:7: note: expanded from macro 'CONFIG_UINT_CBS'
+  361 |       SETTINGS_ACTION_SET(left, &(*list)[list_info->index - 1], a_left) \
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:15113:10: warning: Dereference of null pointer [core.NullDereference]
+ 15113 |          MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR(list, list_info, MENU_ENUM_LABEL_VIDEO_SETTINGS);
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:286:32: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR'
+  286 |    (*a)[b->index - 1].enum_idx = c
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+menu/menu_setting.c:15237:16: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 15237 |                SETTINGS_ACTION_SET(start, &(*list)[list_info->index - 1], &setting_action_start_video_refresh_rate_polled)
+       |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:15266:10: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 15266 |          SETTINGS_ACTION_SET(ok, &(*list)[list_info->index - 1], &setting_action_ok_uint)
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:15367:13: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 15367 |             SETTINGS_ACTION_SET(ok, &(*list)[list_info->index - 1], &setting_action_ok_uint)
+       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:15519:7: warning: Dereference of null pointer [core.NullDereference]
+ 15519 |       MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR(list, list_info, MENU_ENUM_LABEL_AUDIO_SETTINGS);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:286:32: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR'
+  286 |    (*a)[b->index - 1].enum_idx = c
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+menu/menu_setting.c:15644:7: warning: Dereference of null pointer [core.NullDereference]
+ 15644 |       MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR(list, list_info, MENU_ENUM_LABEL_MICROPHONE_SETTINGS);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:286:32: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR'
+  286 |    (*a)[b->index - 1].enum_idx = c
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+menu/menu_setting.c:15889:50: warning: Dereference of null pointer [core.NullDereference]
+ 15889 |          (*list)[list_info->index - 1].ui_type   = ST_UI_TYPE_UINT_RADIO_BUTTONS;
+       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:15925:61: warning: Dereference of null pointer [core.NullDereference]
+ 15925 |                (*list)[list_info->index - 1].ui_type        = ST_UI_TYPE_BIND_BUTTON;
+       |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:15970:13: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 15970 |             SETTINGS_ACTION_SET(ok, &(*list)[list_info->index - 1], &setting_action_ok_uint)
+       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:16011:13: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 16011 |             SETTINGS_ACTION_SET(start, &(*list)[list_info->index - 1], directory_action_start_generic)
+       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:16061:58: warning: Dereference of null pointer [core.NullDereference]
+ 16061 |             (*list)[list_info->index - 1].ui_type        = ST_UI_TYPE_BIND_BUTTON;
+       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:16103:47: warning: Dereference of null pointer [core.NullDereference]
+ 16103 |       (*list)[list_info->index - 1].ui_type   = ST_UI_TYPE_UINT_COMBOBOX;
+       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:16127:47: warning: Dereference of null pointer [core.NullDereference]
+ 16127 |       (*list)[list_info->index - 1].ui_type   = ST_UI_TYPE_UINT_COMBOBOX;
+       |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:16304:7: warning: Dereference of null pointer [core.NullDereference]
+ 16304 |       MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR(list, list_info, MENU_ENUM_LABEL_MENU_SETTINGS);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:286:32: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR'
+  286 |    (*a)[b->index - 1].enum_idx = c
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+menu/menu_setting.c:16332:16: warning: Null pointer passed as 1st argument to memory comparison function [unix.cstring.NullArg]
+ 16332 |       if (     memcmp(settings->arrays.menu_driver, "glui", 5) == 0
+       |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:16577:10: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 16577 |          SETTINGS_ACTION_SET(ok, &(*list)[list_info->index - 1], &setting_action_ok_uint)
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:16614:10: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 16614 |          SETTINGS_ACTION_SET(ok, &(*list)[list_info->index - 1], &setting_action_ok_uint)
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:16703:7: warning: Potential memory leak [unix.Malloc]
+ 16703 |       SETTINGS_ACTION_SET(ok, &(*list)[list_info->index - 1], setting_action_ok_uint)
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:4: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |    ^~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:16703:7: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 16703 |       SETTINGS_ACTION_SET(ok, &(*list)[list_info->index - 1], setting_action_ok_uint)
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:16759:10: warning: Dereference of null pointer [core.NullDereference]
+ 16759 |          SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_IS_DRIVER);
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:16759:10: warning: Potential memory leak [unix.Malloc]
+ 16759 |          SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_IS_DRIVER);
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:16896:7: warning: Dereference of null pointer [core.NullDereference]
+ 16896 |       SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ADVANCED);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:17019:7: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 17019 |       SETTINGS_ACTION_SET(ok, &(*list)[list_info->index - 1], &setting_action_ok_uint)
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:17157:10: warning: Dereference of null pointer [core.NullDereference]
+ 17157 |          SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT);
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:17203:53: warning: Dereference of null pointer [core.NullDereference]
+ 17203 |             (*list)[list_info->index - 1].ui_type   = ST_UI_TYPE_UINT_COMBOBOX;
+       |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:17261:7: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 17261 |       SETTINGS_ACTION_SET(start, &(*list)[list_info->index - 1], setting_generic_action_start_default)
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:17287:50: warning: Dereference of null pointer [core.NullDereference]
+ 17287 |          (*list)[list_info->index - 1].ui_type   = ST_UI_TYPE_UINT_SPINBOX;
+       |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:17329:13: warning: Dereference of null pointer [core.NullDereference]
+ 17329 |             MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR(list, list_info, (enum msg_hash_enums)(MENU_ENUM_LABEL_NETPLAY_REQUEST_DEVICE_1 + user));
+       |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:286:32: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR'
+  286 |    (*a)[b->index - 1].enum_idx = c
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+menu/menu_setting.c:17736:7: warning: Dereference of null pointer [core.NullDereference]
+ 17736 |       SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:17769:7: warning: Dereference of null pointer [core.NullDereference]
+ 17769 |       SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:17802:7: warning: Dereference of null pointer [core.NullDereference]
+ 17802 |       SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:17835:7: warning: Dereference of null pointer [core.NullDereference]
+ 17835 |       SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:17859:7: warning: Dereference of null pointer [core.NullDereference]
+ 17859 |       MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR(list, list_info, MENU_ENUM_LABEL_DIRECTORY_SETTINGS);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:286:32: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR'
+  286 |    (*a)[b->index - 1].enum_idx = c
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+menu/menu_setting.c:17882:10: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 17882 |          SETTINGS_ACTION_SET(start, &(*list)[list_info->index - 1], directory_action_start_generic)
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:17916:7: warning: Access to field 'actions' results in a dereference of a null pointer [core.NullDereference]
+ 17916 |       SETTINGS_ACTION_SET(start, &(*list)[list_info->index - 1], directory_action_start_generic)
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:339:28: note: expanded from macro 'SETTINGS_ACTION_SET'
+  339 |    setting_actions_t _t = *((s)->actions); \
+      |                            ^~~~~~~~~~~~~~
+menu/menu_setting.c:18037:7: warning: Dereference of null pointer [core.NullDereference]
+ 18037 |       SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:18068:7: warning: Dereference of null pointer [core.NullDereference]
+ 18068 |       SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:18132:7: warning: Dereference of null pointer [core.NullDereference]
+ 18132 |       MENU_SETTINGS_LIST_CURRENT_ADD_VALUES(list, list_info, "dat|xml");
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:345:132: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_VALUES'
+  345 | #define MENU_SETTINGS_LIST_CURRENT_ADD_VALUES(list, list_info, str) ((*(list))[MENU_SETTINGS_LIST_CURRENT_IDX((list_info))].values = (str))
+      |                                                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+menu/menu_setting.c:18215:7: warning: Dereference of null pointer [core.NullDereference]
+ 18215 |       SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:18323:7: warning: Dereference of null pointer [core.NullDereference]
+ 18323 |       NFS_STRING(nfs_server, NFS_CLIENT_SERVER);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:18301:4: note: expanded from macro 'NFS_STRING'
+ 18301 |    SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS(list, list_info, SD_FLAG_ALLOW_INPUT)
+       |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:293:29: note: expanded from macro 'SETTINGS_DATA_LIST_CURRENT_ADD_FLAGS'
+  293 |    (*a)[b->index - 1].flags |= c; \
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~
+menu/menu_setting.c:18370:7: warning: Dereference of null pointer [core.NullDereference]
+ 18370 |       MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR(list, list_info, e->idx_label);
+       |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+menu/menu_setting.c:286:32: note: expanded from macro 'MENU_SETTINGS_LIST_CURRENT_ADD_ENUM_IDX_PTR'
+  286 |    (*a)[b->index - 1].enum_idx = c
+      |    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+60 warnings generated.
+CC gfx/drivers_context/w_vk_ctx.c
+ui/drivers/ui_win32_companion.c:2938:1: warning: Potential leak of memory pointed to by 'line' [unix.Malloc]
+ 2938 | }
+      | ^
+ui/drivers/ui_win32_companion.c:3021:1: warning: Potential leak of memory pointed to by 'copy' [unix.Malloc]
+ 3021 | }
+      | ^
+2 warnings generated.
+CC gfx/drivers/vulkan.c
+CC gfx/common/vulkan_common.c
+CC libretro-common/vulkan/vulkan_symbol_wrapper.c
+CC gfx/drivers_shader/shader_vulkan.c
+In file included from gfx/drivers/gl1.c:37:
+./libretro-common/include/gfx/video_frame.h:203:15: warning: Assigned value is uninitialized [core.uninitialized.Assign]
+  203 |          d[0] = s[2];
+      |               ^ ~~~~
+1 warning generated.
+CC gfx/drivers_context/khr_display_ctx.c
+gfx/drivers/sdl2_gfx.c:215:4: warning: Value stored to 'line_x' is never read [deadcode.DeadStores]
+  215 |    line_x    = x;
+      |    ^           ~
+gfx/drivers/sdl2_gfx.c:216:4: warning: Value stored to 'line_y' is never read [deadcode.DeadStores]
+  216 |    line_y    = y;
+      |    ^           ~
+gfx/drivers/sdl2_gfx.c:1720:45: warning: Access to field 'get_glyph' results in a dereference of a null pointer (loaded from field 'font_driver') [core.NullDereference]
+ 1720 |                                           = font->font_driver->get_glyph;
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+CC gfx/drivers/gl3.c
+In file included from gfx/drivers/gl2.c:55:
+./libretro-common/include/gfx/video_frame.h:203:15: warning: Assigned value is uninitialized [core.uninitialized.Assign]
+  203 |          d[0] = s[2];
+      |               ^ ~~~~
+gfx/drivers/gl2.c:2060:16: warning: Value stored to 'img_w' during its initialization is never read [deadcode.DeadStores]
+ 2060 |       unsigned img_w                     = VIDEO_SCALE_W(fbo_rect->img_dims);
+      |                ^~~~~                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/gl2.c:2061:16: warning: Value stored to 'img_h' during its initialization is never read [deadcode.DeadStores]
+ 2061 |       unsigned img_h                     = VIDEO_SCALE_H(fbo_rect->img_dims);
+      |                ^~~~~                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/gl2.c:2062:16: warning: Value stored to 'max_img_w' during its initialization is never read [deadcode.DeadStores]
+ 2062 |       unsigned max_img_w                 =
+      |                ^~~~~~~~~
+ 2063 |             VIDEO_SCALE_W(fbo_rect->max_img_dims);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/gl2.c:2064:16: warning: Value stored to 'max_img_h' during its initialization is never read [deadcode.DeadStores]
+ 2064 |       unsigned max_img_h                 =
+      |                ^~~~~~~~~
+ 2065 |             VIDEO_SCALE_H(fbo_rect->max_img_dims);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+CC gfx/drivers_shader/shader_gl3.c
+CC gfx/drivers_shader/spirv_opengl.c
+CC gfx/drivers/d3d10.c
+CC gfx/drivers/d3d11.c
+CC gfx/common/d3d11_deferred_proxy.c
+CC gfx/drivers/d3d12.c
+CC gfx/common/d3dcompiler_common.c
+CC gfx/common/dxgi_common.c
+In file included from gfx/drivers/gl3.c:37:
+./libretro-common/include/gfx/video_frame.h:203:15: warning: Assigned value is uninitialized [core.uninitialized.Assign]
+  203 |          d[0] = s[2];
+      |               ^ ~~~~
+gfx/drivers/gl3.c:2867:16: warning: Value stored to 'img_w' during its initialization is never read [deadcode.DeadStores]
+ 2867 |       unsigned img_w                     = VIDEO_SCALE_W(fbo_rect->img_dims);
+      |                ^~~~~                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/gl3.c:2868:16: warning: Value stored to 'img_h' during its initialization is never read [deadcode.DeadStores]
+ 2868 |       unsigned img_h                     = VIDEO_SCALE_H(fbo_rect->img_dims);
+      |                ^~~~~                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/gl3.c:2869:16: warning: Value stored to 'max_img_w' during its initialization is never read [deadcode.DeadStores]
+ 2869 |       unsigned max_img_w                 =
+      |                ^~~~~~~~~
+ 2870 |             VIDEO_SCALE_W(fbo_rect->max_img_dims);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/gl3.c:2871:16: warning: Value stored to 'max_img_h' during its initialization is never read [deadcode.DeadStores]
+ 2871 |       unsigned max_img_h                 =
+      |                ^~~~~~~~~
+ 2872 |             VIDEO_SCALE_H(fbo_rect->max_img_dims);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+CC gfx/common/d3d9_common.c
+gfx/drivers/d3d10.c:783:54: warning: Array access (via field 'color') results in a null pointer dereference [core.NullDereference]
+  783 |                0xFF * draw->coords->color[2], 0xFF * draw->coords->color[3]);
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/../common/dxgi_common.h:458:48: note: expanded from macro 'DXGI_COLOR_RGBA'
+  458 | #define DXGI_COLOR_RGBA(r, g, b, a) (((UINT32)(a) << 24) | ((UINT32)(b) << 16) | ((UINT32)(g) << 8) | ((UINT32)(r) << 0))
+      |                                                ^
+gfx/drivers/d3d10.c:1267:4: warning: Access to field 'get_line_metrics' results in a dereference of a null pointer (loaded from field 'font_driver') [core.NullDereference]
+ 1267 |    font->font_driver->get_line_metrics(font->font_data, &line_metrics);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d10.c:1279:4: warning: Value stored to 'drop_pos_x' is never read [deadcode.DeadStores]
+ 1279 |    drop_pos_x        = 0.0f;
+      |    ^                   ~~~~
+gfx/drivers/d3d10.c:1318:23: warning: Value stored to 'v_line' during its initialization is never read [deadcode.DeadStores]
+ 1318 |       d3d10_sprite_t *v_line = v;
+      |                       ^~~~~~   ~
+4 warnings generated.
+CC gfx/common/d3d_common.c
+CC gfx/drivers_shader/shader_glsl.c
+CC gfx/drivers/d3d9hlsl.c
+gfx/drivers_shader/shader_gl3.c:590:7: warning: Value stored to 'vertex_shader' is never read [deadcode.DeadStores]
+  590 |       vertex_shader = 0;
+      |       ^               ~
+gfx/drivers_shader/shader_gl3.c:623:7: warning: Value stored to 'program' is never read [deadcode.DeadStores]
+  623 |       program = 0;
+      |       ^         ~
+gfx/drivers_shader/shader_gl3.c:1257:12: warning: Access to field 'pass_name' results in a dereference of a null pointer (loaded from variable 'pass') [core.NullDereference]
+ 1257 |       free(pass->pass_name);
+      |            ^~~~~~~~~~~~~~~
+gfx/drivers_shader/shader_gl3.c:2995:24: warning: Array access (via field 'passes') results in a null pointer dereference [core.NullDereference]
+ 2995 |    gl3_pass_set_shader(chain->passes[pass], stage, spirv, spirv_words);
+      |                        ^~~~~~~~~~~~~~~~~~~
+gfx/drivers_shader/shader_gl3.c:3488:22: warning: Array access (via field 'passes') results in a null pointer dereference [core.NullDereference]
+ 3488 |    gl3_pass_set_name(chain->passes[pass], name);
+      |                      ^~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+CC gfx/drivers_shader/slang_process.c
+CC gfx/drivers_shader/glslang_util.c
+gfx/drivers_shader/shader_vulkan.c:925:9: warning: Access to field 'pass_name' results in a dereference of a null pointer (loaded from variable 'pass') [core.NullDereference]
+  925 |    free(pass->pass_name);
+      |         ^~~~~~~~~~~~~~~
+gfx/drivers_shader/shader_vulkan.c:4072:13: warning: Access to field 'image' results in a dereference of a null pointer (loaded from field 'framebuffer') [core.NullDereference]
+ 4072 |             pass->framebuffer->image, 1,
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers_shader/../common/vulkan_common.h:63:46: note: expanded from macro 'VULKAN_IMAGE_LAYOUT_TRANSITION_LEVELS'
+   63 |    barrier.image                           = img; \
+      |                                              ^~~
+2 warnings generated.
+CC gfx/drivers_shader/slang_cache.c
+gfx/drivers/d3d11.c:1065:54: warning: Array access (via field 'color') results in a null pointer dereference [core.NullDereference]
+ 1065 |                0xFF * draw->coords->color[2], 0xFF * draw->coords->color[3]);
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/../common/dxgi_common.h:458:48: note: expanded from macro 'DXGI_COLOR_RGBA'
+  458 | #define DXGI_COLOR_RGBA(r, g, b, a) (((UINT32)(a) << 24) | ((UINT32)(b) << 16) | ((UINT32)(g) << 8) | ((UINT32)(r) << 0))
+      |                                                ^
+gfx/drivers/d3d11.c:1658:33: warning: Access to field 'get_glyph' results in a dereference of a null pointer (loaded from field 'font_driver') [core.NullDereference]
+ 1658 |    get_glyph                  = font->font_driver->get_glyph;
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d11.c:1761:23: warning: Value stored to 'v_line' during its initialization is never read [deadcode.DeadStores]
+ 1761 |       d3d11_sprite_t *v_line = v;
+      |                       ^~~~~~   ~
+3 warnings generated.
+CC gfx/video_shader_parse.c
+gfx/drivers_shader/glslang_util.c:681:20: warning: Potential leak of memory pointed to by 'scratch' [unix.Malloc]
+  681 |             return shader_line_buf_append_block(output, hit->exp_data,
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers_shader/glslang_util.c:769:28: warning: Dereference of null pointer [core.NullDereference]
+  769 |                      *wr++ = *rd;
+      |                      ~~~~~~^~~~~
+2 warnings generated.
+CXX gfx/drivers_shader/glslang.cpp
+CXX deps/glslang/glslang/SPIRV/GlslangToSpv.cpp
+CXX deps/glslang/glslang/SPIRV/InReadableOrder.cpp
+CXX deps/glslang/glslang/SPIRV/Logger.cpp
+gfx/drivers/vulkan.c:2499:37: warning: Division by zero [core.DivideZero]
+ 2499 |          (uint32_t)(staging->stride / bpp);
+      |                     ~~~~~~~~~~~~~~~~^~~~~
+gfx/drivers/vulkan.c:2618:13: warning: Division by zero [core.DivideZero]
+ 2618 |    if ((row % bpp) || (off & 3))
+      |         ~~~~^~~~~
+gfx/drivers/vulkan.c:3998:4: warning: Access to field 'get_line_metrics' results in a dereference of a null pointer (loaded from field 'font_driver') [core.NullDereference]
+ 3998 |    font->font_driver->get_line_metrics(font->font_data, &line_metrics);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/vulkan.c:4202:7: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+ 4202 |       memcpy(ubo_range.data, &vk->mvp, sizeof(vk->mvp));
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/vulkan.c:4278:7: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+ 4278 |       memcpy(font->range.data, font->acc,
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 4279 |             font->acc_count * sizeof(struct vk_vertex));
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/vulkan.c:5562:31: warning: Access to field 'device' results in a dereference of a null pointer (loaded from field 'context') [core.NullDereference]
+ 5562 |          vkFreeCommandBuffers(vk->context->device,
+      |                               ^~~~~~~~~~~~~~~~~~~
+gfx/drivers/vulkan.c:5565:28: warning: Access to field 'device' results in a dereference of a null pointer (loaded from field 'context') [core.NullDereference]
+ 5565 |       vkDestroyCommandPool(vk->context->device,
+      |                            ^~~~~~~~~~~~~~~~~~~
+gfx/drivers/vulkan.c:5580:28: warning: Access to field 'device' results in a dereference of a null pointer (loaded from field 'context') [core.NullDereference]
+ 5580 |    vkDestroyPipelineLayout(vk->context->device,
+      |                            ^~~~~~~~~~~~~~~~~~~
+gfx/drivers/vulkan.c:6025:11: warning: Access to field 'flags' results in a dereference of a null pointer (loaded from field 'context') [core.NullDereference]
+ 6025 |       if (vk->context->flags & VK_CTX_FLAG_HDR_ENABLE)
+      |           ^~~~~~~~~~~~~~~~~~
+gfx/drivers/vulkan.c:7004:8: warning: Access to field 'flags' results in a dereference of a null pointer (loaded from field 'context') [core.NullDereference]
+ 7004 |    if (vk->context->flags & VK_CTX_FLAG_HDR_ENABLE)
+      |        ^~~~~~~~~~~~~~~~~~
+gfx/drivers/vulkan.c:11673:14: warning: Dereference of null pointer [core.NullDereference]
+ 11673 |          if (vk->overlay.images[i].memory != VK_NULL_HANDLE)
+       |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+11 warnings generated.
+CXX deps/glslang/glslang/SPIRV/SpvBuilder.cpp
+gfx/drivers_shader/slang_process.c:1106:13: warning: Value stored to 'fields' is never read [deadcode.DeadStores]
+ 1106 |             fields  = 6;
+      |             ^         ~
+1 warning generated.
+CXX deps/glslang/glslang/glslang/GenericCodeGen/CodeGen.cpp
+CXX deps/glslang/glslang/glslang/GenericCodeGen/Link.cpp
+CXX deps/glslang/glslang/OGLCompilersDLL/InitializeDll.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/Constant.cpp
+gfx/drivers/d3d12.c:816:11: warning: Access to field 'lpVtbl' results in a dereference of a null pointer (loaded from variable 'resource') [core.NullDereference]
+  816 |    return ((ID3D12Resource*)resource)
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+  817 |       ->lpVtbl->Map((ID3D12Resource*)resource, subresource, read_range, data);
+      |       ~~~~~~~~
+gfx/drivers/d3d12.c:2301:4: warning: Access to field 'get_line_metrics' results in a dereference of a null pointer (loaded from field 'font_driver') [core.NullDereference]
+ 2301 |    font->font_driver->get_line_metrics(font->font_data, &line_metrics);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d12.c:2384:23: warning: Value stored to 'line_v_first' during its initialization is never read [deadcode.DeadStores]
+ 2384 |       d3d12_sprite_t *line_v_first = v;
+      |                       ^~~~~~~~~~~~   ~
+gfx/drivers/d3d12.c:3581:18: warning: Value stored to 'fence' during its initialization is never read [deadcode.DeadStores]
+ 3581 |       D3D12Fence fence = d3d12->queue.fence;
+      |                  ^~~~~   ~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d12.c:3741:18: warning: Value stored to 'fence' during its initialization is never read [deadcode.DeadStores]
+ 3741 |       D3D12Fence fence = d3d12->queue.fence;
+      |                  ^~~~~   ~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d12.c:4283:38: warning: Value stored to 'settings' during its initialization is never read [deadcode.DeadStores]
+ 4283 |    settings_t                  *     settings = config_get_ptr();
+      |                                      ^~~~~~~~   ~~~~~~~~~~~~~~~~
+gfx/drivers/d3d12.c:8854:4: warning: Value stored to 'width' is never read [deadcode.DeadStores]
+ 8854 |    width  = d3d12->hw_ring.width[slot];
+      |    ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d12.c:8855:4: warning: Value stored to 'height' is never read [deadcode.DeadStores]
+ 8855 |    height = d3d12->hw_ring.height[slot];
+      |    ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8 warnings generated.
+CXX deps/glslang/glslang/glslang/MachineIndependent/InfoSink.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/Initialize.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/IntermTraverse.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/Intermediate.cpp
+gfx/video_shader_parse.c:4162:8: warning: Access to field 'set_shader' results in a dereference of a null pointer (loaded from field 'current_video') [core.NullDereference]
+ 4162 |    if (video_st->current_video->set_shader)
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CXX deps/glslang/glslang/glslang/MachineIndependent/ParseContextBase.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/PoolAlloc.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/RemoveTree.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp
+gfx/drivers/d3d9hlsl.c:2131:20: warning: Potential leak of memory pointed to by 'pass.attrib_map' [unix.Malloc]
+ 2131 |             return false;
+      |                    ^~~~~
+C:/msys64/mingw64/lib/clang/22/include/stdbool.h:26:15: note: expanded from macro 'false'
+   26 | #define false 0
+      |               ^
+gfx/drivers/d3d9hlsl.c:2915:7: warning: Access to field 'lpVtbl' results in a dereference of a null pointer (loaded from field 'dev') [core.NullDereference]
+ 2915 |       IDirect3DDevice9_SetRenderTarget(chain->chain.dev, 0, target);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/d3d9.h:1373:72: note: expanded from macro 'IDirect3DDevice9_SetRenderTarget'
+ 1373 | #define IDirect3DDevice9_SetRenderTarget(p,a,b)                        (p)->lpVtbl->SetRenderTarget(p,a,b)
+      |                                                                        ^~~~~~~~~~~
+gfx/drivers/d3d9hlsl.c:2970:4: warning: Access to field 'lpVtbl' results in a dereference of a null pointer (loaded from field 'dev') [core.NullDereference]
+ 2970 |    IDirect3DDevice9_SetRenderTarget(chain->chain.dev, 0, back_buffer);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/d3d9.h:1373:72: note: expanded from macro 'IDirect3DDevice9_SetRenderTarget'
+ 1373 | #define IDirect3DDevice9_SetRenderTarget(p,a,b)                        (p)->lpVtbl->SetRenderTarget(p,a,b)
+      |                                                                        ^~~~~~~~~~~
+gfx/drivers/d3d9hlsl.c:2978:10: warning: Value stored to 'out_width' is never read [deadcode.DeadStores]
+ 2978 |          out_width = last_pass->info.pass->fbo.scale_x * chain->chain.out_vp->Width;
+      |          ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d9hlsl.c:2981:10: warning: Value stored to 'out_width' is never read [deadcode.DeadStores]
+ 2981 |          out_width = last_pass->info.pass->fbo.abs_x;
+      |          ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d9hlsl.c:2984:10: warning: Value stored to 'out_width' is never read [deadcode.DeadStores]
+ 2984 |          out_width = last_pass->info.pass->fbo.scale_x * current_width;
+      |          ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d9hlsl.c:2990:10: warning: Value stored to 'out_height' is never read [deadcode.DeadStores]
+ 2990 |          out_height = last_pass->info.pass->fbo.scale_y * chain->chain.out_vp->Height;
+      |          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d9hlsl.c:2993:10: warning: Value stored to 'out_height' is never read [deadcode.DeadStores]
+ 2993 |          out_height = last_pass->info.pass->fbo.abs_y;
+      |          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d9hlsl.c:2996:10: warning: Value stored to 'out_height' is never read [deadcode.DeadStores]
+ 2996 |          out_height = last_pass->info.pass->fbo.scale_y * current_height;
+      |          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gfx/drivers/d3d9hlsl.c:3573:14: warning: Potential leak of memory pointed to by 'name_copy' [unix.Malloc]
+ 3573 |          if (output_enabled && strncmp(dir, "include", 7) == 0)
+      |              ^~~~~~~~~~~~~~
+gfx/drivers/d3d9hlsl.c:5124:25: warning: Value stored to 'param_end' during its initialization is never read [deadcode.DeadStores]
+ 5124 |             const char *param_end   = p;
+      |                         ^~~~~~~~~     ~
+gfx/drivers/d3d9hlsl.c:5888:28: warning: Value stored to 'opos' is never read [deadcode.DeadStores]
+ 5888 |                            opos = 0;
+      |                            ^      ~
+gfx/drivers/d3d9hlsl.c:6843:4: warning: Value stored to 'out_width' is never read [deadcode.DeadStores]
+ 6843 |    out_width      = 0;
+      |    ^                ~
+gfx/drivers/d3d9hlsl.c:6844:4: warning: Value stored to 'out_height' is never read [deadcode.DeadStores]
+ 6844 |    out_height     = 0;
+      |    ^                ~
+gfx/drivers/d3d9hlsl.c:7759:33: warning: Access to field 'dev' results in a dereference of a null pointer (loaded from variable 'chain') [core.NullDereference]
+ 7759 |       d3d9_recompute_pass_sizes(chain->dev, chain, d3d);
+      |                                 ^~~~~~~~~~
+15 warnings generated.
+CXX deps/glslang/glslang/glslang/MachineIndependent/ShaderLang.cpp
+In file included from deps/glslang/glslang/glslang/MachineIndependent/Constant.cpp:38:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/localintermediate.h:40:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/../Include/intermediate.h:57:
+deps/glslang/glslang/glslang/MachineIndependent/../Include/../Include/ConstantUnion.h:903:52: warning: Called C++ object pointer is null [core.CallAndMessage]
+  903 |     TConstUnion& operator[](size_t index) { return (*unionArray)[index]; }
+      |                                                    ^~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CXX deps/glslang/glslang/glslang/MachineIndependent/SymbolTable.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/Versions.cpp
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:732:13: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         TPpToken ppToken;
+      |         ~~~~~~~~~~~~~~~~
+  730 |         int token = pp->tokenize(ppToken);
+  731 |         if (token == EndOfInput)
+  732 |             return 0;
+      |             ^~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:738:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         TPpToken ppToken;
+      |         ~~~~~~~~~~~~~~~~
+  730 |         int token = pp->tokenize(ppToken);
+  731 |         if (token == EndOfInput)
+  732 |             return 0;
+  733 |
+  734 |         tokenText = ppToken.name;
+  735 |         loc = ppToken.loc;
+  736 |         parserToken->sType.lex.loc = loc;
+  737 |         switch (token) {
+  738 |         case ';':  afterType = false;   return SEMICOLON;
+      |                                         ^~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:739:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         TPpToken ppToken;
+      |         ~~~~~~~~~~~~~~~~
+  730 |         int token = pp->tokenize(ppToken);
+  731 |         if (token == EndOfInput)
+  732 |             return 0;
+  733 |
+  734 |         tokenText = ppToken.name;
+  735 |         loc = ppToken.loc;
+  736 |         parserToken->sType.lex.loc = loc;
+  737 |         switch (token) {
+  738 |         case ';':  afterType = false;   return SEMICOLON;
+  739 |         case ',':  afterType = false;   return COMMA;
+      |                                         ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:740:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         TPpToken ppToken;
+      |         ~~~~~~~~~~~~~~~~
+  730 |         int token = pp->tokenize(ppToken);
+  731 |         if (token == EndOfInput)
+  732 |             return 0;
+  733 |
+  734 |         tokenText = ppToken.name;
+  735 |         loc = ppToken.loc;
+  736 |         parserToken->sType.lex.loc = loc;
+  737 |         switch (token) {
+  738 |         case ';':  afterType = false;   return SEMICOLON;
+  739 |         case ',':  afterType = false;   return COMMA;
+  740 |         case ':':                       return COLON;
+      |                                         ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:741:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         TPpToken ppToken;
+      |         ~~~~~~~~~~~~~~~~
+  730 |         int token = pp->tokenize(ppToken);
+  731 |         if (token == EndOfInput)
+  732 |             return 0;
+  733 |
+  734 |         tokenText = ppToken.name;
+  735 |         loc = ppToken.loc;
+  736 |         parserToken->sType.lex.loc = loc;
+  737 |         switch (token) {
+  738 |         case ';':  afterType = false;   return SEMICOLON;
+  739 |         case ',':  afterType = false;   return COMMA;
+  740 |         case ':':                       return COLON;
+  741 |         case '=':  afterType = false;   return EQUAL;
+      |                                         ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:742:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         TPpToken ppToken;
+      |         ~~~~~~~~~~~~~~~~
+  730 |         int token = pp->tokenize(ppToken);
+  731 |         if (token == EndOfInput)
+  732 |             return 0;
+  733 |
+  734 |         tokenText = ppToken.name;
+  735 |         loc = ppToken.loc;
+  736 |         parserToken->sType.lex.loc = loc;
+  737 |         switch (token) {
+  738 |         case ';':  afterType = false;   return SEMICOLON;
+  739 |         case ',':  afterType = false;   return COMMA;
+  740 |         case ':':                       return COLON;
+  741 |         case '=':  afterType = false;   return EQUAL;
+  742 |         case '(':  afterType = false;   return LEFT_PAREN;
+      |                                         ^~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:743:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         TPpToken ppToken;
+      |         ~~~~~~~~~~~~~~~~
+  730 |         int token = pp->tokenize(ppToken);
+  731 |         if (token == EndOfInput)
+  732 |             return 0;
+  733 |
+  734 |         tokenText = ppToken.name;
+  735 |         loc = ppToken.loc;
+  736 |         parserToken->sType.lex.loc = loc;
+  737 |         switch (token) {
+  738 |         case ';':  afterType = false;   return SEMICOLON;
+  739 |         case ',':  afterType = false;   return COMMA;
+  740 |         case ':':                       return COLON;
+  741 |         case '=':  afterType = false;   return EQUAL;
+  742 |         case '(':  afterType = false;   return LEFT_PAREN;
+  743 |         case ')':  afterType = false;   return RIGHT_PAREN;
+      |                                         ^~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:744:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         TPpToken ppToken;
+      |         ~~~~~~~~~~~~~~~~
+  730 |         int token = pp->tokenize(ppToken);
+  731 |         if (token == EndOfInput)
+  732 |             return 0;
+  733 |
+  734 |         tokenText = ppToken.name;
+  735 |         loc = ppToken.loc;
+  736 |         parserToken->sType.lex.loc = loc;
+  737 |         switch (token) {
+  738 |         case ';':  afterType = false;   return SEMICOLON;
+  739 |         case ',':  afterType = false;   return COMMA;
+  740 |         case ':':                       return COLON;
+  741 |         case '=':  afterType = false;   return EQUAL;
+  742 |         case '(':  afterType = false;   return LEFT_PAREN;
+  743 |         case ')':  afterType = false;   return RIGHT_PAREN;
+  744 |         case '.':  field = true;        return DOT;
+      |                                         ^~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:745:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '!':                       return BANG;
+      |                                         ^~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:746:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '-':                       return DASH;
+      |                                         ^~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:747:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '~':                       return TILDE;
+      |                                         ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:748:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '+':                       return PLUS;
+      |                                         ^~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:749:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '*':                       return STAR;
+      |                                         ^~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:750:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '/':                       return SLASH;
+      |                                         ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:751:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '%':                       return PERCENT;
+      |                                         ^~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:752:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '<':                       return LEFT_ANGLE;
+      |                                         ^~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:753:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '>':                       return RIGHT_ANGLE;
+      |                                         ^~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:754:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '|':                       return VERTICAL_BAR;
+      |                                         ^~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:755:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '^':                       return CARET;
+      |                                         ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:756:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '&':                       return AMPERSAND;
+      |                                         ^~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:757:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '?':                       return QUESTION;
+      |                                         ^~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:758:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '[':                       return LEFT_BRACKET;
+      |                                         ^~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:759:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case ']':                       return RIGHT_BRACKET;
+      |                                         ^~~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:760:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '{':  afterStruct = false; return LEFT_BRACE;
+      |                                         ^~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:761:41: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case '}':                       return RIGHT_BRACE;
+      |                                         ^~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:766:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PPAtomAddAssign:          return ADD_ASSIGN;
+      |                                        ^~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:767:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PPAtomSubAssign:          return SUB_ASSIGN;
+      |                                        ^~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:768:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PPAtomMulAssign:          return MUL_ASSIGN;
+      |                                        ^~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:769:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PPAtomDivAssign:          return DIV_ASSIGN;
+      |                                        ^~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:770:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PPAtomModAssign:          return MOD_ASSIGN;
+      |                                        ^~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:772:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomRight:              return RIGHT_OP;
+      |                                        ^~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:773:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomLeft:               return LEFT_OP;
+      |                                        ^~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:775:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomRightAssign:        return RIGHT_ASSIGN;
+      |                                        ^~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:776:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomLeftAssign:         return LEFT_ASSIGN;
+      |                                        ^~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:777:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomAndAssign:          return AND_ASSIGN;
+      |                                        ^~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:778:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomOrAssign:           return OR_ASSIGN;
+      |                                        ^~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:779:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomXorAssign:          return XOR_ASSIGN;
+      |                                        ^~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:781:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomAnd:                return AND_OP;
+      |                                        ^~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:782:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomOr:                 return OR_OP;
+      |                                        ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:783:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomXor:                return XOR_OP;
+      |                                        ^~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:785:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomEQ:                 return EQ_OP;
+      |                                        ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:786:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomGE:                 return GE_OP;
+      |                                        ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:787:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomNE:                 return NE_OP;
+      |                                        ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:788:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomLE:                 return LE_OP;
+      |                                        ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:790:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomDecrement:          return DEC_OP;
+      |                                        ^~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:791:40: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomIncrement:          return INC_OP;
+      |                                        ^~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:797:90: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomConstInt:           parserToken->sType.lex.i    = ppToken.ival;       return INTCONSTANT;
+      |                                                                                          ^~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:798:90: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomConstUint:          parserToken->sType.lex.i    = ppToken.ival;       return UINTCONSTANT;
+      |                                                                                          ^~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:799:90: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomConstInt16:         parserToken->sType.lex.i    = ppToken.ival;       return INT16CONSTANT;
+      |                                                                                          ^~~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:800:90: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomConstUint16:        parserToken->sType.lex.i    = ppToken.ival;       return UINT16CONSTANT;
+      |                                                                                          ^~~~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:801:90: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomConstInt64:         parserToken->sType.lex.i64  = ppToken.i64val;     return INT64CONSTANT;
+      |                                                                                          ^~~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:802:90: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomConstUint64:        parserToken->sType.lex.i64  = ppToken.i64val;     return UINT64CONSTANT;
+      |                                                                                          ^~~~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:803:90: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomConstFloat:         parserToken->sType.lex.d    = ppToken.dval;       return FLOATCONSTANT;
+      |                                                                                          ^~~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:804:90: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomConstDouble:        parserToken->sType.lex.d    = ppToken.dval;       return DOUBLECONSTANT;
+      |                                                                                          ^~~~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/Scan.cpp:805:90: warning: Address of stack memory associated with local variable 'ppToken' is still referred to by the caller variable '_parseContext' upon returning to the caller.  This will be a dangling reference [core.StackAddressEscape]
+  729 |         case PpAtomConstFloat16:       parserToken->sType.lex.d    = ppToken.dval;       return FLOAT16CONSTANT;
+      |                                                                                          ^~~~~~~~~~~~~~~~~~~~~~
+55 warnings generated.
+CXX deps/glslang/glslang/glslang/MachineIndependent/attribute.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/glslang_tab.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/intermOut.cpp
+In file included from deps/glslang/glslang/SPIRV/GlslangToSpv.cpp:43:
+In file included from deps/glslang/glslang/SPIRV/GlslangToSpv.h:41:
+In file included from deps/glslang/glslang/SPIRV/../glslang/Include/intermediate.h:56:
+In file included from deps/glslang/glslang/SPIRV/../glslang/Include/../Include/Types.h:45:
+deps/glslang/glslang/SPIRV/../glslang/Include/../Include/arrays.h:111:16: warning: Called C++ object pointer is null [core.CallAndMessage]
+  111 |         return sizes->front().size;
+      |                ^~~~~~~~~~~~~~
+deps/glslang/glslang/SPIRV/GlslangToSpv.cpp:1902:9: warning: Value stored to 'binOp' is never read [deadcode.DeadStores]
+ 1902 |         binOp = node->getOp();
+      |         ^       ~~~~~~~~~~~~~
+2 warnings generated.
+CXX deps/glslang/glslang/glslang/MachineIndependent/iomapper.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/limits.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/linkValidate.cpp
+deps/glslang/glslang/glslang/MachineIndependent/ShaderLang.cpp:824:9: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+  824 |         intermediate.setSourceFile(names[numPre]);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CXX deps/glslang/glslang/glslang/MachineIndependent/parseConst.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/propagateNoContraction.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/reflection.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/preprocessor/Pp.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/preprocessor/PpAtom.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/preprocessor/PpContext.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/preprocessor/PpScanner.cpp
+CXX deps/glslang/glslang/glslang/MachineIndependent/preprocessor/PpTokens.cpp
+CXX deps/glslang/glslang/glslang/OSDependent/Windows/ossource.cpp
+deps/glslang/glslang/glslang/MachineIndependent/preprocessor/Pp.cpp:900:13: warning: Value stored to 'token' is never read [deadcode.DeadStores]
+  900 |             token = extraTokenCheck(PpAtomElse, ppToken, scanToken(ppToken));
+      |             ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CXX deps/SPIRV-Cross/spirv_cross.cpp
+CXX deps/SPIRV-Cross/spirv_cfg.cpp
+CXX deps/SPIRV-Cross/spirv_glsl.cpp
+CXX deps/SPIRV-Cross/spirv_hlsl.cpp
+CXX deps/SPIRV-Cross/spirv_msl.cpp
+In file included from deps/glslang/glslang/glslang/MachineIndependent/linkValidate.cpp:48:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/localintermediate.h:40:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/../Include/intermediate.h:56:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/../Include/../Include/Types.h:45:
+deps/glslang/glslang/glslang/MachineIndependent/../Include/../Include/arrays.h:111:16: warning: Called C++ object pointer is null [core.CallAndMessage]
+  111 |         return sizes->front().size;
+      |                ^~~~~~~~~~~~~~
+1 warning generated.
+CXX deps/SPIRV-Cross/spirv_parser.cpp
+CXX deps/SPIRV-Cross/spirv_cross_parsed_ir.cpp
+CXX deps/SPIRV-Cross/spirv_cross_c.cpp
+In file included from deps/SPIRV-Cross/spirv_parser.cpp:24:
+In file included from deps/SPIRV-Cross/spirv_parser.hpp:27:
+In file included from deps/SPIRV-Cross/spirv_cross_parsed_ir.hpp:27:
+deps/SPIRV-Cross/spirv_common.hpp:1352:17: warning: Dereference of undefined pointer value [core.NullDereference]
+ 1352 |                 bool matrix = vector_elements[0]->m.c[0].vecsize > 1;
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC gfx/drivers_context/wgl_ctx.c
+gfx/drivers_context/wgl_ctx.c:641:16: warning: Value stored to 'settings' during its initialization is never read [deadcode.DeadStores]
+  641 |    settings_t *settings    = config_get_ptr();
+      |                ^~~~~~~~      ~~~~~~~~~~~~~~~~
+1 warning generated.
+CC libretro-common/file/archive_file.c
+deps/SPIRV-Cross/spirv_cross_c.cpp:1930:3: warning: Access to field 'context' results in a dereference of a null pointer (loaded from variable 'resources') [core.NullDereference]
+ 1930 |                 resources->context->report_error("Invalid argument.");
+      |                 ^~~~~~~~~~~~~~~~~~
+deps/SPIRV-Cross/spirv_cross_c.cpp:1961:3: warning: Access to field 'context' results in a dereference of a null pointer (loaded from variable 'resources') [core.NullDereference]
+ 1961 |                 resources->context->report_error("Invalid argument.");
+      |                 ^~~~~~~~~~~~~~~~~~
+2 warnings generated.
+CC libretro-common/file/archive_file_zlib.c
+CC libretro-common/streams/trans_stream.c
+CC libretro-common/streams/trans_stream_pipe.c
+CC libretro-common/encodings/encoding_deflate.c
+CC libretro-common/streams/trans_stream_deflate.c
+CC libretro-common/streams/rzip_stream.c
+CC libretro-common/file/archive_file_7z.c
+libretro-common/encodings/encoding_deflate.c:474:49: warning: Left shift overflows the capacity of 'uint64_t' [core.BitwiseShift]
+  474 |       s->bitbuf |= (uint64_t)s->in[s->in_pos++] << s->bitcnt;
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+libretro-common/encodings/encoding_deflate.c:2060:67: warning: Right operand is negative in left shift [core.BitwiseShift]
+ 2059 |    s->bitbuf |= ((uint64_t)(val & ((n >= 32) ? 0xffffffffu
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 2060 |                                              : ((1u << n) - 1)))) << s->bitcnt;
+      |                                              ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+2 warnings generated.
+In file included from deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp:39:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.h:52:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/SymbolTable.h:68:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/../Include/intermediate.h:56:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/../Include/../Include/Types.h:45:
+deps/glslang/glslang/glslang/MachineIndependent/../Include/../Include/arrays.h:124:16: warning: Called C++ object pointer is null [core.CallAndMessage]
+  124 |         assert(sizes->front().node == nullptr);
+      |                ^~~~~~~~~~~~~~
+C:/msys64/mingw64/include/assert.h:48:7: note: expanded from macro 'assert'
+   48 |  ((!!(_Expression)) || \
+      |       ^~~~~~~~~~~
+In file included from deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp:39:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.h:52:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/SymbolTable.h:68:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/../Include/intermediate.h:56:
+In file included from deps/glslang/glslang/glslang/MachineIndependent/../Include/../Include/Types.h:45:
+deps/glslang/glslang/glslang/MachineIndependent/../Include/../Include/arrays.h:172:16: warning: Called C++ object pointer is null [core.CallAndMessage]
+  172 |         assert((*sizes)[i].node == nullptr);
+      |                ^~~~~~~~~~~
+C:/msys64/mingw64/include/assert.h:48:7: note: expanded from macro 'assert'
+   48 |  ((!!(_Expression)) || \
+      |       ^~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp:1437:19: warning: Called C++ object pointer is null [core.CallAndMessage]
+ 1437 |             if (! (*argp)[fnCandidate[0].type->getSampler().shadow ? 3 : 2]->getAsConstantUnion())
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp:1448:19: warning: Called C++ object pointer is null [core.CallAndMessage]
+ 1448 |             if (! (*argp)[fnCandidate[0].type->getSampler().shadow ? 3 : 2]->getAsConstantUnion())
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp:1456:17: warning: Called C++ object pointer is null [core.CallAndMessage]
+ 1456 |             if ((*argp)[compArg]->getAsConstantUnion()) {
+      |                 ^~~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp:1562:48: warning: Called C++ object pointer is null [core.CallAndMessage]
+ 1562 |         case EOpTextureFetchOffset:     arg = (arg0->getType().getSampler().dim != EsdRect) ? 3 : 2; break;
+      |                                                ^~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp:1580:19: warning: Called C++ object pointer is null [core.CallAndMessage]
+ 1580 |             if (! (*argp)[arg]->getAsConstantUnion())
+      |                   ^~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp:1611:34: warning: Called C++ object pointer is null [core.CallAndMessage]
+ 1611 |         const TType& imageType = arg0->getType();
+      |                                  ^~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp:1649:13: warning: Called C++ object pointer is null [core.CallAndMessage]
+ 1649 |         if (arg0->getType().getQualifier().storage != EvqVaryingIn) {
+      |             ^~~~~~~~~~~~~~~
+deps/glslang/glslang/glslang/MachineIndependent/ParseHelper.cpp:1693:13: warning: Called C++ object pointer is null [core.CallAndMessage]
+ 1693 |         if ((*argp)[1]->getAsConstantUnion() == nullptr)
+      |             ^~~~~~~~~~
+10 warnings generated.
+CC libretro-common/formats/7z/r7z_archive.c
+CC libretro-common/formats/7z/r7z_lzma.c
+CC libretro-common/formats/7z/r7z_lzma_stream.c
+libretro-common/streams/rzip_stream.c:1276:34: warning: Division by zero [core.DivideZero]
+ 1276 |       slot = &par->slots[drained % num_slots];
+      |                          ~~~~~~~~^~~~~~~~~~~
+1 warning generated.
+CC libretro-common/formats/7z/r7z_lzma2.c
+CC libretro-common/formats/7z/r7z_bcj2.c
+CC libretro-common/formats/7z/r7z_filters.c
+libretro-common/formats/7z/r7z_bcj2.c:142:11: warning: Array access (from variable 'main_buf') results in a null pointer dereference [core.NullDereference]
+  142 |       b = main_buf[st->main_pos++];
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/7z/r7z_bcj2.c:168:49: warning: Array access (from variable 'rc_buf') results in a null pointer dereference [core.NullDereference]
+  168 |          st->code = (st->code << 8) | (uint32_t)rc_buf[st->rc_pos++];
+      |                                                 ^~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/7z/r7z_bcj2.c:221:27: warning: Array access (from variable 'src') results in a null pointer dereference [core.NullDereference]
+  221 |          val = ((uint32_t)src[*pos]     << 24)
+      |                           ^~~~~~~~~
+3 warnings generated.
+CC libretro-common/encodings/encoding_rzstd.c
+CC libretro-common/streams/trans_stream_rzstd.c
+CC libretro-common/file/archive_file_zstd.c
+libretro-common/formats/7z/r7z_lzma_stream.c:820:19: warning: Value stored to 'len' is never read [deadcode.DeadStores]
+  820 |                   len = MATCH_SPEC_LEN_START;
+      |                   ^     ~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC libretro-common/formats/mod/rmodtracker.c
+CC libretro-common/formats/aac/raac.c
+CC libretro-common/formats/opus/ropus.c
+libretro-common/encodings/encoding_rzstd.c:393:7: warning: Value stored to 'at' is never read [deadcode.DeadStores]
+  393 |       at += n;
+      |       ^     ~
+libretro-common/encodings/encoding_rzstd.c:2979:7: warning: Assigned value is uninitialized [core.uninitialized.Assign]
+ 2979 |       uint8_t sy = spread[i];
+      |       ^~~~~~~~~~   ~~~~~~~~~
+2 warnings generated.
+CC libretro-common/formats/flac/rflac.c
+libretro-common/formats/aac/raac.c:3027:20: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 3027 |       if (table[i] == needle)
+      |           ~~~~~~~~ ^
+1 warning generated.
+CC libretro-common/formats/vorbis/rvorbis.c
+CC libretro-common/streams/chd_stream.c
+deps/SPIRV-Cross/spirv_hlsl.cpp:4583:3: warning: Called C++ object pointer is null [core.CallAndMessage]
+ 4583 |                 *expr = std::move(load_expr);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC libretro-common/formats/chd/rchd.c
+CC libretro-common/encodings/encoding_huffman.c
+CC libretro-common/cdrom/cdrom.c
+CC libretro-common/vfs/vfs_implementation_cdrom.c
+libretro-common/cdrom/cdrom.c:750:19: warning: Value stored to 'xfer_buf_pos' during its initialization is never read [deadcode.DeadStores]
+  750 |    unsigned char *xfer_buf_pos = xfer_buf;
+      |                   ^~~~~~~~~~~~   ~~~~~~~~
+libretro-common/cdrom/cdrom.c:934:22: warning: Value stored to 'rv' is never read [deadcode.DeadStores]
+  934 |                      rv = 1;
+      |                      ^    ~
+libretro-common/cdrom/cdrom.c:1349:9: warning: Although the value stored to 'rv' is used in the enclosing expression, the value is never actually read from 'rv' [deadcode.DeadStores]
+ 1349 |    if ((rv = cdrom_send_command(stream, DIRECTION_IN, buf,
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1350 |          sizeof(buf), cdb, sizeof(cdb), 0)))
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+CC libretro-common/media/media_detect_cd.c
+CC tasks/task_content_disc.c
+libretro-common/formats/chd/rchd.c:2105:18: warning: Although the value stored to 'e' is used in the enclosing expression, the value is never actually read from 'e' [deadcode.DeadStores]
+ 2105 |          while ((e = rinflate_process(chd->inflate, &rd, &wr))
+      |                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC libretro-common/formats/tga/rtga.c
+CC libretro-common/formats/dds/rdds.c
+CC libretro-common/formats/png/rpng.c
+CC libretro-common/formats/png/rpng_apng.c
+libretro-common/formats/opus/ropus.c:289:15: warning: Right operand is negative in right shift [core.BitwiseShift]
+  289 |    r = e->rng >> (l - 16);
+      |        ~~~~~~~^~~~~~~~~~~
+libretro-common/formats/opus/ropus.c:478:7: warning: Value stored to 'last_size' is never read [deadcode.DeadStores]
+  478 |       last_size -= bytes + p->sizes[count - 1];
+      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/opus/ropus.c:3016:11: warning: Right operand is negative in left shift [core.BitwiseShift]
+ 3016 |    b = 1u << bshift;
+      |        ~~~^~~~~~~~~
+libretro-common/formats/opus/ropus.c:3537:12: warning: Array access (from variable 'x') results in a null pointer dereference [core.NullDereference]
+ 3537 |       x[0] = sign ? -1.f : 1.f;
+      |       ~    ^
+libretro-common/formats/opus/ropus.c:5421:28: warning: Right operand is negative in left shift [core.BitwiseShift]
+ 5421 |    return (a + ((int32_t)1 << (s - 1))) >> s;
+      |                 ~~~~~~~~~~~^~~~~~~~~~
+libretro-common/formats/opus/ropus.c:5982:12: warning: Array access (from variable 'x') results in a null pointer dereference [core.NullDereference]
+ 5982 |       x[0] = sign ? -16384 : 16384;
+      |       ~    ^
+libretro-common/formats/opus/ropus.c:8720:10: warning: Assigned value is uninitialized [core.uninitialized.Assign]
+ 8720 |          int p = sum_pulses[i];
+      |          ^~~~~   ~~~~~~~~~~~~~
+libretro-common/formats/opus/ropus.c:8780:38: warning: Right operand is negative in left shift [core.BitwiseShift]
+ 8780 |    b32_nrm = (int32_t)((uint32_t)b32 << b_headrm);
+      |                        ~~~~~~~~~~~~~~^~~~~~~~~~~
+libretro-common/formats/opus/ropus.c:8781:32: warning: Division by zero [core.DivideZero]
+ 8781 |    b32_inv = (0x7fffffff >> 2) / (b32_nrm >> 16);
+      |              ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+libretro-common/formats/opus/ropus.c:8863:34: warning: The left operand of '-' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 8863 |       min_diff_Q15 = NLSF_Q15[0] - NDeltaMin_Q15[0];
+      |                      ~~~~~~~~~~~ ^
+libretro-common/formats/opus/ropus.c:8983:15: warning: The right operand of '*' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 8983 |       ar[i] = ROPUS_SILK_SMULWW(chirp_Q16, ar[i]);
+      |               ^                            ~~~~~
+libretro-common/formats/opus/ropus.c:8739:59: note: expanded from macro 'ROPUS_SILK_SMULWW'
+ 8739 | #define ROPUS_SILK_SMULWW(a, b)  ((int32_t)(((int64_t)(a) * (b)) >> 16))
+      |                                                           ^  ~
+libretro-common/formats/opus/ropus.c:9000:19: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 9000 |          absval = ROPUS_SILK_ABS(a_QIN[k]);
+      |                   ^              ~~~~~~~~
+libretro-common/formats/opus/ropus.c:8758:33: note: expanded from macro 'ROPUS_SILK_ABS'
+ 8758 | #define ROPUS_SILK_ABS(a) (((a) > 0) ? (a) : -(a))
+      |                              ~  ^
+libretro-common/formats/opus/ropus.c:9058:19: warning: The left operand of '>' is a garbage value due to array index out of bounds [core.UndefinedBinaryOperatorResult]
+ 9058 |       if (A_QA[k] > ROPUS_SILK_A_LIMIT || A_QA[k] < -ROPUS_SILK_A_LIMIT)
+      |           ~~~~~~~ ^
+libretro-common/formats/opus/ropus.c:9085:16: warning: The left operand of '>' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 9085 |    if (A_QA[0] > ROPUS_SILK_A_LIMIT || A_QA[0] < -ROPUS_SILK_A_LIMIT)
+      |        ~~~~~~~ ^
+libretro-common/formats/opus/ropus.c:9309:38: warning: Right operand is negative in left shift [core.BitwiseShift]
+ 9309 |    a32_nrm = (int32_t)((uint32_t)a32 << a_headrm);
+      |                        ~~~~~~~~~~~~~~^~~~~~~~~~~
+15 warnings generated.
+CC libretro-common/formats/png/rpng_encode.c
+libretro-common/formats/png/rpng.c:762:12: warning: Value stored to 'a0p' during its initialization is never read [deadcode.DeadStores]
+  762 |    __m128i a0p        = _mm_setzero_si128();
+      |            ^~~          ~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/png/rpng.c:870:12: warning: Value stored to 'a0p' during its initialization is never read [deadcode.DeadStores]
+  870 |    __m128i a0p       = _mm_setzero_si128();
+      |            ^~~         ~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/png/rpng.c:2532:58: warning: Addition of a null pointer (via field 'out_cursor') and a probably nonzero integer value (via field 'width') may result in undefined behavior [core.NullPointerArithm]
+ 2532 |             rpng_reverse_filter_convert(pngp->out_cursor + ihdr->width,
+      |                                               ~~~~~~~~~~ ^       ~~~~~
+3 warnings generated.
+CC libretro-common/file/rpng_file.c
+libretro-common/formats/png/rpng_apng.c:367:63: warning: Access to field 'parts' results in a dereference of a null pointer (loaded from variable 'f') [core.NullDereference]
+  367 |             struct apng_part *np = (struct apng_part*)realloc(f->parts,
+      |                                                               ^~~~~~~~
+libretro-common/formats/png/rpng_apng.c:389:63: warning: Access to field 'parts' results in a dereference of a null pointer (loaded from variable 'f') [core.NullDereference]
+  389 |             struct apng_part *np = (struct apng_part*)realloc(f->parts,
+      |                                                               ^~~~~~~~
+libretro-common/formats/png/rpng_apng.c:607:4: warning: Value stored to 'pos' is never read [deadcode.DeadStores]
+  607 |    pos = 0;
+      |    ^     ~
+libretro-common/formats/png/rpng_apng.c:656:4: warning: Value stored to 'pos' is never read [deadcode.DeadStores]
+  656 |    pos += 12;
+      |    ^      ~~
+4 warnings generated.
+libretro-common/formats/flac/rflac.c:1118:37: warning: Right shift by '64' overflows the capacity of 'size_t' [core.BitwiseShift]
+ 1118 |       uint32_t resultHi = (uint32_t)RFLAC_CACHE_L1_SELECT_AND_SHIFT(bs, bitCountHi);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/flac/rflac.c:907:61: note: expanded from macro 'RFLAC_CACHE_L1_SELECT_AND_SHIFT'
+  907 | #define RFLAC_CACHE_L1_SELECT_AND_SHIFT(bs, _bitCount)     (RFLAC_CACHE_L1_SELECT((bs), (_bitCount)) >>  RFLAC_CACHE_L1_SELECTION_SHIFT((bs), (_bitCount)))
+      |                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/flac/rflac.c:906:77: note: expanded from macro 'RFLAC_CACHE_L1_SELECT'
+  906 | #define RFLAC_CACHE_L1_SELECT(bs, _bitCount)               (((bs)->cache) & RFLAC_CACHE_L1_SELECTION_MASK(_bitCount))
+      |                                                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/flac/rflac.c:904:76: note: expanded from macro 'RFLAC_CACHE_L1_SELECTION_MASK'
+  904 | #define RFLAC_CACHE_L1_SELECTION_MASK(_bitCount)           (~((~(size_t)0) >> (_bitCount)))
+      |                                                               ~~~~~~~~~~~~~^~~~~~~~~~~~~~
+libretro-common/formats/flac/rflac.c:1118:37: warning: Right shift by '64' overflows the capacity of 'size_t' [core.BitwiseShift]
+ 1118 |       uint32_t resultHi = (uint32_t)RFLAC_CACHE_L1_SELECT_AND_SHIFT(bs, bitCountHi);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/flac/rflac.c:907:102: note: expanded from macro 'RFLAC_CACHE_L1_SELECT_AND_SHIFT'
+  907 | #define RFLAC_CACHE_L1_SELECT_AND_SHIFT(bs, _bitCount)     (RFLAC_CACHE_L1_SELECT((bs), (_bitCount)) >>  RFLAC_CACHE_L1_SELECTION_SHIFT((bs), (_bitCount)))
+      |                                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/flac/rflac.c:1254:5: warning: Value stored to 'bitsToSeek' is never read [deadcode.DeadStores]
+ 1254 |     bitsToSeek = 0; /* <-- Necessary for the assert below. */
+      |     ^            ~
+3 warnings generated.
+CC libretro-common/formats/jpeg/rjpeg.c
+CC libretro-common/formats/bmp/rbmp.c
+CC libretro-common/formats/webp/rwebp.c
+CC libretro-common/formats/vp8/rvp8.c
+CC libretro-common/formats/webm/rwebm.c
+libretro-common/formats/vorbis/rvorbis.c:1234:21: warning: Right operand is negative in left shift [core.BitwiseShift]
+ 1234 |    z = f->acc & ((1 << n)-1);
+      |                   ~~^~~~
+libretro-common/formats/vorbis/rvorbis.c:1286:32: warning: Right operand is negative in left shift [core.BitwiseShift]
+ 1286 |          f->acc += (uint32_t)z << f->valid_bits;
+      |                    ~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+libretro-common/formats/vorbis/rvorbis.c:1772:8: warning: Value stored to 'dy' during its initialization is never read [deadcode.DeadStores]
+ 1772 |    int dy = y1 - y0;
+      |        ^~   ~~~~~~~
+libretro-common/formats/vorbis/rvorbis.c:3885:8: warning: Value stored to 'dy' during its initialization is never read [deadcode.DeadStores]
+ 3885 |    int dy = y1 - y0;
+      |        ^~   ~~~~~~~
+4 warnings generated.
+CC libretro-common/formats/webm/rwebm_video.c
+CC libretro-common/formats/webm/rwebm_audio.c
+libretro-common/formats/webm/rwebm_video.c:552:11: warning: Access to field 'num_frames' results in a dereference of a null pointer (loaded from variable 's') [core.NullDereference]
+  552 |    while (s->num_frames < RWEBM_VIDEO_MAX_TS)
+      |           ^~~~~~~~~~~~~
+libretro-common/formats/webm/rwebm_video.c:1010:29: warning: Access to field 'demux' results in a dereference of a null pointer (loaded from variable 's') [core.NullDereference]
+ 1010 |       r = rwebm_read_packet(s->demux, &pkt);
+      |                             ^~~~~~~~
+2 warnings generated.
+CC libretro-common/formats/image/image_blit_bands.c
+libretro-common/formats/webm/rwebm_audio.c:215:4: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  215 |    memcpy(p, "OggS", 4);
+      |    ^~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC libretro-common/formats/mp4/rmp4.c
+CC libretro-common/formats/mp4/rmp4_video.c
+libretro-common/formats/image/image_blit_bands.c:141:10: warning: Argument to 'free()' is the address of the global variable 'image_blit_pool', which is not memory allocated by 'malloc()' [unix.Malloc]
+  141 |          free(g);
+      |          ^~~~~~~
+1 warning generated.
+CC libretro-common/formats/mp4/rmp4_audio.c
+libretro-common/formats/webp/rwebp.c:134:37: warning: Right operand is negative in left shift [core.BitwiseShift]
+  134 |   { b->val |= (uint64_t)(*b->buf++) << b->nb; b->nb += 8; } }
+      |               ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+libretro-common/formats/webp/rwebp.c:604:41: warning: The left operand of '>>' is a garbage value [core.UndefinedBinaryOperatorResult]
+  604 |          int group = (int)((huff_img[i] >> 8) & 0xFFFF);  /* red<<8 | green */
+      |                             ~~~~~~~~~~~ ^
+2 warnings generated.
+CC libretro-common/formats/h264/rh264.c
+libretro-common/formats/jpeg/rjpeg.c:4566:10: warning: Assigned value is uninitialized [core.uninitialized.Assign]
+ 4566 |          uint8_t *y = coutput[0];
+      |          ^~~~~~~~~~   ~~~~~~~~~~
+1 warning generated.
+CC libretro-common/formats/h265/rh265.c
+libretro-common/formats/mp4/rmp4_audio.c:209:19: warning: Addition of a null pointer and a probably nonzero integer value may result in undefined behavior [core.NullPointerArithm]
+  209 |                   RMP4_ACC_AT(a, a->frames + s),
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/mp4/rmp4_audio.c:96:25: note: expanded from macro 'RMP4_ACC_AT'
+   96 |    ((uint8_t*)(a)->data + (fr) * (a)->channels * (a)->elem)
+      |     ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/mp4/rmp4_audio.c:276:4: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  276 |    memcpy(p, "OggS", 4);
+      |    ^~~~~~~~~~~~~~~~~~~~
+libretro-common/formats/mp4/rmp4_audio.c:612:4: warning: Null pointer passed as 2nd argument to memory copy function [unix.cstring.NullArg]
+  612 |    memcpy(w + 44, pcm, data_size);
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+CC libretro-common/formats/vp9/rvp9.c
+libretro-common/formats/mp4/rmp4_video.c:676:42: warning: Access to field 'demux' results in a dereference of a null pointer (loaded from variable 's') [core.NullDereference]
+  676 |    const int64_t *pts   = rmp4_track_pts(s->demux, s->track, &count);
+      |                                          ^~~~~~~~
+libretro-common/formats/mp4/rmp4_video.c:966:32: warning: Access to field 'demux' results in a dereference of a null pointer (loaded from variable 's') [core.NullDereference]
+  966 |       int r = rmp4_read_packet(s->demux, &pkt);
+      |                                ^~~~~~~~
+2 warnings generated.
+CC libretro-common/formats/image/image_hdr_blit.c
+CC libretro-common/formats/mpeg1/rmpeg1_ps.c
+CC libretro-common/formats/mpeg1/rmpeg1_video.c
+CC libretro-common/formats/bmp/rbmp_encode.c
+CC libretro-common/file/rbmp_file.c
+CC libretro-common/formats/json/rjson.c
+CC libretro-common/formats/image_transfer.c
+CC libretro-common/formats/audio_transfer.c
+libretro-common/formats/json/rjson.c:600:11: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+  600 |    if (*p == '-' && ++p == end)
+      |        ~~ ^
+1 warning generated.
+CC libretro-common/formats/data_transfer.c
+libretro-common/formats/vp8/rvp8.c:2507:18: warning: Access to field 'is_split' results in a dereference of a null pointer (loaded from variable 'out') [core.NullDereference]
+ 2507 |    out->is_split = 0;
+      |    ~~~           ^
+1 warning generated.
+CC libretro-common/memmap/memmap.c
+libretro-common/formats/audio_transfer.c:1165:49: warning: Array access (from variable 'out_s16') results in a null pointer dereference [core.NullDereference]
+ 1165 |             out_s16[produced * a->channels + i] = audio_transfer_unit_to_s16(src[i]);
+      |             ~~~~~~~                             ^
+1 warning generated.
+CC libretro-common/formats/m3u/rm3u.c
+CC camera/drivers/ffmpeg.c
+CC libretro-common/net/net_compat.c
+CC libretro-common/net/net_http.c
+CC libretro-common/net/net_http_parse.c
+CC libretro-common/net/net_socket.c
+CC core_updater_list.c
+CC network/natt.c
+CC network/natt_desc.c
+libretro-common/formats/h265/rh265.c:2479:18: warning: Right operand is negative in left shift [core.BitwiseShift]
+ 2479 |    int size4 = 1 << (log2_size - 2);
+      |                ~~^~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC tasks/task_netplay_lan_scan.c
+CC tasks/task_netplay_nat_traversal.c
+core_updater_list.c:1232:9: warning: Potential leak of memory pointed to by 'entry.local_info_path' [unix.Malloc]
+ 1232 |    if (!core_updater_list_push_entry(core_list, &entry))
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC tasks/task_pl_thumbnail_download.c
+CC tasks/task_netplay_find_content.c
+CC tasks/task_http.c
+CC tasks/task_core_updater.c
+CC tasks/task_cloudsync.c
+CC tasks/task_cloudsync_path.c
+CC network/cloud_sync/webdav.c
+CC network/cloud_sync_driver.c
+CC network/cloud_sync/google_drive.c
+tasks/task_cloudsync.c:487:35: warning: Addition of a null pointer (from variable 'filename') and a nonzero integer value results in undefined behavior [core.NullPointerArithm]
+  487 |       const char *path = filename + STRLEN_CONST("config/");
+      |                          ~~~~~~~~ ^
+tasks/task_cloudsync.c:1661:38: warning: Access to field 'list' results in a dereference of a null pointer (loaded from field 'server_manifest') [core.NullDereference]
+ 1661 |    struct item_file *server_file  = &sync_state->server_manifest->list[sync_state->server_idx];
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tasks/task_cloudsync.c:1698:23: warning: Access to field 'list' results in a dereference of a null pointer (loaded from field 'local_manifest') [core.NullDereference]
+ 1698 |    local_file      = &sync_state->local_manifest->list[sync_state->local_idx];
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+CC network/cloud_sync/smb.c
+CC network/cloud_sync/nfs.c
+libretro-common/formats/vp9/rvp9.c:1565:42: warning: Left shift overflows the capacity of 'uint64_t' [core.BitwiseShift]
+ 1565 |          b->value |= (uint64_t)*b->buf++ << shift;
+      |                      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+In file included from libretro-common/formats/vp9/rvp9.c:3214:
+libretro-common/formats/vp9/rvp9_recon.inc:2568:34: warning: Result of 'calloc' is converted to a pointer of type 'uint8_t', which is incompatible with sizeof operand type 'uint16_t' [unix.MallocSizeof]
+ 2568 |          d->fbs[i].y = (uint8_t*)calloc(sizeof(RVP9_PIXEL), ysz);
+      |                         ~~~~~~~~ ^~~~~~ ~~~~~~~~~~~~~~~~~~
+libretro-common/formats/vp9/rvp9_recon.inc:2569:34: warning: Result of 'calloc' is converted to a pointer of type 'uint8_t', which is incompatible with sizeof operand type 'uint16_t' [unix.MallocSizeof]
+ 2569 |          d->fbs[i].u = (uint8_t*)calloc(sizeof(RVP9_PIXEL), uvsz);
+      |                         ~~~~~~~~ ^~~~~~ ~~~~~~~~~~~~~~~~~~
+libretro-common/formats/vp9/rvp9_recon.inc:2570:34: warning: Result of 'calloc' is converted to a pointer of type 'uint8_t', which is incompatible with sizeof operand type 'uint16_t' [unix.MallocSizeof]
+ 2570 |          d->fbs[i].v = (uint8_t*)calloc(sizeof(RVP9_PIXEL), uvsz);
+      |                         ~~~~~~~~ ^~~~~~ ~~~~~~~~~~~~~~~~~~
+4 warnings generated.
+CC libretro-common/net/net_socket_ssl_retro.c
+CC network/tls_log.c
+CC libretro-common/net/net_ifinfo.c
+CC network/netplay/netplay_frontend.c
+CC network/netplay/netplay_room_parse.c
+libretro-common/net/net_ifinfo.c:434:25: warning: Potential leak of memory pointed to by 'addr' [unix.Malloc]
+  434 |                         struct sockaddr_in *addr_unicast =
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/net/net_ifinfo.c:447:23: warning: Potential leak of memory pointed to by 'addr' [unix.Malloc]
+  447 |                return found;
+      |                       ^~~~~
+2 warnings generated.
+CC cheevos/cheevos.c
+CC cheevos/cheevos_client.c
+CC cheevos/cheevos_menu.c
+CC cheevos/cheevos_badge.c
+network/cloud_sync/webdav.c:1078:35: warning: Array access (via field 'last_slash') results in a null pointer dereference [core.NullDereference]
+ 1078 |    webdav_mkdir_st->last_slash[1] = webdav_mkdir_st->post_slash;
+      |                     ~~~~~~~~~~    ^
+1 warning generated.
+CC libretro-common/formats/cdfs/cdfs.c
+CC deps/rcheevos/src/rc_client.c
+CC deps/rcheevos/src/rc_compat.c
+CC deps/rcheevos/src/rc_libretro.c
+CC deps/rcheevos/src/rc_util.c
+CC deps/rcheevos/src/rcheevos/alloc.c
+deps/rcheevos/src/rcheevos/alloc.c:16:45: warning: The left operand of '+' is a garbage value [core.UndefinedBinaryOperatorResult]
+   16 |     const int32_t aligned_offset = (*offset + alignment - 1) & ~(alignment - 1);
+      |                                     ~~~~~~~ ^
+1 warning generated.
+CC deps/rcheevos/src/rcheevos/condition.c
+CC deps/rcheevos/src/rcheevos/condset.c
+deps/rcheevos/src/rc_libretro.c:200:35: warning: Assigned value is uninitialized [core.uninitialized.Assign]
+  200 |     if (tolower(c1) != tolower(c2 = *match++) && c2 != '?')
+      |                                   ^ ~~~~~~~~
+deps/rcheevos/src/rc_libretro.c:204:18: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+  204 |   return (*match == '\0');
+      |           ~~~~~~ ^
+2 warnings generated.
+CC deps/rcheevos/src/rcheevos/consoleinfo.c
+CC deps/rcheevos/src/rcheevos/format.c
+CC deps/rcheevos/src/rcheevos/lboard.c
+deps/rcheevos/src/rcheevos/condset.c:372:11: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  372 |           memcpy(pause_conditions, &condition, sizeof(condition));
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/rcheevos/src/rcheevos/condset.c:377:11: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  377 |           memcpy(reset_conditions, &condition, sizeof(condition));
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/rcheevos/src/rcheevos/condset.c:382:11: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  382 |           memcpy(hittarget_conditions, &condition, sizeof(condition));
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/rcheevos/src/rcheevos/condset.c:387:11: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  387 |           memcpy(measured_conditions, &condition, sizeof(condition));
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/rcheevos/src/rcheevos/condset.c:392:11: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  392 |           memcpy(indirect_conditions, &condition, sizeof(condition));
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/rcheevos/src/rcheevos/condset.c:397:11: warning: Null pointer passed as 1st argument to memory copy function [unix.cstring.NullArg]
+  397 |           memcpy(other_conditions, &condition, sizeof(condition));
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/rcheevos/src/rcheevos/condset.c:566:13: warning: Value stored to 'cond_valid' during its initialization is never read [deadcode.DeadStores]
+  566 |     uint8_t cond_valid = rc_condset_evaluate_condition_no_add_hits(condition, eval_state);
+      |             ^~~~~~~~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/rcheevos/src/rcheevos/condset.c:623:51: warning: Addition of a null pointer (from variable 'condition') and a nonzero integer value (from variable 'num_conditions') results in undefined behavior [core.NullPointerArithm]
+  623 |   const rc_condition_t* condition_end = condition + num_conditions;
+      |                                         ~~~~~~~~~ ^ ~~~~~~~~~~~~~~
+deps/rcheevos/src/rcheevos/condset.c:741:36: warning: Dereference of null pointer [core.NullDereference]
+  741 |         conditions[i].current_hits = 0;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+9 warnings generated.
+CC deps/rcheevos/src/rcheevos/memref.c
+CC deps/rcheevos/src/rcheevos/operand.c
+CC deps/rcheevos/src/rcheevos/richpresence.c
+CC deps/rcheevos/src/rcheevos/runtime.c
+CC deps/rcheevos/src/rcheevos/runtime_progress.c
+CC deps/rcheevos/src/rcheevos/trigger.c
+CC deps/rcheevos/src/rcheevos/value.c
+CC deps/rcheevos/src/rhash/aes.c
+deps/rcheevos/src/rcheevos/runtime_progress.c:550:37: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+  550 |       if (pending_variables[i].djb2 == djb2) {
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+deps/rcheevos/src/rcheevos/runtime_progress.c:570:5: warning: 1st function call argument is an uninitialized value [core.CallAndMessage]
+  570 |     rc_reset_value(pending_variables[--count].variable);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 warnings generated.
+CC deps/rcheevos/src/rhash/cdreader.c
+CC deps/rcheevos/src/rhash/hash.c
+network/netplay/netplay_frontend.c:7618:11: warning: Access to field 'flags' results in a dereference of a null pointer (loaded from variable 'connection') [core.NullDereference]
+ 7618 |       if (connection->flags & NETPLAY_CONN_FLAG_ACTIVE)
+      |           ^~~~~~~~~~~~~~~~~
+1 warning generated.
+CC deps/rcheevos/src/rhash/hash_disc.c
+deps/rcheevos/src/rcheevos/value.c:452:3: warning: Address of stack memory associated with local variable 'local_cond' returned to caller [core.StackAddressEscape]
+   58 |   return value;
+      |   ^~~~~~~~~~~~
+1 warning generated.
+CC deps/rcheevos/src/rhash/hash_encrypted.c
+CC deps/rcheevos/src/rhash/hash_rom.c
+deps/rcheevos/src/rhash/hash.c:718:9: warning: Although the value stored to 'start' is used in the enclosing expression, the value is never actually read from 'start' [deadcode.DeadStores]
+  718 |   ptr = start = buffer;
+      |         ^       ~~~~~~
+1 warning generated.
+CC deps/rcheevos/src/rhash/hash_zip.c
+deps/rcheevos/src/rhash/cdreader.c:749:10: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  749 |   while (*ptr2 && *ptr2 != '\"')
+      |          ^~~~~
+1 warning generated.
+CC deps/rcheevos/src/rapi/rc_api_common.c
+deps/rcheevos/src/rc_client.c:3372:11: warning: Potential leak of memory pointed to by 'pending_media' [unix.Malloc]
+ 3372 |           rc_mutex_unlock(&client->state.mutex);
+      |           ^~~~~~~~~~~~~~~
+deps/rcheevos/src/rc_client.c:4292:43: warning: Result of 'calloc' is converted to a pointer of type 'rc_client_achievement_list_t', which is incompatible with sizeof operand type 'rc_client_achievement_list_info_t' [unix.MallocSizeof]
+ 4292 |     return (rc_client_achievement_list_t*)calloc(1, sizeof(rc_client_achievement_list_info_t));
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~~~~~    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/rcheevos/src/rc_client.c:4306:43: warning: Result of 'calloc' is converted to a pointer of type 'rc_client_achievement_list_t', which is incompatible with sizeof operand type 'rc_client_achievement_list_info_t' [unix.MallocSizeof]
+ 4306 |     return (rc_client_achievement_list_t*)calloc(1, sizeof(rc_client_achievement_list_info_t));
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~~~~~    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/rcheevos/src/rc_client.c:6316:41: warning: Value stored to 'tracker' during its initialization is never read [deadcode.DeadStores]
+ 6316 |   rc_client_leaderboard_tracker_info_t* tracker = game->leaderboard_trackers;
+      |                                         ^~~~~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/rcheevos/src/rc_client.c:7132:5: warning: Value stored to 'hostname' is never read [deadcode.DeadStores]
+ 7132 |     hostname = rc_api_default_host();
+      |     ^          ~~~~~~~~~~~~~~~~~~~~~
+5 warnings generated.
+CC deps/rcheevos/src/rapi/rc_api_info.c
+CC deps/rcheevos/src/rapi/rc_api_runtime.c
+CC deps/rcheevos/src/rapi/rc_api_user.c
+CC cheevos/cheevos_rvz.c
+deps/rcheevos/src/rhash/hash_zip.c:134:17: warning: Although the value stored to 'nparents' is used in the enclosing expression, the value is never actually read from 'nparents' [deadcode.DeadStores]
+  134 |   for (i_file = nparents = 0, cdir = cdir_start; i_file < total_files && cdir >= cdir_start && cdir <= cdir_max; i_file++, cdir += cdir_entry_len) {
+      |                 ^          ~
+deps/rcheevos/src/rhash/hash_zip.c:193:11: warning: Value stored to 'field' is never read [deadcode.DeadStores]
+  193 |           field += sizeof(uint64_t);
+      |           ^        ~~~~~~~~~~~~~~~~
+2 warnings generated.
+CC network/discord.c
+CC cores/libretro-net-retropad/net_retropad_core.c
+deps/rcheevos/src/rhash/hash_disc.c:574:30: warning: The left operand of '<<' is a garbage value [core.UndefinedBinaryOperatorResult]
+  574 |       size = (buffer[offset] << 16) | (buffer[offset + 1] << 24) | (buffer[offset + 2]) | (buffer[offset + 3] << 8);
+      |               ~~~~~~~~~~~~~~ ^
+deps/rcheevos/src/rhash/hash_disc.c:580:30: warning: The left operand of '<<' is a garbage value [core.UndefinedBinaryOperatorResult]
+  580 |       size = (buffer[offset] << 24) | (buffer[offset + 1] << 16) | (buffer[offset + 2] << 8) | (buffer[offset + 3]);
+      |               ~~~~~~~~~~~~~~ ^
+2 warnings generated.
+WINDRES media/rarch.rc
+CC gfx/common/win32_common.c
+CC frontend/drivers/platform_win32.c
+CC gfx/display_servers/dispserv_win32.c
+CC gfx/common/dx_guids.c
+gfx/common/win32_common.c:2522:16: warning: Although the value stored to 'menuItem' is used in the enclosing expression, the value is never actually read from 'menuItem' [deadcode.DeadStores]
+ 2522 |          if (!(menuItem = GetMenu(main_window.hwnd)))
+      |                ^          ~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+CC gfx/common/dx_guids_d3d9.c
+CC gfx/drivers/gdi_gfx.c
+CC record/drivers/record_ffmpeg.c
+cheevos/cheevos_rvz.c:2759:16: warning: Value stored to 'candidate_idx' is never read [deadcode.DeadStores]
+ 2759 |                candidate_idx = search_idx;
+      |                ^               ~~~~~~~~~~
+1 warning generated.
+CC cores/libretro-ffmpeg/ffmpeg_core.c
+CC gfx/video_crt_switch.c
+CC gfx/modeline/modeline_core.c
+CC gfx/modeline/modeline_monitor.c
+CC gfx/modeline/modeline_list.c
+record/drivers/record_ffmpeg.c:1489:16: warning: Array access (from variable 'in') results in a null pointer dereference [core.NullDereference]
+ 1489 |       out[i] = in[2 * i + 0];
+      |                ^~~~~~~~~~~~~
+1 warning generated.
+CC gfx/modeline/modeline_ini.c
+deps/SPIRV-Cross/spirv_glsl.cpp:294:2: warning: Branch condition evaluates to a garbage value [core.uninitialized.Branch]
+  294 |         assert(swizzle[vecsize - 1][index]);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/msys64/mingw64/include/assert.h:48:4: note: expanded from macro 'assert'
+   48 |  ((!!(_Expression)) || \
+      |    ^~~~~~~~~~~~~~~
+deps/SPIRV-Cross/spirv_glsl.cpp:2540:6: warning: Called C++ object pointer is null [core.CallAndMessage]
+ 2540 |         if (parent_type->type_alias)
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+2 warnings generated.
+CC gfx/modeline/modeline_edid.c
+CC gfx/display_servers/win32_modeline_resync.c
+CC gfx/display_servers/win32_modeline_adl.c
+CC gfx/display_servers/win32_modeline_ati.c
+cores/libretro-ffmpeg/ffmpeg_core.c:2681:47: warning: Access to field 'pts' results in a dereference of a null pointer (loaded from variable 'ctx') [core.NullDereference]
+ 2681 |                pts                          = ctx->pts;
+      |                                               ^~~~~~~~
+cores/libretro-ffmpeg/ffmpeg_core.c:3787:12: warning: Although the value stored to 'seek' is used in the enclosing expression, the value is never actually read from 'seek' [deadcode.DeadStores]
+ 3787 |       if ((seek = DO_SEEK_STR))
+      |            ^      ~~~~~~~~~~~
+2 warnings generated.
+CC gfx/display_servers/win32_modeline_pstrip.c
+CC tasks/task_decompress.c
+CC led/drivers/led_win32_keyboard.c
+CC input/drivers_joypad/test_joypad.c
+CC input/drivers/test_input.c
+CC libretro-common/net/net_nfs3.c
+CC libretro-common/vfs/vfs_implementation_nfs.c
+CC libretro-common/vfs/vfs_prefetch.c
+CC libretro-common/net/net_smb2.c
+CC libretro-common/net/net_krb5.c
+CC libretro-common/vfs/vfs_implementation_smb.c
+CC network/presence.c
+MOC ui/drivers/ui_qt.h
+MOC ui/drivers/ui_qt_widgets.h
+CXX obj-unix/release/ui/drivers/moc_ui_qt.cpp
+CXX obj-unix/release/ui/drivers/moc_ui_qt_widgets.cpp
+libretro-common/net/net_smb2.c:1122:53: warning: Value stored to 'p' is never read [deadcode.DeadStores]
+ 1122 |       user_len = rsmb_utf16(c->user, p, 512, 0);    p += user_len; off += user_len;
+      |                                                     ^    ~~~~~~~~
+libretro-common/net/net_smb2.c:1213:4: warning: Value stored to 'pl' is never read [deadcode.DeadStores]
+ 1213 |    pl = strlcpy(path, "\\\\", sizeof(path));
+      |    ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/net/net_smb2.c:1214:4: warning: Value stored to 'pl' is never read [deadcode.DeadStores]
+ 1214 |    pl = strlcat(path, c->server, sizeof(path));
+      |    ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libretro-common/net/net_smb2.c:1215:4: warning: Value stored to 'pl' is never read [deadcode.DeadStores]
+ 1215 |    pl = strlcat(path, "\\", sizeof(path));
+      |    ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4 warnings generated.
+libretro-common/net/net_nfs3.c:1372:36: warning: Although the value stored to 'st' is used in the enclosing expression, the value is never actually read from 'st' [deadcode.DeadStores]
+ 1372 |    if (nfs4_res(&r) != NFS3_OK || (st = nfs4_res(&r)) != NFS3_OK)
+      |                                    ^    ~~~~~~~~~~~~
+libretro-common/net/net_nfs3.c:2809:37: warning: The left operand of '==' is a garbage value [core.UndefinedBinaryOperatorResult]
+ 2809 |       if (!c->error[0] || st.is_dir == 0)
+      |                           ~~~~~~~~~ ^
+2 warnings generated.
+deps/SPIRV-Cross/spirv_msl.cpp:2367:4: warning: Value stored to 'num_components' is never read [deadcode.DeadStores]
+ 2367 |                         num_components = max<uint32_t>(num_components, get_target_components_for_fragment_location(locn));
+      |                         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+deps/SPIRV-Cross/spirv_msl.cpp:8030:4: warning: Value stored to 'index' is never read [deadcode.DeadStores]
+ 8030 |                         index = uint32_t(-1);
+      |                         ^       ~~~~~~~~~~~~
+2 warnings generated.
+LD retroarch
+scan-build: Analysis run complete.
+scan-build: 425 bugs found.
+scan-build: Run 'scan-view /c/Env/RetroArch/__rapport_audit_windows11_x64/2026-10-05-235156-713-1' to examine bug reports.
