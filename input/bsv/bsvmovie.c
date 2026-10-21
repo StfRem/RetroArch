@@ -1754,7 +1754,7 @@ int64_t bsv_movie_write_deduped_state(bsv_movie_t *movie, uint8_t *state,
     * superblock, if there is one. */
    size_t superblock_buf_bytes = ((superblock_size * sizeof(uint32_t)) + 63) & ~(size_t)63;
    uint32_t *superblock_buf    = (uint32_t*)calloc(1, superblock_buf_bytes + block_byte_size);
-   uint8_t *padded_block       = (uint8_t*)superblock_buf + superblock_buf_bytes;
+   uint8_t *padded_block       = NULL;
    bool padded_block_used      = false;
    intfstream_t *out_stream    = intfstream_open_memory(output,
          RETRO_VFS_FILE_ACCESS_READ_WRITE, RETRO_VFS_FILE_ACCESS_HINT_NONE,
@@ -1778,6 +1778,7 @@ int64_t bsv_movie_write_deduped_state(bsv_movie_t *movie, uint8_t *state,
    }
    if (!superblock_buf || !out_stream || !movie->superblock_seq)
       goto fail;
+   padded_block = (uint8_t*)superblock_buf + superblock_buf_bytes;
    rmsgpack_write_int(out_stream, BSV_IFRAME_START_TOKEN);
    rmsgpack_write_int(out_stream, movie->frame_counter);
    for (superblock = 0; superblock < superblock_count; superblock++)

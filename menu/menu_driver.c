@@ -8231,6 +8231,8 @@ static int generic_menu_iterate(
             menu_list_t *menu_list     = menu_st->entries.list;
             file_list_t *selection_buf = menu_list ? MENU_LIST_GET_SELECTION(menu_list, (unsigned)0) : NULL;
             size_t selection           = menu_st->selection_ptr;
+            if (!selection_buf || selection >= selection_buf->size)
+               break;
             menu_file_list_cbs_t *cbs  = selection_buf ?
                (menu_file_list_cbs_t*)selection_buf->list[selection].actiondata
                : NULL;
