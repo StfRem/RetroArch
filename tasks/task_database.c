@@ -2264,7 +2264,7 @@ static bool manual_scan_end_flush_tick(
 
       if (manual_scan->flush_playlist && (!entry_present || is_m3u))
       {
-         struct playlist_entry entry;
+         struct playlist_entry entry = {0};
 
          if(is_m3u)
             playlist_delete_by_path(manual_scan->flush_playlist, result->entry_path);

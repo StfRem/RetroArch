@@ -7525,11 +7525,11 @@ INPUT_NOINLINE static void input_poll_overlay(
          osk_state_changed  = true;
 
          for (j = 0; j < 32; j++)
-            if ((orig_bits & (1 << j)) != (new_bits & (1 << j)))
+            if ((orig_bits & (1u << j)) != (new_bits & (1u << j)))
             {
                unsigned rk = i * 32 + j;
                uint32_t c  = input_keymaps_translate_rk_to_ascii((enum retro_key)rk, (enum retro_mod)key_mod);
-               input_keyboard_event(new_bits & (1 << j),
+               input_keyboard_event(new_bits & (1u << j),
                      rk, c, key_mod, RETRO_DEVICE_POINTER);
             }
       }

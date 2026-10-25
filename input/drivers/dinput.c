@@ -348,6 +348,7 @@ static void dinput_poll(void *data)
             mouse_state.lX = 0;
             mouse_state.lY = 0;
             mouse_state.lZ = 0;
+            rgb_buttons_ptr = &mouse_state.rgbButtons[0];
             for (
                   ; rgb_buttons_ptr < mouse_state.rgbButtons + 8
                   ; rgb_buttons_ptr++)

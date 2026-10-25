@@ -584,7 +584,8 @@ static bool content_file_list_set_info(
          file_info->ext         = strdup(ext);
          /* File extension is always presented
           * core-side in lowercase format */
-         string_to_lower(file_info->ext);
+         if (file_info->ext)
+            string_to_lower(file_info->ext);
       }
 
       /* Check whether path corresponds to a file

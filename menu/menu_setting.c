@@ -9359,10 +9359,18 @@ static void settings_lazy_learn(rarch_setting_t *list)
          settings_lazy_names_n++;
       }
    }
-   settings_lazy_name_hash    = (uint32_t*)realloc(settings_lazy_name_hash,
-         settings_lazy_names_n * sizeof(uint32_t));
-   settings_lazy_name_builder = (uint8_t*)realloc(settings_lazy_name_builder,
-         settings_lazy_names_n ? settings_lazy_names_n : 1);
+   if (settings_lazy_names_n)
+   {
+      uint32_t *new_hash = (uint32_t*)realloc(settings_lazy_name_hash,
+            settings_lazy_names_n * sizeof(uint32_t));
+      uint8_t *new_builder = (uint8_t*)realloc(settings_lazy_name_builder,
+            settings_lazy_names_n);
+
+      if (new_hash)
+         settings_lazy_name_hash = new_hash;
+      if (new_builder)
+         settings_lazy_name_builder = new_builder;
+   }
 }
 
 static rarch_setting_t *settings_lazy_get(unsigned k);
